@@ -6,9 +6,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
-        <Switch>
-          {/* <Route path="/LoginShin" component={LoginShin} /> */}
-        </Switch>
+        <Switch></Switch>
       </Router>
     );
   }
