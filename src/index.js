@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import '@fortawesome/fontawesome-free/js/all.js';
 import '../src/styles/common.scss';
 import '../src/styles/reset.scss';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 ReactDOM.render(
   <React.StrictMode>
