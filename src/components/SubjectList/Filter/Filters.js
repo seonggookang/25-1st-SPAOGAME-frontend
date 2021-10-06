@@ -10,13 +10,13 @@ class Filters extends Component {
         <h3 className="filter_title">색상</h3>
         <ul className="colors">
           {FILTER.map(item => (
-            <ColorFilter color={item.color} />
+            <ColorFilter key={item.color} color={item.color} />
           ))}
         </ul>
         <h3 className="material_title">소재</h3>
         <ul className="material">
           {FILTER.map(item => (
-            <MaterialFilter material={item.material} />
+            <MaterialFilter key={item.color} material={item.material} />
           ))}
         </ul>
       </div>

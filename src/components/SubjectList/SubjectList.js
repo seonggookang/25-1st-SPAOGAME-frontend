@@ -30,26 +30,27 @@ class SubjectList extends Component {
   }
 
   render() {
+    const { category, goods } = this.state;
     return (
       <div className="subject_wrapper">
         <nav></nav>
         <main>
-          <Filters color={this.state.goods} />
+          <Filters color={goods} />
           <div className="main_mid">
             <h1>아우터</h1>
             <div className="category_filter_wrapper">
               <div className="category_filter">
-                {this.state.category.map(item => (
-                  <CategoryFilter category={item} />
+                {category.map(item => (
+                  <CategoryFilter key={item.id} category={item} />
                 ))}
               </div>
-              <button class="item_count"> 8 items</button>
+              <button className="item_count"> 8 items</button>
               <button className="sort">
-                상품정렬 &nbsp;<i class="fas fa-chevron-down"></i>
+                상품정렬 &nbsp;<i className="fas fa-chevron-down"></i>
               </button>
             </div>
             <ul className="subjects">
-              <GoodsList goods={this.state.goods} />
+              <GoodsList goods={goods} />
             </ul>
           </div>
           <div className="main_right"></div>
