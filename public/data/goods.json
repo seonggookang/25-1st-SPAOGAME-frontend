@@ -1,0 +1,58 @@
+[
+  {
+    "name": " 베이직 조거 팬츠(SPMTB38G04 RE)",
+    "price": "29,900",
+    "review_count": "4",
+    "image": "/images/check.png",
+    "color": "black"
+  },
+  {
+    "name": " 베이직 스웨트 팬츠(SPMTB38G04 RE)",
+    "price": "19,000",
+    "review_count": "3",
+    "image": "/images/hood.png",
+    "color": "gray"
+  },
+  {
+    "name": " 테니스 스커트(이너팬츠)",
+    "price": "69,900",
+    "review_count": "2",
+    "image": "/images/model.png",
+    "color": "green"
+  },
+  {
+    "name": "[데일리지]코듀로이 와이드턱",
+    "price": "39,900",
+    "review_count": "0",
+    "image": "/images/mtom.png",
+    "color": "white"
+  },
+  {
+    "name": "[데일리지]코듀로이 밴딩조거",
+    "price": "38,500",
+    "review_count": "0",
+    "image": "/images/sweat.png",
+    "color": "pink"
+  },
+  {
+    "name": "[포우먼] 릴렉스 밴딩 와이드",
+    "price": "53,400",
+    "review_count": "4",
+    "image": "/images/jogger.png",
+    "color": "orange"
+  },
+  {
+    "name": "언발란스 셋업 스커트",
+    "price": "59,900",
+    "review_count": "0",
+    "image": "/images/jogger.png",
+    "color": "red"
+  },
+  {
+    "name": "후드 셋업",
+    "price": "89,900",
+    "review_count": "0",
+    "image": "/images/jogger.png",
+    "color": "orange"
+  }
+]
