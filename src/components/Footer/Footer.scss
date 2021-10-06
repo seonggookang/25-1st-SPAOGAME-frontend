@@ -1,0 +1,61 @@
+.Footer {
+  border: 1px solid black;
+  padding: 0px 10px;
+  .Footer_wrapper {
+    .About_company {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      .Footer_section01 {
+        font-size: 5px;
+
+        .phone {
+          font-weight: bold;
+          padding: 10px 0px;
+        }
+
+        .work_time {
+          padding: 3px 0px;
+        }
+
+        .email {
+          padding: 3px 0px;
+        }
+      }
+
+      .Footer_section02 {
+        display: flex;
+        flex-direction: row;
+        font-size: 3px;
+        padding: 5px 10px;
+        align-items: baseline;
+        text-align: right;
+
+        .section02_01 {
+          display: flex;
+          flex-direction: column;
+          padding: 5px 10px;
+          gap: 5px;
+        }
+        .section02_02 {
+          display: flex;
+          flex-direction: column;
+          padding: 5px 10px;
+          gap: 5px;
+        }
+        .section02_03 {
+          display: flex;
+          flex-direction: column;
+          padding: 5px 10px;
+          gap: 5px;
+        }
+      }
+    }
+
+    .Footer_section03 {
+      border-top: 1px solid black;
+    }
+  }
+}
