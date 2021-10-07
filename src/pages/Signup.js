@@ -1,27 +1,10 @@
 import React from 'react';
-// import '../pages/Login.scss';
+import '../pages/Signup.scss';
 
 class Signup extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      username: '',
-      password: '',
-      birthday: '',
-    };
-  }
-
-  handleSignupInput = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
   render() {
-    console.log(this.state);
     return (
-      <div className="signup_wrapper">
+      <main className="signup_wrapper">
         <div className="header">
           <div className="head_title">
             <h1>SPAOGAME 멤버십</h1>
@@ -36,7 +19,7 @@ class Signup extends React.Component {
             </span>
           </div>
         </div>
-        <div className="signup_container">
+        <section className="signup_container">
           <div className="signup_wrap">
             <form claaName="signup_form">
               <div className="signup_field">
@@ -378,8 +361,8 @@ class Signup extends React.Component {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 }
