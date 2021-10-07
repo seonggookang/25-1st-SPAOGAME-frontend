@@ -47,6 +47,9 @@ main {
     border: solid 1px lightgray;
     cursor: pointer;
   }
+  button:hover {
+    opacity: 60%;
+  }
 }
 
 .material_title {
@@ -116,6 +119,11 @@ main {
     line-height: 60px;
     border: none;
     cursor: pointer;
+  }
+  button:hover {
+    transform: scale(1.1);
+    font-weight: 450;
+    color: black;
   }
 }
 .item_count {
