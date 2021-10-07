@@ -64,7 +64,7 @@ class Login extends React.Component {
                     <button className="find_password">비밀번호 찾기</button>
                   </div>
                   <div className="join_the_membership">
-                    <li /> SPAO 멤버십 회원이 아니신가요?
+                    <li /> SPAOGAME 멤버십 회원이 아니신가요?
                     <button
                       className="join_membership"
                       onClick={this.goToSignup}
