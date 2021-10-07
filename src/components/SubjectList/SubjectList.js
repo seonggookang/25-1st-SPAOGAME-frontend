@@ -12,6 +12,7 @@ class SubjectList extends Component {
       category: [],
     };
   }
+
   componentDidMount() {
     fetch('/data/goods.json')
       .then(res => res.json())
@@ -20,6 +21,7 @@ class SubjectList extends Component {
           goods: data,
         });
       });
+
     fetch('/data/category.json')
       .then(res => res.json())
       .then(data => {

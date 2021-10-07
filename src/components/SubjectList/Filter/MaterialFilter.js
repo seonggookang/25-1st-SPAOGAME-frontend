@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MaterialFilter.scss';
 
 class MaterialFilter extends Component {
   render() {

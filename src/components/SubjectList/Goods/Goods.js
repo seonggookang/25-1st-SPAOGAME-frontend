@@ -12,7 +12,7 @@ class Goods extends Component {
           <div className="name_heart_wrapper">
             <span className="subject_name">{name} </span>
             <span className="heart">
-              <i className="far fa-heart"></i>
+              <i className="far fa-heart" />
             </span>
           </div>
           <div className="subject_price">{price}</div>

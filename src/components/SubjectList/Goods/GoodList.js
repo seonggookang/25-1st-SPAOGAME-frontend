@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Goods from './Goods';
+import './Good.scss';
 
 class GoodList extends Component {
   render() {
+    const { goods } = this.props;
     return (
       <>
-        {this.props.goods.map(item => (
+        {goods.map(item => (
           <Goods
             key={item.name}
             item={item}

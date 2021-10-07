@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ColorFilter from './ColorFilter';
 import MaterialFilter from './MaterialFilter';
+import './Filters.scss';
 
 class Filters extends Component {
   render() {
