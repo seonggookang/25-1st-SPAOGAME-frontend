@@ -1,0 +1,59 @@
+.signup_wrapper {
+  height: 100%;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+
+    .head_title {
+      border-bottom: 2px solid black;
+      padding: 2em 0;
+      margin-bottom: 3em;
+
+      h1 {
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+
+    .membership_text {
+      margin-bottom: 4em;
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .signup_container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .signup_form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .membership_subtitle {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .essential {
+        color: red;
+      }
+    }
+  }
+}
