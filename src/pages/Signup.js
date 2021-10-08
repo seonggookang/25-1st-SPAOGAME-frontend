@@ -2,25 +2,10 @@ import React from 'react';
 import '../pages/Signup.scss';
 
 class Signup extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      username: '',
-      password: '',
-      birthday: '',
-      phonenumber: '',
-    };
-  }
-
-  handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
   render() {
     console.log(this.state);
     return (
-      <main className="signup_wrapper" onChange={this.handleInput}>
+      <main className="signup_wrapper">
         <div className="header">
           <div className="head_title">
             <h1>SPAOGAME 멤버십</h1>
@@ -122,7 +107,7 @@ class Signup extends React.Component {
                       <td className="user_birth">
                         <div className="selectBox">
                           <label for="year" className="user_year">
-                            {/*year*/}
+                            {/*년*/}
                           </label>
                           <select className="signup_year">
                             <option value>선택</option>
