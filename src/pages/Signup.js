@@ -2,9 +2,25 @@ import React from 'react';
 import '../pages/Signup.scss';
 
 class Signup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      username: '',
+      password: '',
+      birthday: '',
+      phonenumber: '',
+    };
+  }
+
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
+    console.log(this.state);
     return (
-      <main className="signup_wrapper">
+      <main className="signup_wrapper" onChange={this.handleInput}>
         <div className="header">
           <div className="head_title">
             <h1>SPAOGAME 멤버십</h1>
@@ -42,7 +58,11 @@ class Signup extends React.Component {
                         </div>
                       </th>
                       <td>
-                        <input className="name_input" name="name" />
+                        <input
+                          className="name_input"
+                          name="name"
+                          onChange={this.handleInput}
+                        />
                       </td>
                     </tr>
                     <tr>
@@ -105,7 +125,7 @@ class Signup extends React.Component {
                           <label for="year" className="user_year">
                             {/*year*/}
                           </label>
-                          <select className="signup_year" name="birthday">
+                          <select className="signup_year">
                             <option value>선택</option>
                             <option value="2021">2021</option>
                             <option value="2020">2020</option>
@@ -215,7 +235,7 @@ class Signup extends React.Component {
                           <label for="month" className="user_month">
                             {/*month*/}
                           </label>
-                          <select className="signup_month" name="birthday">
+                          <select className="signup_month" value={'13'}>
                             <option value>선택</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -286,7 +306,10 @@ class Signup extends React.Component {
                       <td className="user_firsphonenum">
                         <div className="search_box">
                           <label for="phonenumber">{/*phonenumber*/}</label>
-                          <select className="signup_phonenumber">
+                          <select
+                            className="signup_phonenumber"
+                            name="phonenumber"
+                          >
                             <option value>선택</option>
                             <option value="010">010</option>
                             <option value="011">011</option>
@@ -300,12 +323,14 @@ class Signup extends React.Component {
                           className="signup_phonenumber2"
                           title="중간자리"
                           maxLength="4"
+                          name="phonenumber"
                         />
                         <span>-</span>
                         <input
                           className="signup_phonenumber3"
                           title="마지막자리"
                           maxLength="4"
+                          name="phonenumber"
                         />
                       </td>
                     </tr>
