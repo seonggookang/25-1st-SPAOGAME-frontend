@@ -1,17 +1,11 @@
-.colors {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 160px;
+.ColorFilter {
+  width: 30px;
+  height: 20px;
+  margin: 3px 3px 3px 0px;
+  border: solid 1px lightgray;
+  cursor: pointer;
 
-  button {
-    width: 30px;
-    height: 20px;
-    margin: 3px 3px 3px 0px;
-    border: solid 1px lightgray;
-    cursor: pointer;
-  }
-  button:hover {
+  &:hover {
     opacity: 60%;
   }
 }

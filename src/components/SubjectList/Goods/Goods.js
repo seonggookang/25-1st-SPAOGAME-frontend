@@ -4,7 +4,7 @@ class Goods extends Component {
   render() {
     const { name, price, review_count, image } = this.props.item;
     return (
-      <li className="subject">
+      <li className="Goods">
         <div className="image_wrapper">
           <img alt="상품 이미지" src={image} />
         </div>

@@ -1,57 +1,49 @@
-.main_left {
-  margin-right: 10px;
+.Filters {
+  .main_left {
+    margin-right: 10px;
 
-  .title {
-    width: 160px;
-    padding: 0;
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-    color: #1a1a1a;
-    font-size: 20px;
-    font-weight: 500;
+    .title {
+      width: 160px;
+      padding: 0;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      color: #1a1a1a;
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
-}
 
-.filter_title {
-  position: relative;
-  margin: 18px 0;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  font-size: 15px;
-  font-weight: 400;
-}
+  .filter_title {
+    position: relative;
+    margin: 18px 0;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 400;
+  }
 
-.item_count {
-  width: 80px;
-  padding: 0px 10px;
-  border-left: 1px solid lightgray;
-  cursor: default;
-}
+  .material_title {
+    position: relative;
+    margin: 18px 0;
+    padding-top: 18px;
+    border-top: 1px solid lightgray;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+  }
 
-.sort {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90px;
-  padding: 0px 10px;
-  border-left: 1px solid lightgray;
-  cursor: pointer;
-}
+  .material {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 160px;
+  }
 
-.dropbox {
-  display: none;
-}
-
-.sort:hover {
-  display: flex;
-  flex-direction: column;
-  & .dropbox & .dropbox_item {
-    display: block;
-    position: absolute;
-    width: 90px;
-    height: 60px;
-    border: 1px solid lightgray;
-    background-color: white;
-    cursor: pointer;
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 160px;
   }
 }

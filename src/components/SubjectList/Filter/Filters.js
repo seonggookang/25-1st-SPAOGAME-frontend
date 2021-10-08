@@ -6,20 +6,22 @@ import './Filters.scss';
 class Filters extends Component {
   render() {
     return (
-      <div className="main_left">
-        <h2 className="title">FILTER</h2>
-        <h3 className="filter_title">색상</h3>
-        <ul className="colors">
-          {FILTER.map(item => (
-            <ColorFilter key={item.color} color={item.color} />
-          ))}
-        </ul>
-        <h3 className="material_title">소재</h3>
-        <ul className="material">
-          {FILTER.map(item => (
-            <MaterialFilter key={item.color} material={item.material} />
-          ))}
-        </ul>
+      <div className="Filters">
+        <div className="main_left">
+          <h2 className="title">FILTER</h2>
+          <h3 className="filter_title">색상</h3>
+          <ul className="colors">
+            {FILTER.map(item => (
+              <ColorFilter key={item.color} color={item.color} />
+            ))}
+          </ul>
+          <h3 className="material_title">소재</h3>
+          <ul className="material">
+            {FILTER.map(item => (
+              <MaterialFilter key={item.color} material={item.material} />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

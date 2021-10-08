@@ -5,7 +5,10 @@ class ColorFilter extends Component {
   render() {
     return (
       <li>
-        <button style={{ backgroundColor: this.props.color }} />
+        <button
+          className="ColorFilter"
+          style={{ backgroundColor: this.props.color }}
+        />
       </li>
     );
   }

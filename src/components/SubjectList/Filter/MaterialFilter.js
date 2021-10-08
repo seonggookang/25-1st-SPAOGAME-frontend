@@ -4,7 +4,7 @@ import './MaterialFilter.scss';
 class MaterialFilter extends Component {
   render() {
     return (
-      <li>
+      <li className="MaterialFilter">
         <button className="material_button">{this.props.material}</button>
       </li>
     );

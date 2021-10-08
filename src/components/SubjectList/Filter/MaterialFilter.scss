@@ -1,32 +1,17 @@
-.material_title {
-  position: relative;
-  margin: 18px 0;
-  padding-top: 18px;
-  border-top: 1px solid lightgray;
-  color: #1a1a1a;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.material {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 160px;
-
-  button {
+.MaterialFilter {
+  .material_button {
     width: 72px;
     height: 30px;
     margin: 5px 5px 5px 0px;
     border: solid 1px lightgray;
     background-color: white;
     color: gray;
-    font-size: 11px;
     cursor: pointer;
+    font-size: 11px;
   }
-}
-.material_button:hover {
-  border: solid 1px #d45754;
-  color: #d45754;
+
+  .material_button:hover {
+    border: solid 1px #d45754;
+    color: #d45754;
+  }
 }

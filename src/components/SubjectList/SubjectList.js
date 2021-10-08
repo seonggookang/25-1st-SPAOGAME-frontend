@@ -34,7 +34,7 @@ class SubjectList extends Component {
   render() {
     const { category, goods } = this.state;
     return (
-      <div className="subject_wrapper">
+      <div className="SubjectList">
         <nav></nav>
         <main>
           <Filters color={goods} />
@@ -49,6 +49,12 @@ class SubjectList extends Component {
               <button className="item_count"> 8 items</button>
               <button className="sort">
                 상품정렬 &nbsp;<i className="fas fa-chevron-down"></i>
+                <ul className="dropbox">
+                  <li className="dropbox_item">신상품</li>
+                  <li className="dropbox_item">상품명</li>
+                  <li className="dropbox_item">낮은가격순</li>
+                  <li className="dropbox_item">높은가격순</li>
+                </ul>
               </button>
             </div>
             <ul className="subjects">

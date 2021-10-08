@@ -4,7 +4,7 @@ import './CategoryFilter.scss';
 class CategoryFilter extends Component {
   render() {
     const { name } = this.props.category;
-    return <button className="category_button">{name}</button>;
+    return <button className="CategoryFilter">{name}</button>;
   }
 }
 
