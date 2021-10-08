@@ -58,11 +58,7 @@ class Signup extends React.Component {
                         </div>
                       </th>
                       <td>
-                        <input
-                          className="name_input"
-                          name="name"
-                          onChange={this.handleInput}
-                        />
+                        <input className="name_input" name="name" />
                       </td>
                     </tr>
                     <tr>
@@ -108,7 +104,10 @@ class Signup extends React.Component {
                         </div>
                       </th>
                       <td>
-                        <input className="password_input" name="password" />
+                        <input
+                          className="password_input"
+                          name="repeatPassword"
+                        />
                       </td>
                     </tr>
                     <tr>
