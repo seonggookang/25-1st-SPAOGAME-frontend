@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class Goods extends Component {
   render() {
-    const { name, price, review_count, image } = this.props.item;
+    const { name, price, review_count, img_urls } = this.props.item;
     return (
       <li className="Goods">
         <div className="image_wrapper">
-          <img alt="상품 이미지" src={image} />
+          <img alt="상품 이미지" src={img_urls} />
         </div>
         <div className="description">
           <div className="name_heart_wrapper">

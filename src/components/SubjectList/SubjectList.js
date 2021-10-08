@@ -18,7 +18,7 @@ class SubjectList extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          goods: data,
+          goods: data.goods,
         });
       });
 

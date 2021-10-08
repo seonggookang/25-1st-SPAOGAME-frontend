@@ -8,7 +8,7 @@ class GoodList extends Component {
     return (
       <>
         {goods.map(item => {
-          const { name, price, review_count, image } = item;
+          const { name, price, review_count, img_urls } = item;
           return (
             <Goods
               key={name}
@@ -16,7 +16,7 @@ class GoodList extends Component {
               name={name}
               price={price}
               count={review_count}
-              image={image}
+              image={img_urls}
             />
           );
         })}
