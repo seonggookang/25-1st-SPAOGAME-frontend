@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 @mixin flexcenter($justify: center, $alContent: center, $alItem: center) {
   display: flex;
   justify-content: $justify;
   align-content: $alItem;
+=======
+@mixin flex($justify: center, $alContent: center, $alItem: center) {
+  display: flex;
+  justify-content: $justify;
+  align-content: $alContent;
+>>>>>>> feature/loginlayout
   align-items: $alItem;
 }
