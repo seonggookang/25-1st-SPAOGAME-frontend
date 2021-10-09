@@ -3,6 +3,24 @@ import '../styles/common.scss';
 import '../pages/Signup.scss';
 
 class Signup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      passowrd: '',
+      name: '',
+      email: '',
+      mobile_number: '',
+      address1: '',
+      address2: '',
+      birthday: '',
+    };
+  }
+
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -20,22 +38,18 @@ class Signup extends React.Component {
             <div className="membership_subtitle">
               <span>기본정보</span>
               <p>
-                ( <span className="essential">*</span> )표시는
-                필수입력항목입니다.
+                (<span className="essential">*</span>)표시는 필수입력항목입니다.
               </p>
             </div>
             <table
+              className="signup_table"
               cellspacing="0"
               summary="사용자이름,회원아이디,비밀번호,생일,휴대폰번호,기본주소,상세주소,전자우편주소,성별"
             >
-              <colegroup>
-                <col className="signup_key" />
-                <col className="signup_value" />
-              </colegroup>
               <tbody>
                 <tr>
                   <th scope="row">
-                    <div className="user_name">
+                    <div className="signup_information">
                       이름
                       <span className="essential_input" title="필수입력">
                         *
@@ -48,7 +62,7 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_id">
+                    <div className="signup_information">
                       회원아이디
                       <span className="essential_input" title="필수입력">
                         *
@@ -62,7 +76,7 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_password">
+                    <div className="signup_information">
                       비밀번호
                       <span className="essential_input" title="필수입력">
                         *
@@ -81,7 +95,7 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="repeat_password">
+                    <div className="signup_information">
                       비밀번호재입력
                       <span className="essential_input" title="필수입력">
                         *
@@ -94,7 +108,7 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_birth">
+                    <div className="signup_information">
                       생년월일
                       <span className="essential_input" title="필수입력">
                         *
@@ -106,7 +120,7 @@ class Signup extends React.Component {
                       <label for="year" className="user_year">
                         {/*년*/}
                       </label>
-                      <select className="signup_year">
+                      <select className="signup_birth" name="birthday">
                         <option value>선택</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
@@ -210,13 +224,13 @@ class Signup extends React.Component {
                         <option value="1922">1922</option>
                         <option value="1921">1921</option>
                       </select>
+                      <span>년</span>
                     </div>
-                    <span>년</span>
                     <div className="selectBox">
                       <label for="month" className="user_month">
                         {/*month*/}
                       </label>
-                      <select className="signup_month" value={'13'}>
+                      <select className="signup_birth" name="birthday">
                         <option value>선택</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -231,13 +245,13 @@ class Signup extends React.Component {
                         <option value="11">11</option>
                         <option value="12">12</option>
                       </select>
+                      <span>월</span>
                     </div>
-                    <span>월</span>
                     <div className="selectBox">
                       <label for="date" className="user_date">
                         {/*date*/}
                       </label>
-                      <select className="signup_date" name="birthday">
+                      <select className="signup_birth" name="birthday">
                         <option value>선택</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -271,23 +285,26 @@ class Signup extends React.Component {
                         <option value="30">30</option>
                         <option value="31">31</option>
                       </select>
+                      <span>일</span>
                     </div>
-                    <span>일</span>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_phonenumber">
+                    <div className="signup_information">
                       핸드폰번호
                       <span className="essential_input" title="필수입력">
                         *
                       </span>
                     </div>
                   </th>
-                  <td className="user_firsphonenum">
+                  <td className="user_phonenumber">
                     <div className="search_box">
                       <label for="phonenumber">{/*phonenumber*/}</label>
-                      <select className="signup_phonenumber" name="phonenumber">
+                      <select
+                        className="signup_phonenumber"
+                        name="mobie_number"
+                      >
                         <option value>선택</option>
                         <option value="010">010</option>
                         <option value="011">011</option>
@@ -301,34 +318,42 @@ class Signup extends React.Component {
                       className="signup_phonenumber2"
                       title="중간자리"
                       maxLength="4"
-                      name="phonenumber"
+                      name="mobie_number"
                     />
                     <span>-</span>
                     <input
-                      className="signup_phonenumber3"
+                      className="signup_phonenumber2"
                       title="마지막자리"
                       maxLength="4"
-                      name="phonenumber"
+                      name="mobie_number"
                     />
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_adress">주소</div>
+                    <div className="signup_information">주소</div>
                   </th>
                   <td className="td_address">
-                    <input className="adress" title="주소" />
+                    <input
+                      className="user_adress"
+                      title="주소"
+                      name="adress1"
+                    />
                     <button>
                       <span>주소찾기</span>
                     </button>
                     <div className="user_lastaddress">
-                      <input className="last_adress" title="나머지 주소" />
+                      <input
+                        className="user_adress"
+                        title="나머지 주소"
+                        name="adress2"
+                      />
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="user_email">
+                    <div className="signup_information">
                       이메일
                       <span className="essential_input" title="필수입력">
                         *
@@ -336,29 +361,27 @@ class Signup extends React.Component {
                     </div>
                   </th>
                   <td className="user_email">
-                    <input className="email_id" title="이메일아이디" />
+                    <input
+                      className="email_id"
+                      title="이메일아이디"
+                      name="email"
+                    />
                     <span>@</span>
-                    <input className="emali_pw" title="이메일주소" />
-                    <div className="email_selectbox">
-                      <select className="select_adress">
-                        <option value>직접입력</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="nate.com">nate.com</option>
-                        <option value="daum.net">daum.net</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="yahoo.com">yahoo.com</option>
-                      </select>
-                    </div>
+                    <input
+                      className="email_id"
+                      title="이메일주소"
+                      name="email"
+                    />
                   </td>
                 </tr>
               </tbody>
             </table>
             <div className="signup_button">
               <button className="cancel_button">
-                <span>가입취소</span>
+                <span className="cancel_message">가입취소</span>
               </button>
               <button className="submit_button">
-                <span>제출하기</span>
+                <span className="submit_message">제출하기</span>
               </button>
             </div>
           </form>
