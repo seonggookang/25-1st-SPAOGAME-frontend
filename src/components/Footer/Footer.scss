@@ -1,61 +1,60 @@
 .Footer {
-  border: 1px solid black;
   padding: 0px 10px;
-  .Footer_wrapper {
-    .About_company {
+  border: 1px solid black;
+
+  .about_company {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer_section01 {
+      font-size: 5px;
+
+      .phone {
+        padding: 10px 0px;
+        font-weight: bold;
+      }
+
+      .work_time {
+        padding: 3px 0px;
+      }
+
+      .email {
+        padding: 3px 0px;
+      }
+    }
+
+    .footer_section02 {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
+      align-items: baseline;
+      padding: 5px 10px;
+      text-align: right;
+      font-size: 3px;
 
-      .Footer_section01 {
-        font-size: 5px;
-
-        .phone {
-          font-weight: bold;
-          padding: 10px 0px;
-        }
-
-        .work_time {
-          padding: 3px 0px;
-        }
-
-        .email {
-          padding: 3px 0px;
-        }
-      }
-
-      .Footer_section02 {
+      .section02_01 {
         display: flex;
-        flex-direction: row;
-        font-size: 3px;
+        flex-direction: column;
         padding: 5px 10px;
-        align-items: baseline;
-        text-align: right;
+        gap: 5px;
+      }
 
-        .section02_01 {
-          display: flex;
-          flex-direction: column;
-          padding: 5px 10px;
-          gap: 5px;
-        }
-        .section02_02 {
-          display: flex;
-          flex-direction: column;
-          padding: 5px 10px;
-          gap: 5px;
-        }
-        .section02_03 {
-          display: flex;
-          flex-direction: column;
-          padding: 5px 10px;
-          gap: 5px;
-        }
+      .section02_02 {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px;
+        gap: 5px;
+      }
+
+      .section02_03 {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px;
+        gap: 5px;
       }
     }
+  }
 
-    .Footer_section03 {
-      border-top: 1px solid black;
-    }
+  .footer_section03 {
+    border-top: 1px solid black;
   }
 }

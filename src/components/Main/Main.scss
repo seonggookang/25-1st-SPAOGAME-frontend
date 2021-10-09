@@ -1,7 +1,6 @@
 .Main {
   height: 1030px;
-
   width: 100vw;
-
-  // padding: 30px;
+  // filter: grayscale(100%); // 왜 다른 텍스트들 다 사라지나?
+  // z-index: -1;
 }
