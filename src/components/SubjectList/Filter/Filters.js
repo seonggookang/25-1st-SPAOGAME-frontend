@@ -17,7 +17,7 @@ class Filters extends Component {
                 key={item.color}
                 color={item.color}
                 goods={goods}
-                colorSort={colorSort}
+                colorSort={this.props.colorSort}
               />
             ))}
           </ul>

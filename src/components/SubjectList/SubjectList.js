@@ -37,6 +37,8 @@ class SubjectList extends Component {
     const priceCompare = e.target.getAttribute('name');
 
     const sortByPrice = [...this.state.goods].sort(function (a, b) {
+      console.log('a:' + a[priceCompare] + 'b:' + b[priceCompare]);
+
       return a[priceCompare] - b[priceCompare];
     });
 
