@@ -62,6 +62,7 @@
         justify-content: center;
         gap: 5em;
         margin: 5em 0;
+        cursor: pointer;
 
         .cancel_button {
           display: inline-block;
@@ -70,6 +71,7 @@
           border: 1px solid #ccc;
           background-color: #fff;
           text-align: center;
+          cursor: pointer;
 
           .cancel_message {
             font-size: 15px;
@@ -84,6 +86,7 @@
           border: 1px solid#1971b8;
           background-color: #1971b8;
           text-align: center;
+          cursor: pointer;
         }
 
         .submit_message {
@@ -143,6 +146,7 @@
           background: #666;
           color: #fff;
           padding: 0.3em 1em;
+          cursor: pointer;
         }
 
         .password_input {
