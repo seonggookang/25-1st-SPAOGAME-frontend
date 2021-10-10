@@ -55,7 +55,11 @@ class Login extends React.Component {
                       onChange={this.handleInput}
                     />
                   </div>
-                  <button className="login_button" type="button">
+                  <button
+                    className="login_button"
+                    type="button"
+                    onClick={this.goToMain}
+                  >
                     로그인
                   </button>
                 </div>
@@ -77,9 +81,7 @@ class Login extends React.Component {
                 <div className="join_the_membership">
                   <li>
                     SPAO 멤버십 회원이 아니신가요?
-                    <button className="join_membership" onClick={this.goToMain}>
-                      회원가입
-                    </button>
+                    <button className="join_membership">회원가입</button>
                   </li>
                 </div>
               </ul>
