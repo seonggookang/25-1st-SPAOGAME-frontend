@@ -11,6 +11,7 @@ class SubjectList extends Component {
       goods: [],
       category: [],
       filterdFunction: [],
+      nonfilterd: [],
     };
   }
 
@@ -21,14 +22,7 @@ class SubjectList extends Component {
         this.setState({
           goods: data.goods,
           filterdFunction: data.goods,
-        });
-      });
-
-    fetch('/data/category.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          category: data,
+          nonfilterd: data.goods,
         });
       });
   }
@@ -37,8 +31,6 @@ class SubjectList extends Component {
     const priceCompare = e.target.getAttribute('name');
 
     const sortByPrice = [...this.state.goods].sort(function (a, b) {
-      console.log('a:' + a[priceCompare] + 'b:' + b[priceCompare]);
-
       return a[priceCompare] - b[priceCompare];
     });
 
@@ -55,16 +47,16 @@ class SubjectList extends Component {
   };
 
   sortByName = () => {
-    const priceCompare = 'name';
-    const sortByPrice = [...this.state.goods].sort(function (a, b) {
-      return a[priceCompare] < b[priceCompare]
+    const nameCompare = 'name';
+    const sortByName = [...this.state.goods].sort(function (a, b) {
+      return a[nameCompare] < b[nameCompare]
         ? -1
-        : a[priceCompare] > b[priceCompare]
+        : a[nameCompare] > b[nameCompare]
         ? 1
         : 0;
     });
 
-    this.setState({ color: sortByPrice });
+    this.setState({ goods: sortByName });
   };
 
   colorSort = e => {
@@ -75,8 +67,12 @@ class SubjectList extends Component {
     this.setState({ goods: sortByColor });
   };
 
+  colorRevert = e => {
+    this.setState({ goods: this.state.nonfilterd });
+  };
+
   render() {
-    const { category, goods } = this.state;
+    const { goods, filterdFunction } = this.state;
 
     return (
       <div className="subject_list">
@@ -86,16 +82,19 @@ class SubjectList extends Component {
             goods={goods}
             colorSort={this.colorSort}
             FILTER={FILTER}
-            filterdFunction={this.state.filterdFunction}
+            filterdFunction={filterdFunction}
+            colorRevert={this.colorRevert}
           />
+
           <div className="main_mid">
             <h1>아우터</h1>
             <div className="category_filter_wrapper">
               <div className="category_filter">
-                {category.map(item => (
+                {CATEGORY.map(item => (
                   <CategoryFilter key={item.id} category={item} />
                 ))}
               </div>
+
               <button className="item_count"> 8 items</button>
               <button className="sort">
                 상품정렬 &nbsp;<i className="fas fa-chevron-down"></i>
@@ -125,6 +124,7 @@ class SubjectList extends Component {
                 </ul>
               </button>
             </div>
+
             <ul className="subjects">
               <GoodsList goods={goods} />
             </ul>
@@ -150,4 +150,56 @@ const FILTER = [
   { color: 'brown', material: '코듀로이' },
   { color: 'beige', material: '페이크퍼' },
 ];
+
+const CATEGORY = [
+  {
+    id: 1,
+    name: 'NEW',
+  },
+  {
+    id: 2,
+    name: 'BEST',
+  },
+  {
+    id: 3,
+    name: '아우터',
+  },
+  {
+    id: 4,
+    name: '상의',
+  },
+  {
+    id: 5,
+    name: '하의',
+  },
+  {
+    id: 6,
+    name: '원피스',
+  },
+  {
+    id: 7,
+    name: '가방',
+  },
+  {
+    id: 8,
+    name: '신발',
+  },
+  {
+    id: 9,
+    name: 'ACC',
+  },
+  {
+    id: 10,
+    name: '이너웨어',
+  },
+  {
+    id: 11,
+    name: '홈웨어/잠옷',
+  },
+  {
+    id: 12,
+    name: '스포츠웨어',
+  },
+];
+
 export default SubjectList;

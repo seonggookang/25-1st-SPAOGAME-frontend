@@ -5,19 +5,25 @@ import './Filters.scss';
 
 class Filters extends Component {
   render() {
-    const { goods, colorSort } = this.props;
+    const { goods, colorRevert, colorSort } = this.props;
     return (
       <div className="Filters">
         <div className="main_left">
           <h2 className="title">FILTER</h2>
-          <h3 className="filter_title">색상</h3>
+          <div className="revert_wrapper">
+            <h3 className="filter_title">색상 </h3>
+
+            <button className="revert" onClick={colorRevert}>
+              <i class="fas fa-history"></i> <span> 색상 초기화</span>
+            </button>
+          </div>
           <ul className="colors">
             {this.props.FILTER.map(item => (
               <ColorFilter
                 key={item.color}
                 color={item.color}
                 goods={goods}
-                colorSort={this.props.colorSort}
+                colorSort={colorSort}
               />
             ))}
           </ul>

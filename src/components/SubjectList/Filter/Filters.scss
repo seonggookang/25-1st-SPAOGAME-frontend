@@ -13,6 +13,17 @@
     }
   }
 
+  .revert_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .revert {
+    border: 0;
+    background-color: white;
+    color: #707070;
+    font-size: 10px;
+  }
   .filter_title {
     position: relative;
     margin: 18px 0;
