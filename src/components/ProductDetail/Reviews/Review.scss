@@ -1,19 +1,21 @@
 .review_wrapper {
   width: 1280px;
-  height: 180px;
+  height: 195px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 5px;
+  position: relative;
 
   .review_left {
-    width: 600px;
+    width: 700px;
     margin: 10px;
 
     .review_photo {
       width: 130px;
       height: 130px;
       object-fit: cover;
+      margin-left: 5px;
     }
 
     .review_content {
@@ -35,10 +37,6 @@
       font-family: '나눔고딕', 'NanumGothic', '맑은 고딕';
       margin: 5px;
       padding: 0px;
-
-      .posting_title:nth-child(1) {
-        margin-top: 10px;
-      }
     }
     .posting_content {
       color: #333333;
@@ -54,15 +52,24 @@
     border: 0;
     border-top: 1px solid lightgray;
   }
-  .insteadOfHr {
-    margin-left: 10px;
-    border: 0px;
-    width: 1280px;
-    border-top: 1px solid lightgray;
+
+  .reply {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 700px;
+    margin-top: 10px;
   }
-  .null {
-    width: 10px;
-    height: 10px;
-    display: none;
-  }
+}
+
+.insteadOfHr {
+  margin-left: 10px;
+  border: 0px;
+  width: 1280px;
+  height: 10px;
+  border-top: 1px solid lightgray;
+  margin: 0px;
+  padding: 0px;
 }

@@ -10,9 +10,25 @@ class Ortions extends Component {
       gray: true,
       targetnamesize: ['옵션을 선택하세요'],
       cartsize: '',
-      mybasket: [],
+      count: 0,
+      countprice: 0,
     };
   }
+  handleplus = e => {
+    const count = this.state.count + 1;
+    this.setState({
+      count: count,
+      countprice: (this.props.price * count).toLocaleString('ko-KR'),
+    });
+  };
+  handleminus = e => {
+    const count = this.state.count - 1;
+    const countprice = this.props.price * count;
+    this.setState({
+      count: count < 0 ? 0 : count,
+      countprice: countprice < 0 ? 0 : countprice,
+    });
+  };
 
   changeByTargetNameColor = e => {
     e.target.className = 'black';
@@ -28,14 +44,14 @@ class Ortions extends Component {
     this.setState({
       targetnamesize: e.target.name,
       cartsize: e.target.name,
-
       gray: false,
     });
   };
 
   render() {
-    const { name, price, colors, size } = this.props;
-    const { targetnamecolor, targetnamesize, cartcolor, cartsize } = this.state;
+    const { name, colors, size, price } = this.props;
+    const { targetnamecolor, targetnamesize, cartcolor, cartsize, countprice } =
+      this.state;
     const btn_color = this.state.gray ? 'gray_btn' : 'black_btn';
 
     return (
@@ -43,7 +59,7 @@ class Ortions extends Component {
         <div className="code">SPCKB49W91</div>
         <div className="name">{name}</div>
         <div className="price">
-          {price}
+          {price.toLocaleString('ko-KR')}
           <br />
           <hr />
         </div>
@@ -76,21 +92,21 @@ class Ortions extends Component {
               {cartcolor} {cartsize}
             </div>
             <div className="button_wrapper">
-              <button className="plus">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button className="count">3</button>
-              <button className="minus">
+              <button className="minus" onClick={this.handleminus}>
                 <i class="fas fa-minus"></i>
               </button>
+              <button className="count">{this.state.count}</button>
+              <button className="plus" onClick={this.handleplus}>
+                <i class="fas fa-plus"></i>
+              </button>
             </div>
-            <div className="count_sum">39900</div>
+            <div className="count_sum">{countprice}원</div>
           </div>
         </div>
         <hr className="hrr" />
         <div className="sum_price_wrapper">
           <div className="sum_price_content"> 총 상품 금액</div>
-          <div className="sum_price">39000 원</div>
+          <div className="sum_price">{countprice}원</div>
         </div>
         <div className="button_wrapper_icon">
           <submit className="heart">

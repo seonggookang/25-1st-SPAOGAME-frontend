@@ -14,7 +14,7 @@ class Reviews extends Component {
             posting_image={item.posting_image}
             posting_date={item.posting_date}
           />
-        ))}{' '}
+        ))}
       </div>
     );
   }

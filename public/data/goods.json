@@ -1,92 +1,72 @@
 {
   "goods": [
     {
-      "name": "[포우먼] 세미 오버핏 자켓",
+      "name": "세미 오버핏 자켓",
       "price": 59000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202109/8b8119fa09f53e0b83b916a3fdfcc138.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202109/8b8119fa09f53e0b83b916a3fdfcc138.jpg",
       "review_count": 0,
       "colors": ["red", "green", "gray"]
     },
     {
-      "name": "[포우먼] 소프트 라운더넥 가디건",
+      "name": "소프트 라운더넥 가디건",
       "price": 39000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/13b1ded113e5d3144bd9ec18e7e21508.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/13b1ded113e5d3144bd9ec18e7e21508.jpg",
       "review_count": 0,
       "colors": ["white"]
     },
     {
-      "name": "[포우먼] 배색 가디건",
+      "name": "배색 가디건",
       "price": 39000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/a294e392131983e65f89f2c93b99220f.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/a294e392131983e65f89f2c93b99220f.jpg",
       "review_count": 0,
       "colors": ["black"]
     },
     {
-      "name": "[포우먼] 올블랜드 브이넥 크롭 케이블 가디건",
+      "name": "올블랜드 브이넥 크롭 케이블 가디건",
       "price": 45000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/2f0499e7aa83e378871e313643999c55.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/2f0499e7aa83e378871e313643999c55.jpg",
       "review_count": 3,
       "colors": ["white"]
     },
     {
-      "name": "[포우먼] 소프트 하찌 오버핏 가디건",
+      "name": "소프트 하찌 오버핏 가디건",
       "price": 99000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/ef0836721eb5cfedcdd4a4afa78ee31a.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/ef0836721eb5cfedcdd4a4afa78ee31a.jpg",
       "review_count": 2,
       "colors": ["white"]
     },
     {
-      "name": "[포우먼] 브이넥 스웨터 베스트",
+      "name": "브이넥 스웨터 베스트",
       "price": 42000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/e5b2559c69358fb0d039043ec3926ec4.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/e5b2559c69358fb0d039043ec3926ec4.jpg",
       "review_count": 4,
       "colors": ["black"]
     },
     {
-      "name": "[포우먼] 소프트 하찌 오버핏 베스트",
+      "name": "소프트 하찌 오버핏 베스트",
       "price": 39000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/322d183d23dd711cd65be179e7d76a82.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/322d183d23dd711cd65be179e7d76a82.jpg",
       "review_count": 6,
       "colors": ["white"]
     },
     {
-      "name": "[포우먼] 브이넥 프릴 버튼 스웨터",
+      "name": "브이넥 프릴 버튼 스웨터",
       "price": 29000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/4e33e661f30308c7989f17c890c7d8f7.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/4e33e661f30308c7989f17c890c7d8f7.jpg",
       "review_count": 1,
       "colors": ["white"]
     },
     {
-      "name": "[포우먼] 골지 루즈핏 가디건",
+      "name": "골지 루즈핏 가디건",
       "price": 52000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/5b483d75c17ac6116b359c7f33680006.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/5b483d75c17ac6116b359c7f33680006.jpg",
       "review_count": 2,
       "colors": ["green"]
     },
     {
-      "name": "[포우먼] 크롭 퀄팅 점퍼",
+      "name": "크롭 퀄팅 점퍼",
       "price": 39000,
-      "img_urls": [
-        "http://www.spao.com/web/product/medium/202108/19c74a9084dfea2f20071ae8c8f6dc36.jpg"
-      ],
+      "img_urls": "http://www.spao.com/web/product/medium/202108/19c74a9084dfea2f20071ae8c8f6dc36.jpg",
       "review_count": 0,
       "colors": ["white"]
     }

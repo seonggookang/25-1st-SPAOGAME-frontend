@@ -15,7 +15,7 @@ class Goods extends Component {
               <i className="far fa-heart" />
             </span>
           </div>
-          <div className="subject_price">{price}</div>
+          <div className="subject_price">{price.toLocaleString('ko-KR')}</div>
           <div className="review_count">{`리뷰 ${review_count} 건`}</div>
         </div>
       </li>

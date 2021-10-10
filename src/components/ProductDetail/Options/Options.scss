@@ -2,25 +2,25 @@
   font-family: 'Poppins';
 
   .code {
+    margin-bottom: 10px;
     font-size: 14px;
     color: #999;
-    margin-bottom: 10px;
   }
 
   .name {
-    font-size: 22px;
-    color: #1a1a1a;
+    position: relative;
     line-height: 30px;
     margin-bottom: 10px;
     padding-bottom: 20px;
+    font-size: 22px;
     font-weight: 500;
-    position: relative;
+    color: #1a1a1a;
   }
   .price {
-    font-size: 25px;
-    color: #1a1a1a;
     margin-right: 10px;
+    font-size: 25px;
     font-weight: 700;
+    color: #1a1a1a;
     hr {
       height: 0;
       border: 0;
@@ -28,9 +28,9 @@
     }
   }
   .choice_title {
-    width: 100%;
-    padding: 0px 0;
     display: block;
+    width: 100%;
+    padding: 0px 0px;
     color: #1a1a1a;
     font-size: 14px;
     border: 0;
@@ -89,10 +89,14 @@
     padding: 21px 0px;
 
     .cart_color_size {
+      width: 93px;
       font-weight: normal;
       color: #909090;
       line-height: 18px;
       font-size: 13px;
+    }
+    .count_sum {
+      width: 75px;
     }
   }
   .cart_count_wrapper {
@@ -100,8 +104,10 @@
     justify-content: space-between;
     align-items: center;
     margin: 5px 0px;
+    padding: 0px;
 
     .cart_color_size {
+      width: 95px;
       font-weight: normal;
       color: #909090;
       line-height: 18px;
@@ -111,6 +117,7 @@
 
   .button_wrapper {
     button {
+      width: 50px;
       margin: 0 auto;
       padding: 0 auto;
     }
@@ -118,19 +125,20 @@
       border: 0px;
       border-top: 1px solid lightgray;
       border-bottom: 1px solid lightgray;
-      border-left: 1px solid lightgray;
+      border-right: 1px solid lightgray;
     }
     .count {
       height: 28.52px;
       border: 0px;
       border-top: 1px solid lightgray;
       border-bottom: 1px solid lightgray;
+      cursor: default;
     }
     .minus {
       border: 0px;
       border-top: 1px solid lightgray;
       border-bottom: 1px solid lightgray;
-      border-right: 1px solid lightgray;
+      border-left: 1px solid lightgray;
     }
   }
   .hrr {
@@ -172,12 +180,12 @@
     line-height: 60px;
     background-color: #fff;
     font-size: 16px;
-    vertical-align: middle;
     padding: 0;
     display: block;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .cart {
     text-align: center;
@@ -189,6 +197,7 @@
     font-size: 16px;
     padding: 0;
     display: block;
+    cursor: pointer;
   }
   .buy {
     text-align: center;
@@ -201,5 +210,6 @@
     font-size: 16px;
     padding: 0;
     display: block;
+    cursor: pointer;
   }
 }

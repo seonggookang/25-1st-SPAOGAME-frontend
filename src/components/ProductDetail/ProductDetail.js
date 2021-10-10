@@ -60,7 +60,6 @@ class ProductDetail extends Component {
           {this.state.goods_detail.map(item => (
             <Reviews posting_info={item.posting_info} />
           ))}
-          <hr className="hr_bottom" />
         </div>
       </div>
     );
