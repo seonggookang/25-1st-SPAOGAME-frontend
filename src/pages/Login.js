@@ -29,7 +29,6 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <main className="login_pages">
         <section className="login_form">
