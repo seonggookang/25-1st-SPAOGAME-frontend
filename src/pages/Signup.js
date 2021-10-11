@@ -18,7 +18,8 @@ class Signup extends React.Component {
   }
 
   handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -43,7 +44,7 @@ class Signup extends React.Component {
             </div>
             <table
               className="signup_table"
-              cellspacing="0"
+              cellSpacing="0"
               summary="사용자이름,회원아이디,비밀번호,생일,휴대폰번호,기본주소,상세주소,전자우편주소,성별"
             >
               <tbody>
@@ -57,7 +58,11 @@ class Signup extends React.Component {
                     </div>
                   </th>
                   <td>
-                    <input className="name_input" name="name" />
+                    <input
+                      className="name_input"
+                      name="name"
+                      onChange={this.handleInput}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -70,7 +75,11 @@ class Signup extends React.Component {
                     </div>
                   </th>
                   <td>
-                    <input className="id_input" name="username" />
+                    <input
+                      className="id_input"
+                      name="username"
+                      onChange={this.handleInput}
+                    />
                     <button>아이디 중복체크</button>
                   </td>
                 </tr>
@@ -84,7 +93,11 @@ class Signup extends React.Component {
                     </div>
                   </th>
                   <td>
-                    <input className="password_input" name="password" />
+                    <input
+                      className="password_input"
+                      name="password"
+                      onChange={this.handleInput}
+                    />
                     <p className="notice">
                       연속적인 숫자나 생일, 전화번호 등 추측하기 쉬운 개인정보
                       및 아이디와 비슷한 전화번호 사용을 피하시기 바랍니다.
@@ -103,7 +116,11 @@ class Signup extends React.Component {
                     </div>
                   </th>
                   <td>
-                    <input className="password_input" name="repeatPassword" />
+                    <input
+                      className="password_input"
+                      name="repeatPassword"
+                      onChange={this.handleInput}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -117,10 +134,13 @@ class Signup extends React.Component {
                   </th>
                   <td className="user_birth">
                     <div className="selectBox">
-                      <label for="year" className="user_year">
-                        {/*년*/}
-                      </label>
-                      <select className="signup_birth" name="birthday">
+                      <label className="user_year">{/*년*/}</label>
+                      <select
+                        value={this.state.value}
+                        className="signup_birth"
+                        name="year"
+                        onChange={this.handleInput}
+                      >
                         <option value>선택</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
@@ -227,10 +247,13 @@ class Signup extends React.Component {
                       <span>년</span>
                     </div>
                     <div className="selectBox">
-                      <label for="month" className="user_month">
-                        {/*month*/}
-                      </label>
-                      <select className="signup_birth" name="birthday">
+                      <label className="user_month">{/*month*/}</label>
+                      <select
+                        className="signup_birth"
+                        name="month"
+                        value={this.state.value}
+                        onChange={this.handleInput}
+                      >
                         <option value>선택</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -248,10 +271,13 @@ class Signup extends React.Component {
                       <span>월</span>
                     </div>
                     <div className="selectBox">
-                      <label for="date" className="user_date">
-                        {/*date*/}
-                      </label>
-                      <select className="signup_birth" name="birthday">
+                      <label className="user_date">{/*date*/}</label>
+                      <select
+                        value={this.state.value}
+                        className="signup_birth"
+                        name="day"
+                        onChange={this.handleInput}
+                      >
                         <option value>선택</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -300,10 +326,12 @@ class Signup extends React.Component {
                   </th>
                   <td className="user_phonenumber">
                     <div className="search_box">
-                      <label for="phonenumber">{/*phonenumber*/}</label>
+                      <label>{/*phonenumber*/}</label>
                       <select
+                        value={this.state.value}
                         className="signup_phonenumber"
                         name="mobie_number"
+                        onChange={this.handleInput}
                       >
                         <option value>선택</option>
                         <option value="010">010</option>
@@ -319,6 +347,7 @@ class Signup extends React.Component {
                       title="중간자리"
                       maxLength="4"
                       name="mobie_number"
+                      onChange={this.handleInput}
                     />
                     <span>-</span>
                     <input
@@ -326,6 +355,7 @@ class Signup extends React.Component {
                       title="마지막자리"
                       maxLength="4"
                       name="mobie_number"
+                      onChange={this.handleInput}
                     />
                   </td>
                 </tr>
@@ -338,6 +368,7 @@ class Signup extends React.Component {
                       className="user_adress"
                       title="주소"
                       name="adress1"
+                      onChange={this.handleInput}
                     />
                     <button>
                       <span>주소찾기</span>
@@ -347,6 +378,7 @@ class Signup extends React.Component {
                         className="user_adress"
                         title="나머지 주소"
                         name="adress2"
+                        onChange={this.handleInput}
                       />
                     </div>
                   </td>
