@@ -175,6 +175,10 @@ nav_map.set('kids', {
 
   second_menu: [
     {
+      title: 'Girls',
+      route: 'www.naver.com',
+    },
+    {
       title: '아우터',
       route: 'www.naver.com',
     },
@@ -183,11 +187,43 @@ nav_map.set('kids', {
       route: 'www.naver.com',
     },
     {
+      title: '팬츠',
+      route: 'www.naver.com',
+    },
+    {
+      title: '원피스/스커트',
+      route: 'www.naver.com',
+    },
+    {
+      title: '상하의세트',
+      route: 'www.naver.com',
+    },
+    {
+      title: '홈웨어',
+      route: 'www.naver.com',
+    },
+    {
+      title: 'Boys',
+      route: 'www.naver.com',
+    },
+    {
       title: '아우터',
       route: 'www.naver.com',
     },
     {
+      title: '상의',
+      route: 'www.naver.com',
+    },
+    {
       title: '팬츠',
+      route: 'www.naver.com',
+    },
+    {
+      title: '상하의세트',
+      route: 'www.naver.com',
+    },
+    {
+      title: '홈웨어',
       route: 'www.naver.com',
     },
   ],

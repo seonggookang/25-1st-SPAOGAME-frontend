@@ -1,9 +1,9 @@
 .Nav {
   position: fixed;
   width: 100%;
-  padding: 5px 2350em 5px 50px;
   color: white;
   background-color: transparent;
+  left: 0;
 
   &:hover {
     transition: color 0s, background-color 0.5s;
@@ -14,13 +14,14 @@
   .nav_wrapper {
     display: flex;
     align-items: center;
-    padding: 15px;
     height: 100%;
-    cursor: pointer;
 
     .nav_letters {
       display: flex;
       gap: 3em;
+      cursor: pointer;
+      align-items: center;
+      padding: 0px 50px;
 
       .nav_menu {
         display: flex;
@@ -28,10 +29,6 @@
         align-items: center;
         gap: 3em;
         font-size: 10px;
-
-        .logo {
-          padding: 5px 10px;
-        }
 
         .nav_menu_Festival {
           color: #586d94;
@@ -48,15 +45,16 @@
         .nav_menu_white {
           display: flex;
           align-items: center;
-          width: 100%;
-          height: 100%;
-          gap: 5px 30px;
           font-weight: bold;
           font-size: 16px;
+          cursor: pointer;
 
-          div:hover {
-            color: grey;
-            cursor: pointer;
+          div {
+            padding: 30px 10px;
+
+            &:hover {
+              color: grey;
+            }
           }
         }
       }
@@ -64,44 +62,58 @@
 
     .profile {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding-left: 170px;
+      padding-left: 130px;
       font-size: 20px;
-      cursor: pointer;
 
       div {
-        padding-left: 30px;
+        padding: 10px;
+
+        &:hover {
+          color: gray;
+          cursor: pointer;
+        }
       }
     }
   }
-}
 
-.Drop_down {
-  display: flex;
-  width: 100vw;
-  gap: 20px;
-  padding: 20px 0px;
-
-  div {
-    padding: 4px;
-  }
-
-  .Drop_down_left > div {
-    padding: 0px 5em 1em 15em;
-    color: black;
-    font-size: 0.8em;
-  }
-
-  .Drop_down_center > div {
-    border-left: 0.15px solid grey;
-    padding: 0.2em 5em 1em 3em;
-    color: grey;
-    font-size: 0.6em;
-  }
-
-  .Drop_down_right {
+  .Drop_down {
     display: flex;
-    padding: 0.2em 10em 5px 250px;
+    gap: 20px;
+    padding-bottom: 20px;
+
+    .Drop_down_left > div {
+      padding: 0px 5em 1em 15em;
+      color: black;
+      font-size: 0.8em;
+    }
+
+    .Drop_down_center {
+      border-left: 1px solid grey;
+      display: flex;
+      div {
+        padding: 0.2em 5em 1em 3em;
+        color: grey;
+        font-size: 0.6em;
+      }
+      div:hover {
+        color: red;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+
+    .Drop_down_right {
+      position: absolute;
+      padding: 0.2em 15em 5px 45em;
+      div {
+        display: flex;
+        padding-right: 1em;
+        width: 100%;
+        img {
+          width: 12em;
+        }
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageToggle from './ImageToggle';
+import Searchbox from './Searchbox';
 import './Nav.scss';
 import nav_map from '../../../src/Common';
 
@@ -10,6 +11,8 @@ class Nav extends React.Component {
       isMouseOver: false,
       isMouseTextOver: false,
       hoveredText: '',
+      isSearch: false,
+      isContent: false,
     };
   }
 
@@ -20,6 +23,13 @@ class Nav extends React.Component {
   toggleTextMouseOver = () => {
     this.setState(prev => ({
       isMouseTextOver: !prev.isMouseTextOver,
+      isSearch: false,
+    }));
+  };
+
+  searchButton = () => {
+    this.setState(prev => ({
+      isSearch: !prev.isSearch,
     }));
   };
 
@@ -32,7 +42,10 @@ class Nav extends React.Component {
       >
         <div className="nav_wrapper">
           <div className="nav_letters">
-            <ImageToggle isMouseOver={this.state.isMouseOver} />
+            <ImageToggle
+              className="logo"
+              isMouseOver={this.state.isMouseOver}
+            />
             <div className="nav_menu">
               <div className="nav_menu_Festival">FLECE FESTIVAL</div>
               <div className="nav_menu_Outer">OUTER</div>
@@ -94,7 +107,7 @@ class Nav extends React.Component {
             <div>
               <i class="far fa-heart" />
             </div>
-            <div>
+            <div onClick={this.searchButton}>
               <i class="fas fa-search" />
             </div>
             <div>
@@ -102,17 +115,19 @@ class Nav extends React.Component {
             </div>
           </div>
         </div>
+        {this.state.isSearch && (
+          <div className="searchbox">
+            <Searchbox />
+          </div>
+        )}
         {this.state.isMouseTextOver && this.state.hoveredText !== '' && (
           <div className="Drop_down">
             <div className="Drop_down_left">
-              <div>
-                {nav_map
-                  .get(this.state.hoveredText)
-                  .first_menu.map((el, idx) => {
-                    return <div key={idx}>{el.title}</div>;
-                  })}
-              </div>
+              {nav_map.get(this.state.hoveredText).first_menu.map((el, idx) => {
+                return <div key={idx}>{el.title}</div>;
+              })}
             </div>
+
             <div className="Drop_down_center">
               <div>
                 {nav_map
@@ -122,15 +137,19 @@ class Nav extends React.Component {
                   })}
               </div>
             </div>
+
             <div className="Drop_down_right">
-              {nav_map.get(this.state.hoveredText).third_menu.map((el, idx) => {
-                console.log(el.img_src);
-                return (
-                  <div key={idx}>
-                    <img alt="error" src={el.img_src} width="120em" />
-                  </div>
-                );
-              })}
+              <div>
+                {nav_map
+                  .get(this.state.hoveredText)
+                  .third_menu.map((el, idx) => {
+                    return (
+                      <div key={idx}>
+                        <img alt="error" src={el.img_src} />
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
         )}

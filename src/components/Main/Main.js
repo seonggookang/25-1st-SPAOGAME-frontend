@@ -1,6 +1,5 @@
 import React from 'react';
 import './Main.scss';
-import '../Nav/Nav';
 
 class Main extends React.Component {
   // nav bar hover시 main의 opacity 0.5? 아니면 조금 어둡게?
@@ -15,11 +14,18 @@ class Main extends React.Component {
   render() {
     return (
       <div className="Main">
-        {/* this.props를 이용해서 Nav바의 호버됐는지 체크하는것으로  호버 ?  */}
         <img alt="mainPicture" src="images/main_4.png" height="600em" />
+        <div className="left_button">
+          <div>
+            <i class="fa fa-chevron-left" />
+          </div>
+        </div>
+        <div className="right_button">
+          <div>
+            <i class="fa fa-chevron-right" />
+          </div>
+        </div>
         <div>Main입니다</div>
-        {/* <div>{this.props}</div> */}
-        {/* nav bar에 호버 된것을 이 메인 컴포넌트에서도 감지할수있나? */}
       </div>
     );
   }

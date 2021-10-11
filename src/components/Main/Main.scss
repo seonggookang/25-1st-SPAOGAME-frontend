@@ -1,6 +1,34 @@
 .Main {
-  height: 1030px;
+  position: relative;
   width: 100vw;
-  // filter: grayscale(100%); // 왜 다른 텍스트들 다 사라지나?
-  // z-index: -1;
+  height: 1500px;
+  z-index: -1;
+
+  .left_button {
+    position: absolute;
+    top: 2.5em;
+    left: 0;
+    font-size: 100px;
+    z-index: 3;
+    cursor: pointer;
+
+    div:hover {
+      background-color: white;
+      color: blue;
+    }
+  }
+
+  .right_button {
+    top: 2.5em;
+    left: 13.2em;
+    position: absolute;
+    font-size: 100px;
+    z-index: 3;
+    cursor: pointer;
+
+    div:hover {
+      background-color: white;
+      color: blue;
+    }
+  }
 }
