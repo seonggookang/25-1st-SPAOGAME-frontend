@@ -37,15 +37,15 @@ class Searchbox extends React.Component {
           </div>
           <div className="images">
             <div>#추천상품</div>
-            {/* <div className="images_3">
-              {nav_map.get(this.props.hoveredText).third_menu.map((el, idx) => {
+            <div className="recommend_pictures">
+              {nav_map.get('recommend').picture.map((el, idx) => {
                 return (
-                  <div key={idx} className="each_image">
-                    <img alt="error" src={el.img_src} width="80em" />
+                  <div key={idx} className="recommend_each">
+                    <img alt="recommend" src={el} width="130em" />
                   </div>
                 );
               })}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -293,6 +293,7 @@ nav_map.set('collaboration', {
     },
   ],
 });
+
 nav_map.set('community', {
   first_menu: [
     {
@@ -350,6 +351,10 @@ nav_map.set('community', {
       route: 'www.naver.com',
     },
   ],
+});
+
+nav_map.set('recommend', {
+  picture: ['images/com_1.jpg', 'images/com_2.jpg', 'images/com_3.jpg'],
 });
 
 export default nav_map;

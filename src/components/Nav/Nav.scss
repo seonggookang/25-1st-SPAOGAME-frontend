@@ -1,9 +1,21 @@
+.background {
+  background-color: black;
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 .Nav {
   position: fixed;
   width: 100%;
   color: white;
   background-color: transparent;
   left: 0;
+  z-index: 3;
 
   &:hover {
     transition: color 0s, background-color 0.5s;
@@ -78,9 +90,12 @@
   }
 
   .Drop_down {
+    border-top: 1px solid grey;
     display: flex;
-    gap: 20px;
+    // gap: 120px;
+    padding-top: 40px;
     padding-bottom: 20px;
+    height: 350px;
 
     .Drop_down_left > div {
       padding: 0px 5em 1em 15em;
@@ -90,16 +105,16 @@
 
     .Drop_down_center {
       border-left: 1px solid grey;
-      display: flex;
-      div {
-        padding: 0.2em 5em 1em 3em;
+      z-index: 12;
+      .red_text {
+        padding: 0.2em 5em 1.1em 3em;
         color: grey;
         font-size: 0.6em;
-      }
-      div:hover {
-        color: red;
-        cursor: pointer;
-        font-weight: bold;
+        &:hover {
+          color: red;
+          font-weight: bold;
+          cursor: pointer;
+        }
       }
     }
 
@@ -108,10 +123,10 @@
       padding: 0.2em 15em 5px 45em;
       div {
         display: flex;
-        padding-right: 1em;
+        padding-right: 2em;
         width: 100%;
         img {
-          width: 12em;
+          width: 10em;
         }
       }
     }
