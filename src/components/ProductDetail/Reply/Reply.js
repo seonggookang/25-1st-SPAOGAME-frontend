@@ -7,7 +7,6 @@ class Reply extends Component {
   };
   render() {
     const { comment_content, comment_writer } = this.props;
-    console.log(this.props);
     return (
       <div className="replys">
         <div className="reply_left">
@@ -17,11 +16,9 @@ class Reply extends Component {
           <span className="owner_content">{comment_content}</span>
         </div>
 
-        <span className="reply_right">
-          <button className="delete_btn" onClick={this.handleDelete}>
-            <i className="fas fa-times"></i>
-          </button>
-        </span>
+        <button className="delete_btn" onClick={this.handleDelete}>
+          <i className="fas fa-times"></i>
+        </button>
       </div>
     );
   }

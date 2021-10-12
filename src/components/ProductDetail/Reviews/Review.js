@@ -13,13 +13,9 @@ class Review extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/commnent.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          replys: data.comment_info,
-        });
-      });
+    this.setState({
+      replys: this.props.comment_info,
+    });
   }
 
   handleDelete = reply => {
@@ -79,6 +75,7 @@ class Review extends Component {
               onAdd={this.handleAdd}
               handleAddByEnter={this.handleAddByEnter}
               posting_id={posting_id}
+              comment_info={this.props.comment_info}
             />
           </div>
 

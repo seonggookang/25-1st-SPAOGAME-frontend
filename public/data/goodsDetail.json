@@ -1,10 +1,10 @@
 {
   "goods_detail": [
     {
-      "product_id": 13,
+      "product_id": 2,
       "name": "[포우먼] 배색 가디건",
-      "price": 39000,
-      "colors": ["Red", "Blue", "Brown", "Green"],
+      "price": 69900,
+      "colors": ["blue", "yellow", "green", "brown"],
       "size": ["L", "XL", "FREE"],
       "image_list": [
         "http://spao.com/web/product/small/202108/504512a2f6a19164be6fcb40b04b1bec.jpg",
@@ -16,83 +16,127 @@
       ],
       "posting_info": [
         {
-          "posting_id": 3,
-          "posting_writer": "김현진",
-          "posting_title": "3번째후기글",
-          "posting_content": "내용33333333333333",
+          "posting_id": 5,
+          "posting_writer": "이기용2222",
+          "posting_title": "제목2-1",
+          "posting_content": null,
+          "posting_image": [
+            "https://cafe24img.poxo.com/scenerity/web/product/big/20200327/94edcae99664d3d71b83c55fe2140115.jpg"
+          ],
+          "posting_date": "2021-10-11",
+          "comment_info": []
+        },
+        {
+          "posting_id": 4,
+          "posting_writer": "이기용2222",
+          "posting_title": "제목2-1",
+          "posting_content": "내용2-1",
           "posting_image": [],
-          "posting_date": "2021-10-09"
+          "posting_date": "2021-10-11",
+          "comment_info": [
+            {
+              "posting_id": 4,
+              "comment_id": 7,
+              "comment_writer": "이기용",
+              "comment_content": "댓글66666",
+              "comment_date": "2021-10-11"
+            }
+          ]
+        },
+        {
+          "posting_id": 3,
+          "posting_writer": "이기용",
+          "posting_title": "제목1-1",
+          "posting_content": null,
+          "posting_image": [
+            "https://storynine.co.kr/web/product/big/20200224/4908b2264ad9ac46f4d2d7f1e6f77ea0.jpg"
+          ],
+          "posting_date": "2021-10-11",
+          "comment_info": [
+            {
+              "posting_id": 3,
+              "comment_id": 6,
+              "comment_writer": "이기용2222",
+              "comment_content": "댓글55555",
+              "comment_date": "2021-10-11"
+            }
+          ]
         },
         {
           "posting_id": 2,
           "posting_writer": "이기용",
-          "posting_title": "2번째후기글",
-          "posting_content": "내용22222222222222222222222222222222222222222222222222222222222",
+          "posting_title": "제목1-2",
+          "posting_content": "내용1-2",
           "posting_image": [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pqgOThbQJwXbIFeO59wZKDR-AQ9E4qADmw&usqp=CAU",
-            "https://mblogthumb-phinf.pstatic.net/MjAxODA1MDdfMTY1/MDAxNTI1Njk2NDIwMjQ1.pTtCRxeZKJ0wTXpyobCtHs1PyU51aZC78LqVfPMFDOIg.NZU8W4VGTvT95VI0XRq2ng7LyGC_9h07AANnVDObDzIg.PNG.jsrwnmejs/2018-05-07_21%3B31%3B33.PNG?type=w2"
+            "https://creamcheese.co.kr/web/product/big/20200111/a684d2cdaa1341b2cb7f0118776ca2c9.jpeg",
+            "http://new-more.co.kr/web/product/big/201709/76_shop1_868144.jpg",
+            "https://m.freund.co.kr/web/product/big/201902/ac597bf1d48f02e43705dda82b262214.jpg"
           ],
-          "posting_date": "2021-10-09"
+          "posting_date": "2021-10-11",
+          "comment_info": [
+            {
+              "posting_id": 2,
+              "comment_id": 4,
+              "comment_writer": "이기용",
+              "comment_content": "댓글333333",
+              "comment_date": "2021-10-11"
+            },
+            {
+              "posting_id": 2,
+              "comment_id": 9,
+              "comment_writer": "이기용",
+              "comment_content": "댓글88888",
+              "comment_date": "2021-10-11"
+            }
+          ]
         },
         {
           "posting_id": 1,
-          "posting_writer": "정경훈",
-          "posting_title": "1번째후기글",
-          "posting_content": "내용111111111111111111111111111111111111111111111111111111111111111111111111111",
-          "posting_image": [
-            "https://mblogthumb-phinf.pstatic.net/MjAxODA1MDdfMjAg/MDAxNTI1Njk2NDE2MTkx.c0eLQK-e2wlOEd_oLTXRnrFJ5_QNElxc9GbgjHUO8fIg.ydwTasmnjROtieAIloi-ePnakOExe26LZS50Fn5RAqkg.PNG.jsrwnmejs/2018-05-07_21%3B23%3B32.PNG?type=w2",
-            "https://c-cl.cdn.smule.com/rs-s79/arr/dd/5b/0ae4b120-c80a-4163-ba2f-ce8fcef6eaec.jpg",
-            "https://i.ytimg.com/vi/1rc2OJCPZ-c/sddefault.jpg",
-            "https://mblogthumb-phinf.pstatic.net/MjAxODA1MDdfMTY1/MDAxNTI1Njk2NDIwMjQ1.pTtCRxeZKJ0wTXpyobCtHs1PyU51aZC78LqVfPMFDOIg.NZU8W4VGTvT95VI0XRq2ng7LyGC_9h07AANnVDObDzIg.PNG.jsrwnmejs/2018-05-07_21%3B31%3B33.PNG?type=w2"
-          ],
-          "posting_date": "2021-10-09"
+          "posting_writer": "이기용",
+          "posting_title": "제목1-1",
+          "posting_content": "내용1-1",
+          "posting_image": [],
+          "posting_date": "2021-10-11",
+          "comment_info": [
+            {
+              "posting_id": 1,
+              "comment_id": 1,
+              "comment_writer": "이기용",
+              "comment_content": "댓글111111",
+              "comment_date": "2021-10-11"
+            },
+            {
+              "posting_id": 1,
+              "comment_id": 2,
+              "comment_writer": "이기용2222",
+              "comment_content": "댓글222222",
+              "comment_date": "2021-10-11"
+            },
+            {
+              "posting_id": 1,
+              "comment_id": 3,
+              "comment_writer": "이기용2222",
+              "comment_content": "댓글222222",
+              "comment_date": "2021-10-11"
+            },
+            {
+              "posting_id": 1,
+              "comment_id": 5,
+              "comment_writer": "이기용",
+              "comment_content": "댓글444444",
+              "comment_date": "2021-10-11"
+            },
+            {
+              "posting_id": 1,
+              "comment_id": 8,
+              "comment_writer": "이기용",
+              "comment_content": "댓글177777",
+              "comment_date": "2021-10-11"
+            }
+          ]
         }
       ],
-      "posting_count": 3,
-      "comment_info": [
-        {
-          "posting_id": 2,
-          "comment_id": 5,
-          "comment_writer": "김현진",
-          "comment_content": "포스팅 두번쨰글의 첫번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        },
-        {
-          "posting_id": 2,
-          "comment_id": 6,
-          "comment_writer": "이기용",
-          "comment_content": "2번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        },
-        {
-          "posting_id": 1,
-          "comment_id": 1,
-          "comment_writer": "강성구",
-          "comment_content": "첫번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        },
-        {
-          "posting_id": 1,
-          "comment_id": 2,
-          "comment_writer": "정경훈",
-          "comment_content": "번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        },
-        {
-          "posting_id": 1,
-          "comment_id": 3,
-          "comment_writer": "김주현",
-          "comment_content": "3번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        },
-        {
-          "posting_id": 1,
-          "comment_id": 4,
-          "comment_writer": "송영록",
-          "comment_content": "4번째 댓글입니다",
-          "comment_date": "2021-10-10"
-        }
-      ]
+      "posting_count": 5
     }
   ]
 }
