@@ -13,6 +13,7 @@ class Reviews extends Component {
             posting_content={item.posting_content}
             posting_image={item.posting_image}
             posting_date={item.posting_date}
+            comment_info={this.props.comment_info}
           />
         ))}
       </div>

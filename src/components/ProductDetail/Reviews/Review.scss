@@ -1,14 +1,12 @@
 .review_wrapper {
   width: 1280px;
-  height: 195px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 5px;
   position: relative;
 
   .review_left {
-    width: 700px;
+    width: 650px;
     margin: 10px;
 
     .review_photo {
@@ -16,10 +14,12 @@
       height: 130px;
       object-fit: cover;
       margin-left: 5px;
+      margin-bottom: 10px;
     }
 
     .review_content {
       max-height: 57px;
+      margin-bottom: 10px;
       overflow: hidden;
       line-height: 19px;
       word-wrap: break-word;
@@ -27,6 +27,7 @@
       font-family: '돋움', Helvetica, 'Apple SD Gothic Neo', Sans-serif;
     }
   }
+
   .review_right {
     width: 400px;
 
@@ -52,16 +53,6 @@
     border: 0;
     border-top: 1px solid lightgray;
   }
-
-  .reply {
-    position: absolute;
-    bottom: 6px;
-    left: 10px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    width: 700px;
-    margin-top: 10px;
-  }
 }
 
 .insteadOfHr {
@@ -70,6 +61,5 @@
   width: 1280px;
   height: 10px;
   border-top: 1px solid lightgray;
-  margin: 0px;
   padding: 0px;
 }

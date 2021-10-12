@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Options.scss';
 
-class Ortions extends Component {
+class Options extends Component {
   constructor() {
     super();
     this.state = {
@@ -93,11 +93,11 @@ class Ortions extends Component {
             </div>
             <div className="button_wrapper">
               <button className="minus" onClick={this.handleminus}>
-                <i class="fas fa-minus"></i>
+                <i className="fas fa-minus"></i>
               </button>
               <button className="count">{this.state.count}</button>
               <button className="plus" onClick={this.handleplus}>
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus"></i>
               </button>
             </div>
             <div className="count_sum">{countprice}원</div>
@@ -109,13 +109,13 @@ class Ortions extends Component {
           <div className="sum_price">{countprice}원</div>
         </div>
         <div className="button_wrapper_icon">
-          <submit className="heart">
-            <i class="far fa-heart"></i>
-          </submit>
-          <submit className="cart">
-            <i class="fas fa-cart-plus"></i>
-          </submit>
-          <submit className="buy">구매하기</submit>
+          <form className="heart">
+            <i className="far fa-heart"></i>
+          </form>
+          <form className="cart">
+            <i className="fas fa-cart-plus"></i>
+          </form>
+          <form className="buy">구매하기</form>
         </div>
         <hr className="hrr" />
       </div>
@@ -123,4 +123,4 @@ class Ortions extends Component {
   }
 }
 
-export default Ortions;
+export default Options;

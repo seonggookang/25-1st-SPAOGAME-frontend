@@ -14,7 +14,7 @@ class Filters extends Component {
             <h3 className="filter_title">색상 </h3>
 
             <button className="revert" onClick={colorRevert}>
-              <i class="fas fa-history"></i> <span> 색상 초기화</span>
+              <i className="fas fa-history"></i> <span> 색상 초기화</span>
             </button>
           </div>
           <ul className="colors">

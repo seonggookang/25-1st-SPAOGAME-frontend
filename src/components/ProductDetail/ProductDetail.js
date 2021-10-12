@@ -3,6 +3,7 @@ import Product from './ProductsDetail/Product';
 import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
 import './ProductDetail.scss';
+import './Reviews/Review.scss';
 
 class ProductDetail extends Component {
   constructor() {
@@ -23,6 +24,16 @@ class ProductDetail extends Component {
         });
       });
   }
+
+  handleDelete = reply => {
+    const replys = this.state.replys.filter(item => item.id !== reply.id);
+    this.setState({ replys });
+  };
+
+  goToReviewInput = () => {
+    this.props.history.push('/review');
+  };
+
   render() {
     const { goods_detail } = this.state;
     return (
@@ -43,7 +54,7 @@ class ProductDetail extends Component {
           <div className="product_detail_right">
             {this.state.goods_detail.map(item => (
               <Options
-                key={item.id}
+                key={item.product_id}
                 goods_detail={goods_detail}
                 price={item.price}
                 name={item.name}
@@ -53,12 +64,19 @@ class ProductDetail extends Component {
             ))}
           </div>
         </main>
+        <div class="review_submit_wrapper">
+          <button className="review_submit" onClick={this.goToReviewInput}>
+            리뷰작성
+          </button>
+        </div>
+        <hr className="hr_bottom" />
         <div className="bottom_wrapper">
-          <div className="stars_wrapper">
-            <hr className="hr_bottom" />
-          </div>
           {this.state.goods_detail.map(item => (
-            <Reviews posting_info={item.posting_info} />
+            <Reviews
+              key={item.product_id}
+              posting_info={item.posting_info}
+              comment_info={item.comment_info}
+            />
           ))}
         </div>
       </div>
