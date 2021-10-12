@@ -5,7 +5,7 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: '',
+      username: '',
       password: '',
     };
   }
@@ -15,8 +15,17 @@ class Login extends React.Component {
     this.setState({ [name]: value });
   };
 
-  goToSignup = () => {
-    this.props.history.push('/users/signup');
+  goToMain = () => {
+    this.props.history.push('/users/Main');
+    fetch('http://127.0.0.1:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.username,
+        passowrd: this.state.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(''));
   };
 
   render() {
@@ -35,7 +44,7 @@ class Login extends React.Component {
                     <input
                       className="user_id"
                       placeholder="아이디"
-                      name="email"
+                      name="username"
                       onChange={this.handleInput}
                     />
                     <input
@@ -46,7 +55,11 @@ class Login extends React.Component {
                       onChange={this.handleInput}
                     />
                   </div>
-                  <button className="login_button" type="button">
+                  <button
+                    className="login_button"
+                    type="button"
+                    onClick={this.goToMain}
+                  >
                     로그인
                   </button>
                 </div>
@@ -68,12 +81,7 @@ class Login extends React.Component {
                 <div className="join_the_membership">
                   <li>
                     SPAO 멤버십 회원이 아니신가요?
-                    <button
-                      className="join_membership"
-                      onClick={this.goToSignup}
-                    >
-                      회원가입
-                    </button>
+                    <button className="join_membership">회원가입</button>
                   </li>
                 </div>
               </ul>
