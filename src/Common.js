@@ -19,7 +19,7 @@ nav_map.set('women', {
   second_menu: [
     {
       title: '아우터',
-      route: 'http://localhost:3001/women/outer',
+      route: 'http://10.58.2.199:8000/women/outer?offset=0&limit=15',
     },
     {
       title: '상의',
@@ -157,6 +157,7 @@ nav_map.set('men', {
     },
   ],
 });
+
 nav_map.set('kids', {
   first_menu: [
     {
@@ -243,6 +244,7 @@ nav_map.set('kids', {
     },
   ],
 });
+
 nav_map.set('collaboration', {
   first_menu: [
     {

@@ -1,14 +1,13 @@
 .Searchbox {
-  // border: 1px solid black;
-  background-color: white;
   font-size: 20px;
-  height: 450px;
-  padding: 0 350px 50px 350px;
-  background-color: powderblue;
+  height: 350px;
+  padding: 0 350px 50px 400px;
+  background-color: grey;
   position: absolute;
-  top: 3.5em;
+  top: 3.8em;
   width: 1379px;
   left: 0px;
+  transition: 1900ms;
 
   // transform: translate(-50%, -50%);
   .greeting {

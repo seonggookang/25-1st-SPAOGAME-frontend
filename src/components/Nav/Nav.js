@@ -252,6 +252,7 @@ class Nav extends React.Component {
   searchButton = () => {
     this.setState(prev => ({
       isSearch: !prev.isSearch,
+      hoveredText: '',
     }));
   };
 
@@ -259,10 +260,60 @@ class Nav extends React.Component {
     window.location.href = 'http://localhost:3000/main';
   };
 
+  goToMyProfile = () => {
+    window.location.href = 'http://localhost:3000/users/login';
+  };
+
+  // componentDidMount() {
+  //   fetch('https://jsonplaceholder.typicode.com/users', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => this.setState({ monsters: data }));
+  // }
+
+  //기용님 주소: 'http://10.58.2.199'
+  // body JSON.stringify 는 왜하는거지?
+
+  // componentDidMount() {
+  //   fetch('/data/goods.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data.goods[0]);
+  //       this.setState({
+  //         goods_detail: data.goods_detail,
+  //         // nav_map: data.good,
+  //         // console.log(data),
+  //       });
+  //     });
+  // }
+
+  // componentDidMount() {
+  //   fetch('http://10.58.2.199:8000/women/outer?offset=0&limit=15', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data.goods[0]);
+  //       this.setState({
+  //         giyoung: data.goods_detail,
+  //       });
+  //     });
+  // }
+
   render() {
+    {
+      console.log(nav_map);
+      console.log(typeof nav_map);
+      console.log(nav_map['women']);
+      console.log(nav_map.women);
+    }
+
     return (
       <div>
-        {this.state.isMouseTextOver && <div className="background"></div>}
+        {this.state.isMouseOver && <div className="background"></div>}
         <div
           className="Nav"
           onMouseEnter={this.toggleMouseOver}
@@ -278,7 +329,16 @@ class Nav extends React.Component {
 
               <div className="nav_menu">
                 <div className="nav_menu_Festival">FLECE FESTIVAL</div>
-                <div className="nav_menu_Outer">OUTER</div>
+                <div
+                  className="nav_menu_Outer"
+                  onMouseEnter={() => {
+                    this.setState({
+                      hoveredText: '',
+                    });
+                  }}
+                >
+                  OUTER
+                </div>
                 <div className="nav_menu_white">
                   <div
                     onMouseEnter={() => {
@@ -340,7 +400,7 @@ class Nav extends React.Component {
             </div>
 
             <div className="profile">
-              <div>
+              <div onClick={this.goToMyProfile}>
                 <i className="fas fa-user" />
               </div>
               <div>
@@ -360,7 +420,6 @@ class Nav extends React.Component {
               <Searchbox />
             </div>
           )}
-
           {this.state.hoveredText !== '' && this.state.isMouseTextOver && (
             <div className="Drop_down">
               <div className="Drop_down_left">
@@ -377,7 +436,10 @@ class Nav extends React.Component {
                     .get(this.state.hoveredText)
                     .second_menu.map((el, idx) => {
                       return (
-                        <div className="red_text" key={idx}>
+                        <div
+                          className="red_text"
+                          key={idx} /* onClick={this.gotoSomethings} */
+                        >
                           {el.title}
                         </div>
                       );

@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageToggle from '../Nav/ImageToggle';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -60,7 +61,7 @@ class Main extends React.Component {
           <img
             alt="mainPicture"
             src={`images/main_${this.state.count}.png`}
-            height="600em"
+            height="500em"
             width="1380px"
           />
         </div>
@@ -73,7 +74,13 @@ class Main extends React.Component {
           <i className="fa fa-chevron-right" />
         </div>
 
-        <div>Main입니다</div>
+        <div className="main">Main</div>
+        <img
+          alt="mainPicture"
+          src={`images/man_${this.state.count}.png`}
+          height="600em"
+          width="1380px"
+        />
       </div>
     );
   }
