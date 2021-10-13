@@ -54,11 +54,11 @@ class Main extends React.Component {
             width="1380px"
           />
         </div>
-
+        {/* 왼쪽 버튼 클릭시 이미지 transition 효과 */}
         <div className="left_button" onClick={this.handleLeft}>
           <i className="fa fa-chevron-left" />
         </div>
-
+        {/* 오른쪽 버튼 클릭시 이미지 transition 효과 */}
         <div className="right_button" onClick={this.handleRight}>
           <i className="fa fa-chevron-right" />
         </div>
