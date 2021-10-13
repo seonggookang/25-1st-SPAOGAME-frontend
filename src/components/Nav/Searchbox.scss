@@ -1,0 +1,77 @@
+.Searchbox {
+  font-size: 20px;
+  height: 350px;
+  padding: 0 350px 50px 400px;
+  background-color: grey;
+  position: absolute;
+  top: 3.8em;
+  width: 1379px;
+  left: 0px;
+  transition: 1900ms;
+
+  // transform: translate(-50%, -50%);
+  .greeting {
+    // border: 1px solid black;
+    padding: 1em 1em 1em 0.5em;
+    font-weight: bold;
+  }
+  .find {
+    display: flex;
+    background-color: white;
+    font-weight: bold;
+    position: relative;
+
+    input {
+      border: none;
+      padding: 10px;
+      font-size: 1em;
+      width: 50em;
+    }
+
+    div {
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      cursor: pointer;
+    }
+  }
+  .recommend {
+    width: 100%;
+    display: flex;
+    font-weight: bold;
+    border-top: 1px solid grey;
+
+    .popular {
+      padding: 10px;
+      width: 200px;
+      font-size: 15px;
+      .word {
+        padding: 15px;
+      }
+
+      .ten_keywords span {
+        // display: block;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 5px;
+        width: 500px;
+        // padding: 10px;
+
+        flex-wrap: wrap;
+      }
+    }
+
+    .images {
+      position: absolute;
+      right: 17em;
+      padding: 10px;
+
+      .recommend_pictures {
+        display: flex;
+        .recommend_each {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
