@@ -26,6 +26,7 @@
   .nav_wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 
     .nav_letters {
@@ -75,7 +76,7 @@
     .profile {
       display: flex;
       align-items: center;
-      padding-left: 130px;
+      padding-right: 30px;
       font-size: 20px;
 
       div {

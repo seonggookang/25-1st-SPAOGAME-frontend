@@ -7,8 +7,8 @@
     display: flex;
 
     .slideBox {
-      width: 100vw;
-
+      width: 100%;
+      // zoom: 150%;
       // float: left;
 
       .img {
@@ -82,6 +82,8 @@
 
       &:hover {
         width: 100px;
+        transition: width 0.3s;
+        cursor: pointer;
       }
 
       .fa-chevron-left {
@@ -104,6 +106,8 @@
 
       &:hover {
         width: 100px;
+        transition: width 0.3s;
+        cursor: pointer;
       }
 
       .fa-chevron-right {

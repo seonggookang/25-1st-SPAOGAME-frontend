@@ -38,11 +38,11 @@ class Main extends React.Component {
   };
 
   handleUp = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   handleDown = () => {
-    window.scrollTo(0, 12200);
+    window.scrollTo({ top: 12222, behavior: 'smooth' });
   };
 
   render() {
@@ -52,17 +52,22 @@ class Main extends React.Component {
           <img
             alt="mainPicture"
             src={`/images/main_${this.state.count}.png`}
-            height="500em"
-            width="1380px"
+            // height="500em"
+            // height="400px"
+            // width="100%"
+            // width="1380px"
           />
         </div>
         {/* 왼쪽 버튼 클릭시 이미지 transition 효과 */}
-        <div className="left_button" onClick={this.handleLeft}>
-          <i className="fa fa-chevron-left" />
-        </div>
-        {/* 오른쪽 버튼 클릭시 이미지 transition 효과 */}
-        <div className="right_button" onClick={this.handleRight}>
-          <i className="fa fa-chevron-right" />
+        <div className="arrow_container">
+          <div className="left_button" onClick={this.handleLeft}>
+            <i className="fa fa-chevron-left" />
+          </div>
+
+          {/* 오른쪽 버튼 클릭시 이미지 transition 효과 */}
+          <div className="right_button" onClick={this.handleRight}>
+            <i className="fa fa-chevron-right" />
+          </div>
         </div>
 
         <div className="main">AUTUMN OUTER</div>

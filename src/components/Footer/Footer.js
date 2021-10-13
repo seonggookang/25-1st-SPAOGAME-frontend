@@ -53,7 +53,7 @@ class Footer extends React.Component {
 
         <div className="footer_section03">
           Copyright ⓒ by 스파오닷컴 All Right Reserved. 호스팅 서비스 제공자 :
-          카페24(주)
+          스파오게임(주)
         </div>
       </footer>
     );
