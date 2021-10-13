@@ -1,0 +1,17 @@
+.MaterialFilter {
+  .material_button {
+    width: 72px;
+    height: 30px;
+    margin: 5px 5px 5px 0px;
+    border: solid 1px lightgray;
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    font-size: 11px;
+  }
+
+  .material_button:hover {
+    border: solid 1px #d45754;
+    color: #d45754;
+  }
+}

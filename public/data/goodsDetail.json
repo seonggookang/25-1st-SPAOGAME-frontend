@@ -1,0 +1,97 @@
+{
+  "goods_detail": [
+    {
+      "product_id": 13,
+      "name": "[포우먼] 배색 가디건",
+      "price": 39000,
+      "colors": ["Red", "Blue", "Brown", "Green"],
+      "size": ["L", "XL", "FREE"],
+      "image_list": [
+        "http://spao.com/web/product/small/202108/504512a2f6a19164be6fcb40b04b1bec.jpg",
+        "http://spao.com/web/product/extra/small/202108/85bcadb79d42d3d51deaa27a3cb59eb0.jpg",
+        "http://spao.com/web/product/extra/small/202108/e0f67f571208ae84ec6b8a0d3ca40ff8.jpg",
+        "http://spao.com/web/product/extra/small/202108/b5b47c7f246c0a1564e52e2d17a41235.jpg",
+        "http://spao.com/web/product/extra/small/202108/3df208f9655c478e2804edf933a8cec1.jpg",
+        "http://spao.com/web/product/extra/small/202108/cc7a3d4e587f0d94905cbeaef2a540ae.jpg"
+      ],
+      "posting_info": [
+        {
+          "posting_id": 3,
+          "posting_writer": "김현진",
+          "posting_title": "3번째후기글",
+          "posting_content": "내용33333333333333",
+          "posting_image": [],
+          "posting_date": "2021-10-09"
+        },
+        {
+          "posting_id": 2,
+          "posting_writer": "이기용",
+          "posting_title": "2번째후기글",
+          "posting_content": "내용22222222222222222222222222222222222222222222222222222222222",
+          "posting_image": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pqgOThbQJwXbIFeO59wZKDR-AQ9E4qADmw&usqp=CAU",
+            "https://mblogthumb-phinf.pstatic.net/MjAxODA1MDdfMTY1/MDAxNTI1Njk2NDIwMjQ1.pTtCRxeZKJ0wTXpyobCtHs1PyU51aZC78LqVfPMFDOIg.NZU8W4VGTvT95VI0XRq2ng7LyGC_9h07AANnVDObDzIg.PNG.jsrwnmejs/2018-05-07_21%3B31%3B33.PNG?type=w2"
+          ],
+          "posting_date": "2021-10-09"
+        },
+        {
+          "posting_id": 1,
+          "posting_writer": "정경훈",
+          "posting_title": "1번째후기글",
+          "posting_content": "내용111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "posting_image": [
+            "https://mblogthumb-phinf.pstatic.net/MjAxODA1MDdfMjAg/MDAxNTI1Njk2NDE2MTkx.c0eLQK-e2wlOEd_oLTXRnrFJ5_QNElxc9GbgjHUO8fIg.ydwTasmnjROtieAIloi-ePnakOExe26LZS50Fn5RAqkg.PNG.jsrwnmejs/2018-05-07_21%3B23%3B32.PNG?type=w2",
+            "https://c-cl.cdn.smule.com/rs-s79/arr/dd/5b/0ae4b120-c80a-4163-ba2f-ce8fcef6eaec.jpg",
+            "https://i.ytimg.com/vi/1rc2OJCPZ-c/sddefault.jpg"
+          ],
+          "posting_date": "2021-10-09"
+        }
+      ],
+      "posting_count": 3,
+      "comment_info": [
+        {
+          "posting_id": 2,
+          "comment_id": 5,
+          "comment_writer": "김현진",
+          "comment_content": "첫번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        },
+        {
+          "posting_id": 2,
+          "comment_id": 6,
+          "comment_writer": "이기용",
+          "comment_content": "2번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        },
+        {
+          "posting_id": 1,
+          "comment_id": 1,
+          "comment_writer": "강성구",
+          "comment_content": "첫번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        },
+        {
+          "posting_id": 1,
+          "comment_id": 2,
+          "comment_writer": "정경훈",
+          "comment_content": "번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        },
+        {
+          "posting_id": 1,
+          "comment_id": 3,
+          "comment_writer": "김주현",
+          "comment_content": "3번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        },
+        {
+          "posting_id": 1,
+          "comment_id": 4,
+          "comment_writer": "송영록",
+          "comment_content": "4번째 댓글입니다",
+          "comment_date": "2021-10-10"
+        }
+      ]
+    }
+  ]
+}
