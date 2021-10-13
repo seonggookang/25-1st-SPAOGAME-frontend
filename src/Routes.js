@@ -16,12 +16,16 @@ class Routes extends React.Component {
       <>
         <Router>
           <Nav />
-          <Switch>
-            <Route path="/Main" component={Main} />
-            <Route exact path="/users/signin" component={Login} />
-            <Route exact path="/users/signup" component={Signup} />
-            <Route exact path="/baskets" component={Basket} />
-          </Switch>
+          <div className="header_fixed" style={{ marginTop: '75px' }}>
+            <Switch>
+              <Route path="/Main" component={Main} />
+              <Route exact path="/users/signin" component={Login} />
+              <Route exact path="/users/signup" component={Signup} />
+              <Route exact path="/baskets" component={Basket} />
+              <Route exact path="/productdetail" component={ProductDetail} />
+              <Route exact path="/subjectlist" component={SubjectList} />
+            </Switch>
+          </div>
           <Footer />
         </Router>
       </>
