@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
 import GoodsList from './Goods/GoodList';
 import Filters from './Filter/Filters';
 import CategoryFilter from './Filter/CategoryFilter';
@@ -20,7 +22,7 @@ class SubjectList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.2.199:8000/products/women/outer?offset=0&limit=15')
+    fetch('http://10.58.5.176:8000/products/women/outer?offset=0&limit=15')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -32,7 +34,7 @@ class SubjectList extends Component {
   }
   componentDidUpdate() {
     fetch(
-      `http://10.58.2.199:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
+      `http://10.58.5.176:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
     )
       .then(res => res.json())
       .then(data => {
@@ -89,7 +91,8 @@ class SubjectList extends Component {
   };
 
   pageBtn = e => {
-    console.log(e.target.name);
+    window.scrollTo(0, 0);
+
     this.setState({
       limit: 15 * e.target.name,
       offset: 15 * (e.target.name - 1),

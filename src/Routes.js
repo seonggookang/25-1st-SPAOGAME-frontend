@@ -15,12 +15,11 @@ class Routes extends React.Component {
     return (
       <Router>
         <Nav />
-
         <Switch>
-          <Route path="/subject" component={SubjectList} />
-          <Route path="/subjectdetail" component={ProductDetail} />
-          <Route path="/review" component={ReviewInput} />
-          <Route path="/Main" component={Main} />
+          <Route exact path="/products" component={SubjectList} />
+          <Route exact path="/products/:id" component={ProductDetail} />
+          <Route exact path="/review" component={ReviewInput} />
+          <Route exact path="/Main" component={Main} />
           <Route exact path="/users/signin" component={Login} />
           <Route exact path="/users/signup" component={Signup} />
           <Route exact path="/baskets" component={Basket} />

@@ -16,7 +16,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.2.199:8000/products/2')
+    fetch(`http://10.58.5.176:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -35,6 +35,7 @@ class ProductDetail extends Component {
   };
 
   render() {
+    console.log(this.props.match);
     const { goods_detail } = this.state;
     return (
       <div className="ProductDetail">

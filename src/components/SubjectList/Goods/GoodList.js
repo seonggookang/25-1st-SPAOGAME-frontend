@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Goods from './Goods';
-import './Good.scss';
+import './Goods.scss';
 
 class GoodList extends Component {
   render() {

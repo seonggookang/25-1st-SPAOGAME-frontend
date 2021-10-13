@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 600px;
   height: 20px;
   border-bottom: 1px solid lightgray;
   border-radius: 1px;
@@ -21,9 +21,12 @@
     background-color: white;
     border: 0px;
     height: 20px;
-    color: black;
+    color: gray;
     &:hover {
       color: #c41e1f;
     }
   }
+}
+.reply_wrapper::-webkit-scrollbar {
+  display: none;
 }
