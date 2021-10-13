@@ -8,6 +8,7 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       password: '',
+      checkpassword: '',
       name: '',
       email: '',
       mobile_number: '',
@@ -31,6 +32,26 @@ class Signup extends React.Component {
     });
   };
 
+  handleSubmitButton = () => {
+    const { username, password, name, birthday, gender, mobile_number, email } =
+      this.state;
+
+    if (
+      username &&
+      // username.includes('@')
+      password &&
+      name &&
+      birthday &&
+      gender &&
+      mobile_number &&
+      email
+    ) {
+      this.props.history.push('/users/signin');
+    } else {
+      alert('필수입력사항을 입력해주세요');
+    }
+  };
+
   goToSignin = () => {
     this.props.history.push('/users/signin');
     fetch('http://10.58.2.134:8000/users/signup', {
@@ -51,8 +72,11 @@ class Signup extends React.Component {
       .then(result => console.log(''));
   };
 
+  goToMain = () => {
+    this.props.history.push('/components/Main/Main.js');
+  };
+
   render() {
-    console.log(this.state);
     return (
       <main className="signup_wrapper">
         <div className="header">
@@ -109,7 +133,8 @@ class Signup extends React.Component {
                       name="username"
                       onChange={this.handleInput}
                     />
-                    <button>아이디 중복체크</button>
+                    <button onClick={this.idCheck}>아이디 중복체크</button>
+                    <p className="notice">이메일 형식으로 입력해주세요.</p>
                   </td>
                 </tr>
                 <tr>
@@ -147,7 +172,7 @@ class Signup extends React.Component {
                   <td>
                     <input
                       className="password_input"
-                      name="repeatPassword"
+                      name="checkpassword"
                       onChange={this.handleInput}
                     />
                   </td>
@@ -346,14 +371,20 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
-                    <div className="signup_gender">성별</div>
+                    <div className="signup_gender">
+                      성별
+                      <span className="essential_input">*</span>
+                    </div>
                   </th>
                   <td>
-                    <select name="gender" onChange={this.handleInput}>
+                    <select
+                      className="select_gender"
+                      name="gender"
+                      onChange={this.handleInput}
+                    >
                       <option value>선택</option>
                       <option value="1">남자</option>
                       <option value="2">여자</option>
-                      <option value="3">안밝힘</option>
                     </select>
                   </td>
                 </tr>
@@ -453,10 +484,13 @@ class Signup extends React.Component {
               </tbody>
             </table>
             <div className="signup_button">
-              <button className="cancel_button">
+              <button className="cancel_button" onClick={this.goToMain}>
                 <span className="cancel_message">가입취소</span>
               </button>
-              <button className="submit_button" onClick={this.goToSignin}>
+              <button
+                className="submit_button"
+                onClick={this.handleSubmitButton}
+              >
                 <span className="submit_message">제출하기</span>
               </button>
             </div>

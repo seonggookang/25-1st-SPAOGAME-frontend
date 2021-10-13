@@ -123,6 +123,12 @@
           color: red;
           padding-left: 0.5em;
         }
+
+        .signup_gender {
+          padding-left: 1em;
+          font-size: 17px;
+          font-weight: bold;
+        }
       }
 
       td {
@@ -175,6 +181,13 @@
         }
       }
 
+      .select_gender {
+        width: 7em;
+        height: 2em;
+        padding-left: 0.5em;
+        margin-right: 0.5em;
+      }
+
       .user_phonenumber {
         display: flex;
         align-items: center;
@@ -217,11 +230,5 @@
         }
       }
     }
-  }
-
-  .signup_gender {
-    padding-left: 1em;
-    font-size: 17px;
-    font-weight: bold;
   }
 }
