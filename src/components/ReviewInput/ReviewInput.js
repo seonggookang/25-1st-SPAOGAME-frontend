@@ -52,7 +52,7 @@ class ReviewInput extends Component {
           <input
             id="image_upload"
             name="review_image"
-            multiplt="multiple"
+            multiple="multiple"
             type="file"
             style={{ display: 'none' }}
             onChange={this.handleInput}

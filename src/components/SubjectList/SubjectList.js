@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoodsList from './Goods/GoodList';
 import Filters from './Filter/Filters';
 import CategoryFilter from './Filter/CategoryFilter';
+import PageBtn from '../PageBtn/PageBtn';
 import './SubjectList.scss';
 
 class SubjectList extends Component {
@@ -12,11 +13,27 @@ class SubjectList extends Component {
       category: [],
       filterdFunction: [],
       nonfilterd: [],
+      offset: 0,
+      limit: 15,
+      standard: 0,
     };
   }
 
   componentDidMount() {
-    fetch('/data/goods.json')
+    fetch('http://10.58.2.199:8000/products/women/outer?offset=0&limit=15')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          goods: data.goods,
+          filterdFunction: data.goods,
+          nonfilterd: data.goods,
+        });
+      });
+  }
+  componentDidUpdate() {
+    fetch(
+      `http://10.58.2.199:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
+    )
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -71,9 +88,16 @@ class SubjectList extends Component {
     this.setState({ goods: this.state.nonfilterd });
   };
 
+  pageBtn = e => {
+    console.log(e.target.name);
+    this.setState({
+      limit: 15 * e.target.name,
+      offset: 15 * (e.target.name - 1),
+    });
+  };
+
   render() {
     const { goods, filterdFunction } = this.state;
-
     return (
       <div className="subject_list">
         <nav />
@@ -128,7 +152,9 @@ class SubjectList extends Component {
             <ul className="subjects">
               <GoodsList goods={goods} />
             </ul>
+            <PageBtn pageBtn={this.pageBtn} />
           </div>
+
           <div className="main_right"></div>
         </main>
         <footer />
