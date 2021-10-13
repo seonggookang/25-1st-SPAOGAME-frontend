@@ -1,5 +1,5 @@
 import React from 'react';
-import '../pages/Basket.scss';
+import '../Cart/Basket.scss';
 
 class Basket extends React.Component {
   render() {

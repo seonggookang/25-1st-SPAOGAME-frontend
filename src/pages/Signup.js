@@ -7,19 +7,48 @@ class Signup extends React.Component {
     super();
     this.state = {
       username: '',
-      passowrd: '',
+      password: '',
       name: '',
       email: '',
       mobile_number: '',
       address1: '',
       address2: '',
       birthday: '',
+      gender: '',
     };
   }
 
   handleInput = e => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value,
+      birthday: this.state.year + '-' + this.state.month + '-' + this.state.day,
+      mobile_number:
+        this.state.first_number +
+        this.state.second_number +
+        this.state.last_number,
+      email: this.state.email_id + '@' + this.state.emailaddress,
+    });
+  };
+
+  goToSignin = () => {
+    this.props.history.push('/users/signin');
+    fetch('http://10.58.2.134:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+        name: this.state.name,
+        email: this.state.email,
+        mobile_number: this.state.mobile_number,
+        address1: this.state.address1,
+        address2: this.state.address2,
+        birthday: this.state.birthday,
+        gender: this.state.gender,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(''));
   };
 
   render() {
@@ -279,15 +308,15 @@ class Signup extends React.Component {
                         onChange={this.handleInput}
                       >
                         <option value>선택</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
@@ -317,6 +346,19 @@ class Signup extends React.Component {
                 </tr>
                 <tr>
                   <th scope="row">
+                    <div className="signup_gender">성별</div>
+                  </th>
+                  <td>
+                    <select name="gender" onChange={this.handleInput}>
+                      <option value>선택</option>
+                      <option value="1">남자</option>
+                      <option value="2">여자</option>
+                      <option value="3">안밝힘</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
                     <div className="signup_information">
                       핸드폰번호
                       <span className="essential_input" title="필수입력">
@@ -330,7 +372,7 @@ class Signup extends React.Component {
                       <select
                         value={this.state.value}
                         className="signup_phonenumber"
-                        name="mobie_number"
+                        name="first_number"
                         onChange={this.handleInput}
                       >
                         <option value>선택</option>
@@ -346,7 +388,7 @@ class Signup extends React.Component {
                       className="signup_phonenumber2"
                       title="중간자리"
                       maxLength="4"
-                      name="mobie_number"
+                      name="second_number"
                       onChange={this.handleInput}
                     />
                     <span>-</span>
@@ -354,7 +396,7 @@ class Signup extends React.Component {
                       className="signup_phonenumber2"
                       title="마지막자리"
                       maxLength="4"
-                      name="mobie_number"
+                      name="last_number"
                       onChange={this.handleInput}
                     />
                   </td>
@@ -367,7 +409,7 @@ class Signup extends React.Component {
                     <input
                       className="user_adress"
                       title="주소"
-                      name="adress1"
+                      name="address1"
                       onChange={this.handleInput}
                     />
                     <button>
@@ -377,7 +419,7 @@ class Signup extends React.Component {
                       <input
                         className="user_adress"
                         title="나머지 주소"
-                        name="adress2"
+                        name="address2"
                         onChange={this.handleInput}
                       />
                     </div>
@@ -396,13 +438,15 @@ class Signup extends React.Component {
                     <input
                       className="email_id"
                       title="이메일아이디"
-                      name="email"
+                      name="email_id"
+                      onChange={this.handleInput}
                     />
                     <span>@</span>
                     <input
                       className="email_id"
                       title="이메일주소"
-                      name="email"
+                      name="emailaddress"
+                      onChange={this.handleInput}
                     />
                   </td>
                 </tr>
@@ -412,7 +456,7 @@ class Signup extends React.Component {
               <button className="cancel_button">
                 <span className="cancel_message">가입취소</span>
               </button>
-              <button className="submit_button">
+              <button className="submit_button" onClick={this.goToSignin}>
                 <span className="submit_message">제출하기</span>
               </button>
             </div>

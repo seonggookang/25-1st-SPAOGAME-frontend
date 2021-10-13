@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Basket from './pages/Basket';
+import Basket from './pages/Cart/Basket';
 
 class Routes extends React.Component {
   render() {
