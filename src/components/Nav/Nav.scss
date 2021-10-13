@@ -16,7 +16,7 @@
   background-color: transparent;
   left: 0;
   z-index: 3;
-
+  //if(scroll이 맨위가 아니면){ 색변경 감행 }
   &:hover {
     transition: background-color 0.5s;
     background-color: white;
@@ -92,7 +92,6 @@
   .Drop_down {
     border-top: 1px solid grey;
     display: flex;
-    // gap: 120px;
     padding-top: 40px;
     padding-bottom: 20px;
     height: 350px;
@@ -113,6 +112,9 @@
         &:hover {
           color: red;
           font-weight: bold;
+
+          font-size: 0.65em;
+          // transition: transform 0.3s;
           cursor: pointer;
         }
       }
@@ -120,15 +122,23 @@
 
     .Drop_down_right {
       position: absolute;
-      padding: 0.2em 15em 5px 45em;
+      padding: 0.2em 15em 5px 40em;
       div {
         display: flex;
         padding-right: 2em;
         width: 100%;
         img {
           width: 10em;
+          &:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+          }
         }
       }
     }
+    // &:hover {
+    //   transition: display 0.3s;
+    // }
   }
 }

@@ -226,7 +226,6 @@ class Nav extends React.Component {
       isMouseTextOver: false,
       hoveredText: '',
       isSearch: false,
-      isContent: false,
     };
   }
 
@@ -256,12 +255,18 @@ class Nav extends React.Component {
     }));
   };
 
+  isMouseTextOverDie = () => {
+    this.setState({
+      isMouseTextOver: false,
+    });
+  };
+
   goToMain = () => {
     window.location.href = 'http://localhost:3000/main';
   };
 
   goToMyProfile = () => {
-    window.location.href = 'http://localhost:3000/users/login';
+    window.location.href = 'http://localhost:3000/users/signin';
   };
 
   // componentDidMount() {
@@ -315,6 +320,7 @@ class Nav extends React.Component {
           <div className="nav_wrapper">
             <div className="nav_letters">
               <ImageToggle
+                //if(scroll이 맨위가 아니면){ 색변경 감행 }
                 className="logo"
                 isMouseOver={this.state.isMouseOver}
                 onClick={this.goToMain}
@@ -392,7 +398,10 @@ class Nav extends React.Component {
             </div>
 
             <div className="profile">
-              <div onClick={this.goToMyProfile}>
+              <div
+                onClick={this.goToMyProfile}
+                onMouseEnter={this.isMouseTextOverDie}
+              >
                 <i className="fas fa-user" />
               </div>
               <div>

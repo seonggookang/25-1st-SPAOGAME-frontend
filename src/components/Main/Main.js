@@ -1,5 +1,7 @@
 import React from 'react';
 import './Main.scss';
+import Carousel from '../Nav/Carousel';
+import IMAGE_DATA from '../Nav/IMAGE_DATA';
 
 class Main extends React.Component {
   // nav bar hover시 main의 opacity 0.5? 아니면 조금 어둡게?
@@ -49,7 +51,7 @@ class Main extends React.Component {
         <div className="images">
           <img
             alt="mainPicture"
-            src={`images/main_${this.state.count}.png`}
+            src={`/images/main_${this.state.count}.png`}
             height="500em"
             width="1380px"
           />
@@ -63,13 +65,15 @@ class Main extends React.Component {
           <i className="fa fa-chevron-right" />
         </div>
 
-        <div className="main">Main</div>
-        <img
+        <div className="main">AUTUMN OUTER</div>
+        <Carousel images={IMAGE_DATA} />
+        {/* <img
           alt="mainPicture"
-          src={`images/man_${this.state.count}.png`}
-          height="600em"
-          width="1380px"
-        />
+          src={`/images/man_${this.state.count}.jpg`}
+          // height="600em"
+          width="380px"
+        /> */}
+
         <div className="up_button" onClick={this.handleUp}>
           <i className="fa fa-arrow-circle-up" />
         </div>

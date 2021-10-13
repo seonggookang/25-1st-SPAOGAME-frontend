@@ -1,17 +1,22 @@
 .Footer {
   padding: 0px 10px;
-  border: 1px solid black;
-  height: 200px;
-  background-color: grey;
+  height: 450px;
+  background-color: lightgrey;
+  position: relative;
 
   .about_company {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .footer_section01 {
-      font-size: 5px;
-
+      font-size: 20px;
+      width: 50%;
+      // padding: 50px 0;
+      position: absolute;
+      top: 30px;
+      left: 30px;
       .phone {
         padding: 10px 0px;
         font-weight: bold;
@@ -24,6 +29,23 @@
       .email {
         padding: 3px 0px;
       }
+
+      .company_info {
+        padding-top: 50px;
+      }
+      .sns {
+        display: flex;
+        font-size: 30px;
+        padding-top: 40px;
+        div {
+          padding: 10px;
+          &:hover {
+            cursor: pointer;
+            color: grey;
+            transform: scale(1.2);
+          }
+        }
+      }
     }
 
     .footer_section02 {
@@ -31,32 +53,43 @@
       align-items: baseline;
       padding: 5px 10px;
       text-align: right;
-      font-size: 3px;
+      font-size: 20px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
 
       .section02_01 {
-        display: flex;
-        flex-direction: column;
         padding: 5px 10px;
         gap: 5px;
+        > li {
+          padding: 5px;
+        }
       }
 
       .section02_02 {
-        display: flex;
-        flex-direction: column;
         padding: 5px 10px;
         gap: 5px;
+        > li {
+          padding: 5px;
+        }
       }
 
       .section02_03 {
-        display: flex;
-        flex-direction: column;
         padding: 5px 10px;
         gap: 5px;
+        > li {
+          padding: 5px;
+        }
       }
     }
   }
 
   .footer_section03 {
-    border-top: 1px solid black;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    border-top: 1px solid grey;
+    padding-top: 20px;
+    padding-left: 40px;
   }
 }

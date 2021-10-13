@@ -12,6 +12,25 @@ class Footer extends React.Component {
               상담시간 : 오전10시~오후5시 (토요일, 공휴일 휴무)
             </p>
             <p className="email">email : spao@eland.co.kr</p>
+            <p className="company_info">
+              (주)이랜드월드패션사업부 사업자등록번호 : 113-85-19030
+              [사업자정보확인] 통신판매업 신고번호 : 제 2005-01053 호 대표이사 :
+              최운식/최종양 서울특별시 금천구 가산디지털1로 159 (가산동)
+              이랜드가산동사옥 개인정보 보호책임자 : 최운식 사옥 주소로 상품을
+              발송하시면 교환ㆍ환불이 불가하므로, 교환ㆍ환불은 사이트 내에서
+              신청해주시기 바랍니다.
+            </p>
+            <div class="sns">
+              <div>
+                <i className="fab fa-instagram" />
+              </div>
+              <div>
+                <i className="fab fa-youtube" />
+              </div>
+              <div>
+                <i className="fab fa-facebook-square" />
+              </div>
+            </div>
           </div>
           <div className="footer_section02">
             <ul className="section02_01">
@@ -32,7 +51,10 @@ class Footer extends React.Component {
           </div>
         </div>
 
-        <div className="footer_section03">인스타그램, 유튜브, 등등</div>
+        <div className="footer_section03">
+          Copyright ⓒ by 스파오닷컴 All Right Reserved. 호스팅 서비스 제공자 :
+          카페24(주)
+        </div>
       </footer>
     );
   }
