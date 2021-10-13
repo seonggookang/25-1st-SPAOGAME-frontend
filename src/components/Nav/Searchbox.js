@@ -38,7 +38,7 @@ class Searchbox extends React.Component {
           <div className="images">
             <div>#추천상품</div>
             <div className="recommend_pictures">
-              {nav_map.get('recommend').picture.map((el, idx) => {
+              {nav_map.recommend.picture.map((el, idx) => {
                 return (
                   <div key={idx} className="recommend_each">
                     <img alt="recommend" src={el} width="130em" />

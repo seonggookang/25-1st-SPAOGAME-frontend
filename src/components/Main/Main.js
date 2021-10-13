@@ -1,5 +1,4 @@
 import React from 'react';
-import ImageToggle from '../Nav/ImageToggle';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -8,17 +7,15 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      isClicked: false,
       count: 1,
     };
   }
 
   handleLeft = () => {
     let newCount = this.state.count + 1;
-    this.setState(prev => ({
-      isClicked: !prev.isClicked,
+    this.setState({
       count: newCount,
-    }));
+    });
     if (this.state.count === 4) {
       this.setState({
         count: 1,
@@ -26,12 +23,11 @@ class Main extends React.Component {
     }
   };
 
-  handleright = () => {
+  handleRight = () => {
     let newCount = this.state.count - 1;
-    this.setState(prev => ({
-      isClicked: !prev.isClicked,
+    this.setState({
       count: newCount,
-    }));
+    });
     if (this.state.count === 1) {
       this.setState({
         count: 4,
@@ -39,21 +35,14 @@ class Main extends React.Component {
     }
   };
 
-  // interval;
+  handleUp = () => {
+    window.scrollTo(0, 0);
+  };
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => {
-  //     console.log('abcd');
-  //     this.setState({
-  //       // 이미지 변경함수??
-  //     });
-  //   }, 1000);
-  // }
-  // componentDidUpdate() {}
-  // componentWillUnmount() {
-  //   // clearInterval(this.interval);
-  // }
-  //비동기 함수 바깥에 있는 변수를 참조하면 클로저 문제 발생
+  handleDown = () => {
+    window.scrollTo(0, 12200);
+  };
+
   render() {
     return (
       <div className="Main">
@@ -70,7 +59,7 @@ class Main extends React.Component {
           <i className="fa fa-chevron-left" />
         </div>
 
-        <div className="right_button" onClick={this.handleright}>
+        <div className="right_button" onClick={this.handleRight}>
           <i className="fa fa-chevron-right" />
         </div>
 
@@ -81,6 +70,13 @@ class Main extends React.Component {
           height="600em"
           width="1380px"
         />
+        <div className="up_button" onClick={this.handleUp}>
+          <i className="fa fa-arrow-circle-up" />
+        </div>
+
+        <div className="down_button" onClick={this.handleDown}>
+          <i className="fa fa-arrow-circle-down" />
+        </div>
       </div>
     );
   }

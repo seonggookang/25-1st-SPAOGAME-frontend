@@ -1,9 +1,9 @@
 .Main {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 1500px;
-  // z-index: -1;
-  // align-items: center;
+  left: 0;
+  top: 0;
 
   .left_button {
     position: absolute;
@@ -27,7 +27,6 @@
     font-size: 100px;
     z-index: 3;
     cursor: pointer;
-
     &:hover {
       color: blue;
     }
@@ -41,5 +40,18 @@
     font-size: 50px;
     font-weight: bold;
     background-color: yellow;
+  }
+  .up_button {
+    position: fixed;
+    right: 30px;
+    bottom: 140px;
+    font-size: 3em;
+    transition-duration: 500ms;
+  }
+  .down_button {
+    position: fixed;
+    font-size: 3em;
+    right: 30px;
+    bottom: 80px;
   }
 }

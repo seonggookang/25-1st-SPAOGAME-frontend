@@ -32,7 +32,7 @@ class Footer extends React.Component {
           </div>
         </div>
 
-        <div className="footer_section03">3</div>
+        <div className="footer_section03">인스타그램, 유튜브, 등등</div>
       </footer>
     );
   }

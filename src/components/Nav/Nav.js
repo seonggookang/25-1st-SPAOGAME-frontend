@@ -304,13 +304,6 @@ class Nav extends React.Component {
   // }
 
   render() {
-    {
-      console.log(nav_map);
-      console.log(typeof nav_map);
-      console.log(nav_map['women']);
-      console.log(nav_map.women);
-    }
-
     return (
       <div>
         {this.state.isMouseOver && <div className="background"></div>}
@@ -326,7 +319,6 @@ class Nav extends React.Component {
                 isMouseOver={this.state.isMouseOver}
                 onClick={this.goToMain}
               />
-
               <div className="nav_menu">
                 <div className="nav_menu_Festival">FLECE FESTIVAL</div>
                 <div
@@ -420,21 +412,19 @@ class Nav extends React.Component {
               <Searchbox />
             </div>
           )}
+          {/* 각 메뉴에 hover 됐을때 글자를 가져올수 있게. */}
           {this.state.hoveredText !== '' && this.state.isMouseTextOver && (
             <div className="Drop_down">
               <div className="Drop_down_left">
-                {nav_map
-                  .get(this.state.hoveredText)
-                  .first_menu.map((el, idx) => {
-                    return <div key={idx}>{el.title}</div>;
-                  })}
+                {nav_map[this.state.hoveredText].first_menu.map((el, idx) => {
+                  return <div key={idx}>{el.title}</div>;
+                })}
               </div>
 
               <div className="Drop_down_center">
                 <div>
-                  {nav_map
-                    .get(this.state.hoveredText)
-                    .second_menu.map((el, idx) => {
+                  {nav_map[this.state.hoveredText].second_menu.map(
+                    (el, idx) => {
                       return (
                         <div
                           className="red_text"
@@ -443,21 +433,20 @@ class Nav extends React.Component {
                           {el.title}
                         </div>
                       );
-                    })}
+                    }
+                  )}
                 </div>
               </div>
 
               <div className="Drop_down_right">
                 <div>
-                  {nav_map
-                    .get(this.state.hoveredText)
-                    .third_menu.map((el, idx) => {
-                      return (
-                        <div key={idx}>
-                          {<img alt="category_image" src={el.img_src} />}
-                        </div>
-                      );
-                    })}
+                  {nav_map[this.state.hoveredText].third_menu.map((el, idx) => {
+                    return (
+                      <div key={idx}>
+                        {<img alt="category_image" src={el.img_src} />}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
