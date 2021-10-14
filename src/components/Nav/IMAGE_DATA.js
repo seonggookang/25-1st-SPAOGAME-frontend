@@ -20,10 +20,13 @@ const IMAGE_DATA = [
     url: '/images/man_2.jpg',
   },
   {
-    id: 5,
-    url: '/images/man_3.jpg',
+    id: 6,
+    url: '/images/kid_1.jpg',
+  },
+  {
+    id: 7,
+    url: '/images/kid_2.jpg',
   },
 ];
 
 export default IMAGE_DATA;
-// let newArr = images.slice(0, 5);

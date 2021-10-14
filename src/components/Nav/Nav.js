@@ -271,7 +271,10 @@ class Nav extends React.Component {
   };
 
   goToWomenOuter = () => {
-    window.location.href = 'http://localhost:3000/productdetail';
+    window.location.href = 'http://localhost:3000/products';
+    this.setState({
+      isMouseOver: true,
+    });
   };
 
   componentDidMount() {
@@ -300,13 +303,15 @@ class Nav extends React.Component {
   }
 
   render() {
+    const { scroll } = this.state;
+    const { isMain } = this.props;
     return (
-      <div>
+      <>
         {this.state.isMouseOver && this.state.hoveredText !== '' && (
           <div className="background"></div>
         )}
         <div
-          className={this.state.scroll === true ? 'Nav2' : 'Nav'}
+          className={scroll ? 'Nav2' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
         >
@@ -454,7 +459,7 @@ class Nav extends React.Component {
             </div>
           )}
         </div>
-      </div>
+      </>
     );
   }
 }
