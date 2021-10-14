@@ -21,51 +21,54 @@ class Signup extends React.Component {
 
   handleInput = e => {
     const { name, value } = e.target;
+    const {
+      year,
+      month,
+      day,
+      first_number,
+      second_number,
+      last_number,
+      email_id,
+      emailaddress,
+    } = this.state;
     this.setState({
       [name]: value,
-      birthday: this.state.year + '-' + this.state.month + '-' + this.state.day,
-      mobile_number:
-        this.state.first_number +
-        this.state.second_number +
-        this.state.last_number,
-      email: this.state.email_id + '@' + this.state.emailaddress,
+      birthday: year + '-' + month + '-' + day,
+      mobile_number: first_number + second_number + last_number,
+      email: email_id + '@' + emailaddress,
     });
   };
 
-  handleSubmitButton = () => {
-    const { username, password, name, birthday, gender, mobile_number, email } =
-      this.state;
-
-    if (
-      username &&
-      // username.includes('@')
-      password &&
-      name &&
-      birthday &&
-      gender &&
-      mobile_number &&
-      email
-    ) {
-      this.props.history.push('/users/signin');
-    } else {
-      alert('필수입력사항을 입력해주세요');
-    }
+  sumBirthDay = () => {
+    const { year, month, day } = this.state;
+    this.setState({ birthday: year + month + day });
   };
 
   goToSignin = () => {
+    const {
+      username,
+      password,
+      name,
+      email,
+      mobile_number,
+      address1,
+      address2,
+      birthday,
+      gender,
+    } = this.state;
     this.props.history.push('/users/signin');
-    fetch('http://10.58.2.134:8000/users/signup', {
+    fetch('http://10.58.7.38:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password,
-        name: this.state.name,
-        email: this.state.email,
-        mobile_number: this.state.mobile_number,
-        address1: this.state.address1,
-        address2: this.state.address2,
-        birthday: this.state.birthday,
-        gender: this.state.gender,
+        username: username,
+        password: password,
+        name: name,
+        email: email,
+        mobile_number: mobile_number,
+        address1: address1,
+        address2: address2,
+        birthday: birthday,
+        gender: gender,
       }),
     })
       .then(response => response.json())
@@ -77,6 +80,29 @@ class Signup extends React.Component {
   };
 
   render() {
+    const special = /[~!@#$%^&*()_+|<>?:{}]/;
+    const {
+      username,
+      password,
+      checkpassword,
+      name,
+      email,
+      mobile_number,
+      birthday,
+      gender,
+    } = this.state;
+
+    const isValidSignup =
+      username.includes('@') &&
+      special.test(password) &&
+      password.length >= 8 &&
+      password === checkpassword &&
+      name.length >= 2 &&
+      email.length > 0 &&
+      mobile_number.length > 11 &&
+      birthday.length >= 8 &&
+      gender.length > 0;
+
     return (
       <main className="signup_wrapper">
         <div className="header">
@@ -149,6 +175,7 @@ class Signup extends React.Component {
                   <td>
                     <input
                       className="password_input"
+                      type="password"
                       name="password"
                       onChange={this.handleInput}
                     />
@@ -172,6 +199,7 @@ class Signup extends React.Component {
                   <td>
                     <input
                       className="password_input"
+                      type="password"
                       name="checkpassword"
                       onChange={this.handleInput}
                     />
@@ -489,7 +517,8 @@ class Signup extends React.Component {
               </button>
               <button
                 className="submit_button"
-                onClick={this.handleSubmitButton}
+                disabled={!isValidSignup}
+                onClick={this.goToSignin}
               >
                 <span className="submit_message">제출하기</span>
               </button>
