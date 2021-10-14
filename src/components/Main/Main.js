@@ -60,16 +60,8 @@ class Main extends React.Component {
           </div>
         </div>
 
-        <div className="main">AUTUMN OUTER</div>
+        <div className="main">AgUTUMN OUTER</div>
         <Carousel images={IMAGE_DATA} />
-
-        <div className="up_button" onClick={this.handleUp}>
-          <i className="fa fa-arrow-circle-up" />
-        </div>
-
-        <div className="down_button" onClick={this.handleDown}>
-          <i className="fa fa-arrow-circle-down" />
-        </div>
       </div>
     );
   }

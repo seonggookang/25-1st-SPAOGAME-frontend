@@ -1,0 +1,11 @@
+.ColorFilter {
+  width: 30px;
+  height: 20px;
+  margin: 3px 3px 3px 0px;
+  border: solid 1px lightgray;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 60%;
+  }
+}

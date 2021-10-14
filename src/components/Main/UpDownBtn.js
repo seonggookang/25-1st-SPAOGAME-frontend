@@ -1,6 +1,6 @@
 import React from 'react';
-
-class UpDownBtn extends React.Component {
+import './UpDownBtn.scss';
+export default class UpDownBtn extends React.Component {
   handleUp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -10,7 +10,7 @@ class UpDownBtn extends React.Component {
   };
   render() {
     return (
-      <>
+      <div className="UpDownBtn">
         <div className="up_button" onClick={this.handleUp}>
           <i className="fa fa-arrow-circle-up" />
         </div>
@@ -18,7 +18,7 @@ class UpDownBtn extends React.Component {
         <div className="down_button" onClick={this.handleDown}>
           <i className="fa fa-arrow-circle-down" />
         </div>
-      </>
+      </div>
     );
   }
 }

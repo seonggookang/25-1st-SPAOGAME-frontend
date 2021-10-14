@@ -1,0 +1,205 @@
+.Options {
+  font-family: 'Poppins';
+
+  .code {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-size: 22px;
+    color: #1a1a1a;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+  }
+  .price {
+    font-size: 25px;
+    color: #1a1a1a;
+    margin-right: 10px;
+    font-weight: 700;
+    hr {
+      height: 0;
+      border: 0;
+      border-top: 1px solid lightgray;
+    }
+  }
+  .choice_title {
+    width: 100%;
+    padding: 0px 0;
+    display: block;
+    color: #1a1a1a;
+    font-size: 14px;
+    border: 0;
+    padding-top: 19px;
+  }
+
+  button {
+    margin-top: 10px;
+    width: 60px;
+    min-width: 28px;
+    text-align: center;
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 6px 5px;
+    margin-right: 5px;
+  }
+
+  .gray_btn {
+    color: #909090;
+    word-break: break-all;
+    font-size: 13px;
+    padding: 6px 0px;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .black_btn {
+    color: black;
+    word-break: break-all;
+    font-size: 13px;
+    padding: 6px 0px;
+    margin-bottom: 30px;
+  }
+
+  .black {
+    width: 60px;
+    min-width: 28px;
+    text-align: center;
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 12px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 6px 5px;
+    margin-right: 5px;
+  }
+  hr {
+    border: 0px;
+    border-top: 1px solid black;
+  }
+  .cart_wrapper {
+    font-weight: 400;
+    font-size: 13px;
+    padding: 21px 0px;
+
+    .cart_color_size {
+      font-weight: normal;
+      color: #909090;
+      line-height: 18px;
+      font-size: 13px;
+    }
+  }
+  .cart_count_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+
+    .cart_color_size {
+      font-weight: normal;
+      color: #909090;
+      line-height: 18px;
+      font-size: 13px;
+    }
+  }
+
+  .button_wrapper {
+    button {
+      margin: 0 auto;
+      padding: 0 auto;
+    }
+    .plus {
+      border: 0px;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+      border-left: 1px solid lightgray;
+    }
+    .count {
+      height: 28.52px;
+      border: 0px;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+    }
+    .minus {
+      border: 0px;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+      border-right: 1px solid lightgray;
+    }
+  }
+  .hrr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid lightgray;
+  }
+
+  .sum_price_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    .sum_price_content {
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 400;
+      float: left;
+    }
+    .sum_price {
+      font-size: 23px;
+      color: #1a1a1a;
+      font-weight: 500;
+      padding-right: 5px;
+    }
+  }
+
+  .button_wrapper_icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px 30px 0px;
+  }
+  .heart {
+    text-align: center;
+    width: 16.2%;
+    height: 60px;
+    border: 1px solid #c9c9c9;
+    line-height: 60px;
+    background-color: #fff;
+    font-size: 16px;
+    vertical-align: middle;
+    padding: 0;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart {
+    text-align: center;
+    width: 39.2%;
+    height: 60px;
+    border: 1px solid #c9c9c9;
+    line-height: 60px;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0;
+    display: block;
+  }
+  .buy {
+    text-align: center;
+    width: 39.2%;
+    height: 60px;
+    border: 1px solid #000;
+    line-height: 60px;
+    color: #fff;
+    background-color: #000;
+    font-size: 16px;
+    padding: 0;
+    display: block;
+  }
+}

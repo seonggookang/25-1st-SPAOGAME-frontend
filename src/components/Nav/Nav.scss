@@ -14,14 +14,11 @@
   width: 100%;
   color: white;
   left: 0;
+  top: 0;
+
   z-index: 223;
   background-color: transparent;
   color: white;
-  //if(scroll이 맨위가 아니면){ 색변경 감행 }
-  // .hi {
-  //   background-color: white;
-  //   color: black;
-  // }
   &:hover {
     transition: background-color 0.5s;
     background-color: white;
@@ -156,7 +153,7 @@
   background-color: white;
   color: black;
   transition: background-color 0.4s;
-
+  top: 0;
   .nav_wrapper {
     display: flex;
     align-items: center;

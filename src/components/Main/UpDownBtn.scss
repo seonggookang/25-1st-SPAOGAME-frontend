@@ -1,0 +1,18 @@
+.UpDownBtn {
+  .up_button {
+    position: fixed;
+    right: 30px;
+    bottom: 140px;
+    font-size: 3em;
+    transition-duration: 500ms;
+    cursor: pointer;
+  }
+
+  .down_button {
+    position: fixed;
+    font-size: 3em;
+    right: 30px;
+    bottom: 80px;
+    cursor: pointer;
+  }
+}
