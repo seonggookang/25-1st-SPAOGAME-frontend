@@ -270,6 +270,10 @@ class Nav extends React.Component {
     window.location.href = 'http://localhost:3000/users/signin';
   };
 
+  goToWomenOuter = () => {
+    window.location.href = 'http://localhost:3000/productdetail';
+  };
+
   componentDidMount() {
     window.onscroll = () => {
       if (window.scrollY !== 0) {
@@ -466,7 +470,8 @@ class Nav extends React.Component {
                       return (
                         <div
                           className="red_text"
-                          key={idx} /* onClick={this.gotoSomethings} */
+                          key={idx}
+                          onClick={this.goToWomenOuter}
                         >
                           {el.title}
                         </div>

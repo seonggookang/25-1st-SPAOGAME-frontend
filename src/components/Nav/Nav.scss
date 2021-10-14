@@ -12,13 +12,11 @@
 .Nav {
   position: fixed;
   width: 100%;
-  color: white;
+  color: black;
   left: 0;
   top: 0;
-
   z-index: 223;
   background-color: transparent;
-  color: white;
   &:hover {
     transition: background-color 0.5s;
     background-color: white;
@@ -149,11 +147,12 @@
   position: fixed;
   width: 100%;
   left: 0;
+  top: 0;
   z-index: 223;
   background-color: white;
   color: black;
   transition: background-color 0.4s;
-  top: 0;
+
   .nav_wrapper {
     display: flex;
     align-items: center;

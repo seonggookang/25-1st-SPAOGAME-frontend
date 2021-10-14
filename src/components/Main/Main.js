@@ -60,7 +60,7 @@ class Main extends React.Component {
           </div>
         </div>
 
-        <div className="main">AgUTUMN OUTER</div>
+        <div className="main">AUTUMN OUTER</div>
         <Carousel images={IMAGE_DATA} />
       </div>
     );
