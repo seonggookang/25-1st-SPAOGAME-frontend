@@ -6,9 +6,16 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ReviewInput from './components/ReviewInput/ReviewInput';
 import SubjectList from './components/SubjectList/SubjectList';
+<<<<<<< HEAD
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Basket from './pages/Basket';
+=======
+
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Basket from './pages/Cart/Basket';
+>>>>>>> master
 
 class Routes extends React.Component {
   render() {

@@ -89,6 +89,10 @@ class SubjectList extends Component {
     this.setState({ goods: this.state.nonfilterd });
   };
 
+
+  render() {
+    const { goods, filterdFunction } = this.state;
+
   pageBtn = e => {
     window.scrollTo(0, 0);
 

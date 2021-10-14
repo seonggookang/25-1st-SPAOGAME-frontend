@@ -58,11 +58,17 @@
           }
         }
 
-        .login_button {
+        .activeButton {
           width: 6em;
           background-color: #333;
           color: #fff;
           cursor: pointer;
+        }
+
+        .disabled {
+          width: 6em;
+          background-color: gray;
+          color: #fff;
         }
       }
     }
