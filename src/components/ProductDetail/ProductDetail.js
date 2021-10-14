@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Product from './ProductsDetail/Product';
 import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
+import ReviewInput from '../ReviewInput/ReviewInput';
+
 import './ProductDetail.scss';
 import './Reviews/Review.scss';
 
@@ -12,11 +14,12 @@ class ProductDetail extends Component {
       goods_detail: [],
       category: [],
       filterdFunction: [],
+      isReviewInputPopup: false,
     };
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.205:8000/products/${this.props.match.params.id}`)
+    fetch(`http://192.168.0.133:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -30,13 +33,19 @@ class ProductDetail extends Component {
     this.setState({ replys });
   };
 
+  handleModal = e => {
+    this.setState({
+      isReviewInputPopup: !this.state.isReviewInputPopup,
+    });
+  };
+
   render() {
     const { goods_detail } = this.state;
 
     return (
       <div className="ProductDetail">
         <div className="nav_position" />
-        <main>
+        <main onClick={e => e.stopPropagation()}>
           <div className="product_detail_left">
             {this.state.goods_detail.map(item => (
               <Product
@@ -73,6 +82,11 @@ class ProductDetail extends Component {
               product_id={item.product_id}
             />
           ))}
+        </div>
+        <div>
+          {this.state.isReviewInputPopup && (
+            <ReviewInput handleModal={this.handleModal} />
+          )}
         </div>
       </div>
     );

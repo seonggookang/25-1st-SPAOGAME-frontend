@@ -20,7 +20,7 @@ class Reply extends Component {
     this.props.onDelete(this.props.reply);
 
     fetch(
-      `http://10.58.0.205:8000/postings/comments/${this.state.comment_id}`,
+      `http://192.168.0.133:8000/postings/comments/${this.state.comment_id}`,
       {
         method: 'delete',
         body: JSON.stringify({}),
