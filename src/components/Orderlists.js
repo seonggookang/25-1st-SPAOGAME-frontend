@@ -1,5 +1,5 @@
 import React from 'react';
-import '../basket/Orderlists.scss';
+import Orderproduct from '../pages/basket/Orderproduct';
 
 class Orderlists extends React.Component {
   render() {
@@ -49,7 +49,9 @@ class Orderlists extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>{/*오더 프로덕트가 들어갈곳*/}</tr>
+            <tr>
+              <Orderproduct />
+            </tr>
           </tbody>
         </table>
       </section>
