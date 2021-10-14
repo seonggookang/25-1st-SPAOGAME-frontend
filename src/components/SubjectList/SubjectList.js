@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 
 import GoodsList from './Goods/GoodList';
 import Filters from './Filter/Filters';
@@ -22,7 +21,7 @@ class SubjectList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.5.176:8000/products/women/outer?offset=0&limit=15')
+    fetch('http://10.58.0.205:8000/products/women/outer?offset=0&limit=15')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -34,7 +33,7 @@ class SubjectList extends Component {
   }
   componentDidUpdate() {
     fetch(
-      `http://10.58.5.176:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
+      `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
     )
       .then(res => res.json())
       .then(data => {

@@ -16,7 +16,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.5.176:8000/products/${this.props.match.params.id}`)
+    fetch(`http://10.58.0.205:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -30,15 +30,12 @@ class ProductDetail extends Component {
     this.setState({ replys });
   };
 
-  goToReviewInput = () => {
-    this.props.history.push('/review');
-  };
-
   render() {
-    console.log(this.props.match);
+    console.log(this.state.goods_detail);
     const { goods_detail } = this.state;
     return (
       <div className="ProductDetail">
+        <div className="nav_position" />
         <main>
           <div className="product_detail_left">
             {this.state.goods_detail.map(item => (
@@ -65,18 +62,14 @@ class ProductDetail extends Component {
             ))}
           </div>
         </main>
-        <div class="review_submit_wrapper">
-          <button className="review_submit" onClick={this.goToReviewInput}>
-            리뷰작성
-          </button>
-        </div>
-        <hr className="hr_bottom" />
+
         <div className="bottom_wrapper">
           {this.state.goods_detail.map(item => (
             <Reviews
               key={item.product_id}
               posting_info={item.posting_info}
               comment_info={item.comment_info}
+              product_id={item.product_id}
             />
           ))}
         </div>

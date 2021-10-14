@@ -1,0 +1,27 @@
+.review_submit_wrapper {
+  position: relative;
+  width: 1280px;
+}
+.review_submit {
+  float: right;
+  text-align: center;
+  width: 95px;
+  height: 40px;
+  border: 1px solid #000;
+  line-height: 20px;
+  color: #fff;
+  background-color: #000;
+  font-size: 15px;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.hr_bottom {
+  width: 1280px;
+  height: 0;
+  border: 0;
+  border-top: 1px solid lightgray;
+  margin: 15px;
+}

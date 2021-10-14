@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 import './Options.scss';
 
 class Options extends Component {
@@ -12,8 +14,11 @@ class Options extends Component {
       cartsize: '',
       count: 0,
       countprice: 0,
+      activeBtnByColor: '',
+      activeBtnBySize: '',
     };
   }
+
   handleplus = e => {
     const count = this.state.count + 1;
     this.setState({
@@ -30,29 +35,53 @@ class Options extends Component {
     });
   };
 
-  changeByTargetNameColor = e => {
+  changeByTargetNameColor = (e, idx) => {
     e.target.className = 'black';
     this.setState({
       targetnamecolor: e.target.name,
       cartcolor: '- ' + e.target.name.toUpperCase() + ' /',
-      gray: false,
+      activeBtnByColor: idx,
     });
   };
 
-  changeByTargetNameSize = e => {
-    e.target.className = 'black';
+  changeByTargetNameSize = (e, idx) => {
     this.setState({
       targetnamesize: e.target.name,
       cartsize: e.target.name,
-      gray: false,
+      activeBtnBySize: idx,
     });
   };
 
+  goToBaskets = () => {
+    this.props.history.push('/baskets');
+  };
+
+  goToReviewInput = () => {
+    fetch('http://10.58.7.58:8000/users/review/', {
+      method: 'POST',
+      body: JSON.stringify({
+        product_id: this.props.product_id,
+        colorname: this.state.cartcolor,
+        sizename: this.state.cartsize,
+        count: this.state.count,
+        price: this.state.countprice,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'INVALID_USER') {
+          alert('비밀번호가 올바르지 않습니다!');
+        } else {
+          this.props.history.push('/baskets');
+        }
+      });
+  };
+
   render() {
+    console.log(this.props);
     const { name, colors, size, price } = this.props;
     const { targetnamecolor, targetnamesize, cartcolor, cartsize, countprice } =
       this.state;
-    const btn_color = this.state.gray ? 'gray_btn' : 'black_btn';
 
     return (
       <div className="Options">
@@ -64,24 +93,36 @@ class Options extends Component {
           <hr />
         </div>
         <div className="choice_title">Color</div>
-        {colors.map(item => (
-          <button name={item} onClick={this.changeByTargetNameColor}>
+        {colors.map((item, idx) => (
+          <button
+            name={item}
+            onClick={e => this.changeByTargetNameColor(e, idx)}
+            className={
+              this.state.activeBtnByColor == idx ? 'black_btn' : 'gray_btn'
+            }
+          >
             {item.toUpperCase()}
           </button>
         ))}
         <div>
-          <span className="gray_btn">[필수] </span>
-          <span className={btn_color}>{targetnamecolor}</span>
+          <span className="null_btn">[필수] </span>
+          <span className="null_btn">{targetnamecolor}</span>
         </div>
         <div className="choice_title">Size</div>
-        {size.map(item => (
-          <button name={item} onClick={this.changeByTargetNameSize}>
+        {size.map((item, idx) => (
+          <button
+            name={item}
+            className={
+              this.state.activeBtnBySize == idx ? 'black_btn' : 'gray_btn'
+            }
+            onClick={e => this.changeByTargetNameSize(e, idx)}
+          >
             {item.toUpperCase()}
           </button>
         ))}
         <div>
-          <span className="gray_btn">[필수] </span>
-          <span className={btn_color}>{targetnamesize}</span>
+          <span className="null_btn">[필수] </span>
+          <span className="null_btn">{targetnamesize}</span>
         </div>
         <br /> <br />
         <hr />
@@ -112,7 +153,7 @@ class Options extends Component {
           <form className="heart">
             <i className="far fa-heart"></i>
           </form>
-          <form className="cart">
+          <form className="cart" onClick={this.goToBaskets}>
             <i className="fas fa-cart-plus"></i>
           </form>
           <form className="buy">구매하기</form>
@@ -123,4 +164,4 @@ class Options extends Component {
   }
 }
 
-export default Options;
+export default withRouter(Options);

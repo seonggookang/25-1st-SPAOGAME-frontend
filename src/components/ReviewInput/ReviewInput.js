@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 import './ReviewInput.scss';
 
 class ReviewInput extends Component {
   constructor() {
     super();
     this.state = {
-      review_image: [],
       review_content: '',
     };
   }
 
   handleInput = e => {
-    const { value, name } = e.target;
+    const { name, value } = e.target;
     this.setState({
       [name]: value,
     });
   };
 
   reviewInput = () => {
-    fetch('http://10.58.6.202:8000/users/review/', {
+    fetch('http://10.58.0.205:8000/postings', {
       method: 'POST',
       body: JSON.stringify({
         review_image: this.state.review_image,
         review_content: this.state.review_content,
+        product_id: this.props.location.state.product_id,
+        title: '1',
       }),
     })
       .then(response => response.json())
@@ -31,11 +34,15 @@ class ReviewInput extends Component {
           alert('비밀번호가 올바르지 않습니다!');
         } else {
           alert('로그인 성공!');
-          this.props.histoy.push('/subject');
+          this.props.history.push(
+            `/products/${this.props.location.state.product_id}`
+          );
         }
       });
   };
+
   render() {
+    console.log(this.props);
     return (
       <div className="ReviewInput">
         <div className="review_input_wrapper">
@@ -54,6 +61,13 @@ class ReviewInput extends Component {
             name="review_image"
             multiple="multiple"
             type="file"
+            formEncType="multipart/form-data"
+            style={{ display: 'none' }}
+            onChange={this.handleImgInput}
+          />
+          <input
+            name="review_title"
+            type="text"
             style={{ display: 'none' }}
             onChange={this.handleInput}
           />
@@ -72,9 +86,13 @@ class ReviewInput extends Component {
           </div>
           <div>
             <form type="submit">
-              <button type="submit" className="submit_btn">
+              <form
+                type="submit"
+                className="submit_btn"
+                onClick={this.reviewInput}
+              >
                 완료
-              </button>
+              </form>
             </form>
           </div>
         </div>
@@ -83,4 +101,4 @@ class ReviewInput extends Component {
   }
 }
 
-export default ReviewInput;
+export default withRouter(ReviewInput);

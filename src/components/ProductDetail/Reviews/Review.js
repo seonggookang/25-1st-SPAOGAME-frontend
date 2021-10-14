@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 import Replys from '../Reply/Replys';
 import './Review.scss';
 
@@ -47,7 +49,6 @@ class Review extends Component {
   };
 
   render() {
-    console.log(this.state.replys);
     const {
       posting_image,
       posting_content,
@@ -100,4 +101,4 @@ class Review extends Component {
   }
 }
 
-export default Review;
+export default withRouter(Review);

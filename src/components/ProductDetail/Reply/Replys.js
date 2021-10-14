@@ -4,6 +4,10 @@ import ReplyInput from './ReplyInput';
 import './Replys.scss';
 
 class Replys extends Component {
+  constructor() {
+    super();
+  }
+
   handleDelete = reply => {
     this.props.onDelete(reply);
   };
@@ -11,10 +15,15 @@ class Replys extends Component {
   handleAdd = replyInput => {
     this.props.onAdd(replyInput);
   };
+
   render() {
     return (
       <>
-        <div className="replys_wrapper">
+        <div
+          className="replys_wrapper"
+          ref={this.messagesEndRef}
+          onChange={this.scrollBottom}
+        >
           {this.props.replys.map(reply => (
             <Reply
               key={reply.comment_id}
@@ -22,12 +31,14 @@ class Replys extends Component {
               comment_content={reply.comment_content}
               comment_writer={reply.comment_writer}
               onDelete={this.handleDelete}
+              conmment_id={reply.comment_id}
             />
           ))}
         </div>
         <ReplyInput
           onAdd={this.handleAdd}
           hadleAddByEnter={this.props.hadleAddByEnter}
+          posting_id={this.props.posting_id}
         />
       </>
     );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Description.scss';
 class Description extends Component {
   render() {
-    const { colors } = this.props;
+    const { colors, size } = this.props;
 
     return (
       <div className="Description">
@@ -14,7 +14,7 @@ class Description extends Component {
         ))}
         <br />
         <span className="description_title">사이즈: </span>
-        {this.props.size.map(size => (
+        {size.map(size => (
           <span key={size} className="description_content">
             {size}
           </span>

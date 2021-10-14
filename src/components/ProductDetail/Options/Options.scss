@@ -52,6 +52,20 @@
   }
 
   .gray_btn {
+    margin-top: 10px;
+    width: 60px;
+    min-width: 28px;
+    text-align: center;
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 6px 5px;
+    margin-right: 5px;
+  }
+
+  .null_btn {
     color: #909090;
     word-break: break-all;
     font-size: 13px;
@@ -60,14 +74,7 @@
   }
 
   .black_btn {
-    color: black;
-    word-break: break-all;
-    font-size: 13px;
-    padding: 6px 0px;
-    margin-bottom: 30px;
-  }
-
-  .black {
+    margin-top: 10px;
     width: 60px;
     min-width: 28px;
     text-align: center;
@@ -79,6 +86,7 @@
     padding: 6px 5px;
     margin-right: 5px;
   }
+
   hr {
     border: 0px;
     border-top: 1px solid black;
