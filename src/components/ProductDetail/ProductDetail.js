@@ -31,8 +31,8 @@ class ProductDetail extends Component {
   };
 
   render() {
-    console.log(this.state.goods_detail);
     const { goods_detail } = this.state;
+
     return (
       <div className="ProductDetail">
         <div className="nav_position" />

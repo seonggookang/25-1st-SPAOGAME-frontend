@@ -78,7 +78,6 @@ class Options extends Component {
   };
 
   render() {
-    console.log(this.props);
     const { name, colors, size, price } = this.props;
     const { targetnamecolor, targetnamesize, cartcolor, cartsize, countprice } =
       this.state;

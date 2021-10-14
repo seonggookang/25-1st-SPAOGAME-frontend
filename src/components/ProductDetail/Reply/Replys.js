@@ -8,14 +8,6 @@ class Replys extends Component {
     super();
   }
 
-  handleDelete = reply => {
-    this.props.onDelete(reply);
-  };
-
-  handleAdd = replyInput => {
-    this.props.onAdd(replyInput);
-  };
-
   render() {
     return (
       <>
@@ -30,13 +22,13 @@ class Replys extends Component {
               reply={reply}
               comment_content={reply.comment_content}
               comment_writer={reply.comment_writer}
-              onDelete={this.handleDelete}
+              onDelete={this.props.onDelete}
               conmment_id={reply.comment_id}
             />
           ))}
         </div>
         <ReplyInput
-          onAdd={this.handleAdd}
+          onAdd={this.props.onAdd}
           hadleAddByEnter={this.props.hadleAddByEnter}
           posting_id={this.props.posting_id}
         />

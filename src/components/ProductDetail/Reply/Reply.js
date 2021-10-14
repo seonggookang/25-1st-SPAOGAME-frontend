@@ -38,7 +38,6 @@ class Reply extends Component {
   };
 
   render() {
-    console.log(this.props.reply);
     const { comment_content, comment_writer } = this.props;
     return (
       <div className="replys">
