@@ -10,6 +10,7 @@ import UpDownBtn from './components/Main/UpDownBtn';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Basket from './pages/basket/Basket';
+
 class Routes extends React.Component {
   render() {
     return (
