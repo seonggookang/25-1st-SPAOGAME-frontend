@@ -17,7 +17,7 @@ class Routes extends React.Component {
         <Nav />
         <UpDownBtn />
         <Router>
-          <div className="header_fixed" style={{ marginTop: '75px' }}>
+          <div className="header_fixed">
             <Switch>
               <Route path="/Main" component={Main} />
               <Route exact path="/users/signin" component={Login} />

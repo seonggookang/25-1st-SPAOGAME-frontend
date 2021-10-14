@@ -428,15 +428,15 @@ const nav_map = {
     ],
     third_menu: [
       {
-        img_src: 'images/woman_1.jpg',
+        img_src: '/images/woman_1.jpg',
         route: 'www.naver.com',
       },
       {
-        img_src: 'images/woman_2.jpg',
+        img_src: '/images/woman_2.jpg',
         route: 'www.naver.com',
       },
       {
-        img_src: 'images/woman_3.jpg',
+        img_src: '//images/woman_3.jpg',
         route: 'www.naver.com',
       },
     ],
@@ -500,15 +500,15 @@ const nav_map = {
     ],
     third_menu: [
       {
-        img_src: 'images/man_1.jpg',
+        img_src: '/images/man_1.jpg',
         route: 'www.naver.com',
       },
       {
-        img_src: 'images/man_2.jpg',
+        img_src: '/images/man_2.jpg',
         route: 'www.naver.com',
       },
       {
-        img_src: 'images/man_3.jpg',
+        img_src: '/images/man_3.jpg',
         route: 'www.naver.com',
       },
     ],
