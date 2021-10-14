@@ -4,8 +4,6 @@ import Carousel from '../Nav/Carousel';
 import IMAGE_DATA from '../Nav/IMAGE_DATA';
 
 class Main extends React.Component {
-  // nav bar hover시 main의 opacity 0.5? 아니면 조금 어둡게?
-  // 그냥 여기서의 밝기 state를 따로 만들어줘야하나?
   constructor() {
     super();
     this.state = {
@@ -49,22 +47,14 @@ class Main extends React.Component {
     return (
       <div className="Main">
         <div className="images">
-          <img
-            alt="mainPicture"
-            src={`/images/main_${this.state.count}.png`}
-            // height="500em"
-            // height="400px"
-            // width="100%"
-            // width="1380px"
-          />
+          <img alt="mainPicture" src={`/images/main_${this.state.count}.png`} />
         </div>
-        {/* 왼쪽 버튼 클릭시 이미지 transition 효과 */}
+
         <div className="arrow_container">
           <div className="left_button" onClick={this.handleLeft}>
             <i className="fa fa-chevron-left" />
           </div>
 
-          {/* 오른쪽 버튼 클릭시 이미지 transition 효과 */}
           <div className="right_button" onClick={this.handleRight}>
             <i className="fa fa-chevron-right" />
           </div>
@@ -72,12 +62,6 @@ class Main extends React.Component {
 
         <div className="main">AUTUMN OUTER</div>
         <Carousel images={IMAGE_DATA} />
-        {/* <img
-          alt="mainPicture"
-          src={`/images/man_${this.state.count}.jpg`}
-          // height="600em"
-          width="380px"
-        /> */}
 
         <div className="up_button" onClick={this.handleUp}>
           <i className="fa fa-arrow-circle-up" />

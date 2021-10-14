@@ -22,12 +22,10 @@ class Carousel extends React.Component {
   };
 
   render() {
-    // images.map(({ id }) => console.log(id));
-    // images.map(({ id }) => console.log({ id }));
-    // images.map(id => console.log({ id }));
-    // images.map(id => console.log({ id }));
     const { currIndex } = this.state;
     const { images } = this.props;
+    let newArr = images.slice(0, images.length - 2);
+    console.log(newArr);
     return (
       <>
         <div className="MainCarouselWapper">
@@ -40,24 +38,12 @@ class Carousel extends React.Component {
           >
             {images.map(({ id, url }) => {
               return (
-                <div
-                  className="slideBox"
-                  key={id}
-                  style={{
-                    width: '100%',
-                    padding: '15px 25px',
-                  }}
-                >
+                <div className="slideBox" key={id}>
                   <div
                     className="img"
                     style={{
-                      // width: '100em',
-                      // height: '30em',
                       background: `url(${url}) no-repeat center`,
                       backgroundSize: 'contain',
-                      // backgroundSize: '300px',
-                      // backgroundSize: 'cover',
-                      // backgroundSize: '350px 420px',
                     }}
                   />
                 </div>
@@ -65,8 +51,9 @@ class Carousel extends React.Component {
             })}
           </div>
 
+          {/*  왜 6개지 ??? */}
           <ul className="dots">
-            {images.map(({ id }) => {
+            {newArr.map(({ id }) => {
               console.log(id); // 012345 number
               console.log({ id }); // object
               // (id === 4 ? return : continue)

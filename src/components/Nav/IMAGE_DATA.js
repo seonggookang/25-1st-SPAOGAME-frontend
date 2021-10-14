@@ -26,3 +26,4 @@ const IMAGE_DATA = [
 ];
 
 export default IMAGE_DATA;
+// let newArr = images.slice(0, 5);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ImageToggle extends React.Component {
+export default class ImageToggle extends React.Component {
   render() {
     return (
       <div>
@@ -13,5 +13,3 @@ class ImageToggle extends React.Component {
     );
   }
 }
-
-export default ImageToggle;

@@ -13,10 +13,9 @@
   position: fixed;
   width: 100%;
   color: white;
-  background-color: transparent;
   left: 0;
-  z-index: 3;
-  // background-color: white;
+  z-index: 223;
+  background-color: transparent;
   color: white;
   //if(scroll이 맨위가 아니면){ 색변경 감행 }
   // .hi {
@@ -28,6 +27,135 @@
     background-color: white;
     color: black;
   }
+
+  .nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .nav_letters {
+      display: flex;
+      gap: 3em;
+      cursor: pointer;
+      align-items: center;
+      padding: 0px 50px;
+
+      .nav_menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3em;
+        font-size: 10px;
+
+        .nav_menu_Festival {
+          color: #586d94;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .nav_menu_Outer {
+          color: #946c58;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .nav_menu_white {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          font-size: 16px;
+          cursor: pointer;
+
+          div {
+            padding: 30px 10px;
+
+            &:hover {
+              color: grey;
+            }
+          }
+        }
+      }
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      padding-right: 30px;
+      font-size: 20px;
+
+      div {
+        padding: 10px;
+
+        &:hover {
+          color: gray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .Drop_down {
+    border-top: 1px solid grey;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 350px;
+
+    .Drop_down_left > div {
+      padding: 0px 5em 1em 15em;
+      color: black;
+      font-size: 0.8em;
+    }
+
+    .Drop_down_center {
+      border-left: 1px solid grey;
+      z-index: 12;
+      .red_text {
+        padding: 0.2em 5em 1.1em 3em;
+        color: grey;
+        font-size: 0.6em;
+        &:hover {
+          color: red;
+          font-weight: bold;
+
+          font-size: 0.65em;
+          // transition: transform 0.3s;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .Drop_down_right {
+      position: absolute;
+      padding: 0.2em 15em 5px 40em;
+      div {
+        display: flex;
+        padding-right: 2em;
+        width: 100%;
+        img {
+          width: 10em;
+          &:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    // &:hover {
+    //   transition: display 0.3s;
+    // }
+  }
+}
+.Nav2 {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 223;
+  background-color: white;
+  color: black;
+  transition: background-color 0.4s;
 
   .nav_wrapper {
     display: flex;

@@ -226,6 +226,7 @@ class Nav extends React.Component {
       isMouseTextOver: false,
       hoveredText: '',
       isSearch: false,
+      scroll: false,
     };
   }
 
@@ -270,14 +271,9 @@ class Nav extends React.Component {
   };
 
   componentDidMount() {
-    console.log(window.scrollY); // 0 맨처음 0이니까 0이 아니면 네브바 켜지게.
     window.onscroll = () => {
       if (window.scrollY !== 0) {
-        console.log(window.scrollY);
-        console.log('컴디마:스크롤감지!!!');
-        // this.state.hoveredText ='women',
         this.setState({
-          // hoveredText: 'e',
           isMouseOver: true,
         });
       }
@@ -286,15 +282,14 @@ class Nav extends React.Component {
   componentDidUpdate() {
     window.onscroll = () => {
       if (window.scrollY !== 0) {
-        console.log('컴디업:스크롤감지!!');
-        console.log(this.state.hoveredText);
-        console.log(this.state.isMouseOver);
         this.setState({
           isMouseOver: true,
+          scroll: true,
         });
       } else {
         this.setState({
           isMouseOver: false,
+          scroll: false,
         });
       }
     };
@@ -346,8 +341,8 @@ class Nav extends React.Component {
           <div className="background"></div>
         )}
         <div
-          className="Nav"
-          // className={this.state.isMouseOver === true ? 'hi' : 'Nav'}
+          // className="Nav" 됐다!!!!근데 전체를 감싸야 하는데..
+          className={this.state.scroll === true ? 'Nav2' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
         >

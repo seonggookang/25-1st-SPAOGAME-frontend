@@ -3,7 +3,7 @@
   // height: 360px;
   height: 1100px;
   z-index: 1112222;
-  padding: 0 300px;
+  padding: 30px 220px;
   // margin: 0 auto;
   // background-color: grey;
   // position: absolute;
@@ -18,6 +18,9 @@
     // border: 1px solid black;
     padding: 1em 1em 1em 0.5em;
     font-weight: bold;
+    .greeting_content {
+      padding-bottom: 23px;
+    }
   }
   .find {
     display: flex;
@@ -47,22 +50,16 @@
     border-top: 1px solid grey;
 
     .popular {
-      padding: 10px;
+      // padding: 10px;
       width: 230px;
       font-size: 15px;
       .word {
-        padding: 15px;
+        padding: 15px 0;
       }
 
       .ten_keywords span {
-        // display: block;
-        flex-direction: row;
-        flex-wrap: wrap;
         padding: 5px;
         width: 500px;
-        // padding: 10px;
-
-        flex-wrap: wrap;
       }
     }
 

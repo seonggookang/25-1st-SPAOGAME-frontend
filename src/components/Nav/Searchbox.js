@@ -7,9 +7,9 @@ class Searchbox extends React.Component {
     return (
       <div className="Searchbox">
         <div className="greeting">
-          고객님
+          <span className="greeting_content">고객님</span>
           <br />
-          무엇을찾으시나요?
+          <span className="greeting_content">무엇을찾으시나요?</span>
         </div>
 
         <div className="find">
