@@ -18,6 +18,7 @@ class SubjectList extends Component {
       nonfilterd: [],
       offset: 0,
       standard: 0,
+      order_id: 0,
     };
   }
 
@@ -36,9 +37,12 @@ class SubjectList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.offset !== this.state.offset) {
+    if (
+      prevState.offset !== this.state.offset ||
+      prevState.order_id !== this.state.order_id
+    ) {
       fetch(
-        `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}`
+        `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}&order_id=${this.state.order_id}`
       )
         .then(res => res.json())
         .then(data => {
@@ -51,36 +55,16 @@ class SubjectList extends Component {
     }
   }
 
-  sortByPrice = e => {
-    const priceCompare = e.target.getAttribute('name');
-
-    const sortByPrice = [...this.state.goods].sort(function (a, b) {
-      return a[priceCompare] - b[priceCompare];
-    });
-
-    this.setState({ goods: sortByPrice });
+  sortByPrice = () => {
+    this.setState({ order_id: 1 });
   };
 
   sortByPriceDesc = () => {
-    const priceCompare = 'price';
-    const sortByPrice = [...this.state.goods].sort(function (a, b) {
-      return b[priceCompare] - a[priceCompare];
-    });
-
-    this.setState({ goods: sortByPrice });
+    this.setState({ order_id: 2 });
   };
 
   sortByName = () => {
-    const nameCompare = 'name';
-    const sortByName = [...this.state.goods].sort(function (a, b) {
-      return a[nameCompare] < b[nameCompare]
-        ? -1
-        : a[nameCompare] > b[nameCompare]
-        ? 1
-        : 0;
-    });
-
-    this.setState({ goods: sortByName });
+    this.setState({ order_id: 3 });
   };
 
   colorSort = e => {
@@ -105,6 +89,7 @@ class SubjectList extends Component {
   };
 
   render() {
+    console.log(this.state);
     const { goods, filterdFunction } = this.state;
     return (
       <div className="subject_list">
@@ -182,7 +167,7 @@ const FILTER = [
   { color: 'pink', material: '레더' },
   { color: 'purple', material: '치노' },
   { color: 'brown', material: '코듀로이' },
-  { color: 'beige', material: '페이크퍼' },
+  { color: '#A99477', material: '페이크퍼' },
 ];
 
 const CATEGORY = [

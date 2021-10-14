@@ -60,7 +60,6 @@ class Review extends Component {
       <>
         <div className="review_wrapper">
           <div className="review_left">
-            <div className="review_content">{posting_content}</div>
             {posting_image.map(item => (
               <img
                 className="review_photo"
@@ -69,6 +68,7 @@ class Review extends Component {
                 id={posting_id}
               />
             ))}
+            <div className="review_content">{posting_content}</div>
 
             <Replys
               replys={this.state.replys}

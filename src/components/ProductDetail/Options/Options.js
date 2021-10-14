@@ -14,8 +14,8 @@ class Options extends Component {
       cartsize: '',
       count: 0,
       countprice: 0,
-      activeBtnByColor: '',
-      activeBtnBySize: '',
+      activeBtnByColor: 'gray_btn',
+      activeBtnBySize: 'gray_btn',
     };
   }
 
@@ -52,34 +52,41 @@ class Options extends Component {
     });
   };
 
-  goToBaskets = () => {
-    this.props.history.push('/baskets');
-  };
-
   goToCart = () => {
-    fetch('http://10.58.7.58:8000/orders/cart/', {
+    fetch('http://10.58.0.205:8000/orders/cart', {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.props.product_id,
-        color_name: this.state.cartcolor,
-        size_name: this.state.cartsize,
+        color_name: this.state.targetnamecolor,
+        size_name: this.state.targetnamesize,
         quantity: this.state.count,
       }),
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message === 'INVALID_USER') {
-          alert('비밀번호가 올바르지 않습니다!');
+        if (result.message === 'ALREADY_EXIST') {
+          alert('이미 장바구니에 같은 상품이 존재합니다. ');
         } else {
           this.props.history.push('/baskets');
         }
       });
   };
 
+  notIsValidOption = (count, cartcolor, cartsize) => {
+    return count > 0 && cartcolor !== '' && cartsize !== '' ? false : true;
+  };
   render() {
     const { name, colors, size, price } = this.props;
-    const { targetnamecolor, targetnamesize, cartcolor, cartsize, countprice } =
-      this.state;
+    const {
+      targetnamecolor,
+      count,
+      size_name,
+      color_name,
+      targetnamesize,
+      cartcolor,
+      cartsize,
+      countprice,
+    } = this.state;
 
     return (
       <div className="Options">
@@ -148,15 +155,17 @@ class Options extends Component {
           <div className="sum_price">{countprice}원</div>
         </div>
         <div className="button_wrapper_icon">
-          <form className="heart">
+          <button className="heart">
             <i className="far fa-heart"></i>
-          </form>
-          <form className="cart" onClick={this.goToBaskets}>
+          </button>
+          <button
+            className="cart"
+            onClick={this.goToCart}
+            disabled={this.notIsValidOption(count, cartcolor, cartsize)}
+          >
             <i className="fas fa-cart-plus"></i>
-          </form>
-          <form className="buy" onSubmit={this.goToCart}>
-            구매하기
-          </form>
+          </button>
+          <button className="buy">구매하기</button>
         </div>
         <hr className="hrr" />
       </div>
