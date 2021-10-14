@@ -34,10 +34,9 @@ class ReviewInput extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message === 'INVALID_USER') {
-          alert('비밀번호가 올바르지 않습니다!');
+        if (result.message === 'USER_NOTEXIST') {
+          alert('리뷰가 정상적으로 등록되지 않았습니다.');
         } else {
-          alert('로그인 성공!');
           this.props.history.push(
             `/products/${this.props.location.state.product_id}`
           );
