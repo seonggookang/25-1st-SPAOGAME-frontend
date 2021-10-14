@@ -13,30 +13,21 @@ class Signup extends React.Component {
       address1: '',
       address2: '',
       gender: '',
-      mobile_number: '',
-      birthday: '',
-      email: '',
+      year: '',
+      month: '',
+      day: '',
+      first_number: '',
+      second_number: '',
+      last_number: '',
+      user_email: '',
+      emailaddress: '',
     };
   }
 
   handleInput = e => {
     const { name, value } = e.target;
-    const {
-      year,
-      month,
-      day,
-      first_number,
-      second_number,
-      last_number,
-      user_email,
-      emailaddress,
-    } = this.state;
-
     this.setState({
       [name]: value,
-      birthday: year + '-' + month + '-' + day,
-      mobile_number: first_number + second_number + last_number,
-      email: user_email + '@' + emailaddress,
     });
   };
 
@@ -45,13 +36,24 @@ class Signup extends React.Component {
       username,
       password,
       name,
-      email,
-      mobile_number,
+      user_email,
+      emailaddress,
+      first_number,
+      second_number,
+      last_number,
+      year,
+      month,
+      day,
       address1,
       address2,
-      birthday,
       gender,
     } = this.state;
+
+    const sumBirthday = year + '-' + month + '-' + day;
+
+    const sumMobileNumber = first_number + second_number + last_number;
+
+    const sumEmail = user_email + '@' + emailaddress;
 
     this.props.history.push('/users/signin');
     fetch(`${BASE_URL}/users/signup`, {
@@ -60,11 +62,11 @@ class Signup extends React.Component {
         username: username,
         password: password,
         name: name,
-        email: email,
-        mobile_number: mobile_number,
+        email: sumEmail,
+        mobile_number: sumMobileNumber,
         address1: address1,
         address2: address2,
-        birthday: birthday,
+        birthday: sumBirthday,
         gender: gender,
       }),
     })
@@ -84,11 +86,22 @@ class Signup extends React.Component {
       password,
       checkpassword,
       name,
-      email,
-      mobile_number,
-      birthday,
       gender,
+      year,
+      month,
+      day,
+      first_number,
+      second_number,
+      last_number,
+      user_email,
+      emailaddress,
     } = this.state;
+
+    const sumBirthday = year + '-' + month + '-' + day;
+
+    const sumMobileNumber = first_number + second_number + last_number;
+
+    const sumEmail = user_email + '@' + emailaddress;
 
     const isValidSignup =
       username.includes('@') &&
@@ -96,19 +109,21 @@ class Signup extends React.Component {
       password.length >= 8 &&
       password === checkpassword &&
       name.length >= 2 &&
-      email &&
-      mobile_number.length >= 11 &&
-      birthday &&
+      sumEmail &&
+      sumMobileNumber.length >= 11 &&
+      sumBirthday &&
       gender;
 
-    const year = Array.from({ length: 101 }).map((el, idx) => 2021 - idx);
-    year.unshift('선택');
+    const useryear = Array.from({ length: 101 }).map((el, idx) => 2021 - idx);
+    useryear.unshift('선택');
 
-    const month = Array.from({ length: 12 }).map((el, idx) => idx + 1);
-    month.unshift('선택');
+    const usermonth = Array.from({ length: 12 }).map((el, idx) => idx + 1);
+    usermonth.unshift('선택');
 
-    const day = Array.from({ length: 31 }).map((el, idx) => idx + 1);
-    day.unshift('선택');
+    const userday = Array.from({ length: 31 }).map((el, idx) => idx + 1);
+    userday.unshift('선택');
+
+    console.log(this.state);
 
     return (
       <main className="signup_wrapper">
@@ -230,7 +245,7 @@ class Signup extends React.Component {
                         name="year"
                         onChange={this.handleInput}
                       >
-                        {year.map(el => (
+                        {useryear.map(el => (
                           <option value={el}>{el}</option>
                         ))}
                       </select>
@@ -244,7 +259,7 @@ class Signup extends React.Component {
                         value={this.state.value}
                         onChange={this.handleInput}
                       >
-                        {month.map(el => (
+                        {usermonth.map(el => (
                           <option value={el}>{el}</option>
                         ))}
                       </select>
@@ -258,7 +273,7 @@ class Signup extends React.Component {
                         name="day"
                         onChange={this.handleInput}
                       >
-                        {day.map(el => (
+                        {userday.map(el => (
                           <option value={el}>{el}</option>
                         ))}
                       </select>
