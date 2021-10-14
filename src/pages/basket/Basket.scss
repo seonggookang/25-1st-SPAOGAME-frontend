@@ -84,6 +84,7 @@
 
       .basket_delivery {
         display: flex;
+        margin: 1em 0;
 
         ul {
           display: flex;
@@ -148,12 +149,12 @@
       }
 
       .basket_amount {
-        height: 4em;
+        height: 6em;
         display: flex;
         justify-content: center;
         align-content: center;
         background-color: #909090;
-        margin-top: 3em;
+        margin: 3em 0;
 
         .total_amount {
           display: flex;
@@ -174,6 +175,7 @@
 
           p {
             font-size: 20px;
+            font-weight: bold;
           }
         }
       }

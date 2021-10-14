@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Orderproduct extends React.Component {
+  /*basket.js 에 있는 컴디마랑 컨스트륵터 가져와야함*/
   render() {
     return (
       <table>

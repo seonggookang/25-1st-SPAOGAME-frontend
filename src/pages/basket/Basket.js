@@ -1,9 +1,20 @@
 import React from 'react';
 import '../basket/Basket.scss';
-import Orderlists from './Orderlists';
+// import Orderlists from './Orderlists';
+// import Empty from '';
 
 class Basket extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isEmptyCart: [],
+    };
+  }
+
+  /*컴디마 페치(api) .then(제이슨) .then(인자 => 셋스테이트 (빈배열 : 벨류값(인자.백엔드객체이름)))*/
+
   render() {
+    /*구조분해할당* const{isEmptyCart} = this.state*/
     return (
       <main className="basket_container">
         <section className="basket_contents">
@@ -24,11 +35,8 @@ class Basket extends React.Component {
                 장바구니에 담긴 상품은 30일동안 보관됩니다.
               </p>
             </div>
-            <table className="vacant_basket">
-              <thead>
-                <td>장바구니가 비어있습니다.</td>
-              </thead>
-            </table>
+            {/* {idEmptyCart.length > 0 ? <Orderlists /> : <Empty />}
+            빈것이 들어갈지 들어간놈이 들어갈지 정할게 들어간다 */}
             <div className="delivery_wrapper">
               <div className="delivery_title">배송방법</div>
               <div className="basket_delivery">
