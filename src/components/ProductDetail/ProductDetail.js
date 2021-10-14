@@ -58,6 +58,7 @@ class ProductDetail extends Component {
                 name={item.name}
                 colors={item.colors}
                 size={item.size}
+                product_id={item.product_id}
               />
             ))}
           </div>
