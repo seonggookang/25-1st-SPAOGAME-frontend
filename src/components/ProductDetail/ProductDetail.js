@@ -15,6 +15,7 @@ class ProductDetail extends Component {
       category: [],
       filterdFunction: [],
       isReviewInputPopup: false,
+      content_writer: '',
     };
   }
 
@@ -40,6 +41,7 @@ class ProductDetail extends Component {
   };
 
   render() {
+    console.log(this.state);
     const { goods_detail } = this.state;
 
     return (

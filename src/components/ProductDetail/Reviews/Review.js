@@ -11,6 +11,7 @@ class Review extends Component {
       replys: [],
       replyInput: '',
       posting_id: '',
+      writer: '',
     };
   }
 
@@ -36,7 +37,7 @@ class Review extends Component {
       {
         comment_id: Date.now(),
         comment_content: replyInput,
-        comment_writer: '김현진[Review에서 바꿔주기]',
+        comment_writer: '',
       },
     ];
     this.setState({ replys });
@@ -49,6 +50,7 @@ class Review extends Component {
   };
 
   render() {
+    console.log(this.props);
     const {
       posting_image,
       posting_content,

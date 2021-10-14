@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './Reply.scss';
 
@@ -21,9 +21,10 @@ class Reply extends Component {
 
     fetch(
       `http://192.168.0.133:8000/postings/comments/${this.state.comment_id}`,
+
       {
+        headers: { Authorization: localStorage.getItem('token') },
         method: 'delete',
-        body: JSON.stringify({}),
       }
     )
       .then(response => response.json())
@@ -31,13 +32,14 @@ class Reply extends Component {
         if (result.message === 'INVALID_USER') {
           alert('비밀번호가 올바르지 않습니다!');
         } else {
-          alert('로그인 성공!');
+          alert('댓글 작성이 완료되었습니다.');
           this.props.history.push(`${this.props.location.pathname}`);
         }
       });
   };
 
   render() {
+    console.log(this.Authorization);
     const { comment_content, comment_writer } = this.props;
     return (
       <div className="replys">

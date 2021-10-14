@@ -14,6 +14,7 @@ class Reply extends PureComponent {
 
   reviewInput = () => {
     fetch('http://192.168.0.133:8000/postings/comments', {
+      headers: { Authorization: localStorage.getItem('token') },
       method: 'POST',
       body: JSON.stringify({
         comment_content: this.inputRef.current.value,

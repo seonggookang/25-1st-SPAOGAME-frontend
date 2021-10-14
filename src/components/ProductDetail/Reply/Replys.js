@@ -31,6 +31,7 @@ class Replys extends Component {
           onAdd={this.props.onAdd}
           hadleAddByEnter={this.props.hadleAddByEnter}
           posting_id={this.props.posting_id}
+          comment_info={this.props.comment_info}
         />
       </>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BASE_URL } from '../config';
 import '../pages/Login.scss';
 
 class Login extends React.Component {
@@ -16,8 +17,8 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    this.props.history.push('/users/Main');
-    fetch('http://192.168.0.133:8000/users/signin', {
+    this.props.history.push('/users/main');
+    fetch(`${BASE_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -29,7 +30,7 @@ class Login extends React.Component {
         if (res.token) {
           localStorage.setItem('token', res.token);
           alert('로그인 되었습니다.');
-          this.props.history.push('/users/Main');
+          this.props.history.push('/Main');
         } else {
           alert('아이디와 비밀번호를 확인하세요');
         }

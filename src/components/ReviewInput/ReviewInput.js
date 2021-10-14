@@ -24,6 +24,8 @@ class ReviewInput extends Component {
 
   reviewInput = () => {
     fetch('http://192.168.0.133:8000/postings', {
+      headers: { Authorization: localStorage.getItem('token') },
+
       method: 'POST',
       body: JSON.stringify({
         review_image: this.state.review_image,
@@ -81,6 +83,7 @@ class ReviewInput extends Component {
               <span className="review_span">필수입력 항목 입니다.</span>
             </div>
             <input
+              name="review_content"
               className="review_content"
               placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다.
         (최소 10자 이상)"

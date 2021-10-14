@@ -1,24 +1,21 @@
 import React from 'react';
-import ImageToggle from '../Nav/ImageToggle';
 import './Main.scss';
+import Carousel from '../Nav/Carousel';
+import IMAGE_DATA from '../Nav/IMAGE_DATA';
 
 class Main extends React.Component {
-  // nav bar hover시 main의 opacity 0.5? 아니면 조금 어둡게?
-  // 그냥 여기서의 밝기 state를 따로 만들어줘야하나?
   constructor() {
     super();
     this.state = {
-      isClicked: false,
       count: 1,
     };
   }
 
   handleLeft = () => {
     let newCount = this.state.count + 1;
-    this.setState(prev => ({
-      isClicked: !prev.isClicked,
+    this.setState({
       count: newCount,
-    }));
+    });
     if (this.state.count === 4) {
       this.setState({
         count: 1,
@@ -26,12 +23,11 @@ class Main extends React.Component {
     }
   };
 
-  handleright = () => {
+  handleRight = () => {
     let newCount = this.state.count - 1;
-    this.setState(prev => ({
-      isClicked: !prev.isClicked,
+    this.setState({
       count: newCount,
-    }));
+    });
     if (this.state.count === 1) {
       this.setState({
         count: 4,
@@ -39,48 +35,33 @@ class Main extends React.Component {
     }
   };
 
-  // interval;
+  handleUp = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => {
-  //     console.log('abcd');
-  //     this.setState({
-  //       // 이미지 변경함수??
-  //     });
-  //   }, 1000);
-  // }
-  // componentDidUpdate() {}
-  // componentWillUnmount() {
-  //   // clearInterval(this.interval);
-  // }
-  //비동기 함수 바깥에 있는 변수를 참조하면 클로저 문제 발생
+  handleDown = () => {
+    window.scrollTo({ top: 12222, behavior: 'smooth' });
+  };
+
   render() {
     return (
       <div className="Main">
         <div className="images">
-          <img
-            alt="mainPicture"
-            src={`images/main_${this.state.count}.png`}
-            height="500em"
-            width="1380px"
-          />
+          <img alt="mainPicture" src={`/images/main_${this.state.count}.png`} />
         </div>
 
-        <div className="left_button" onClick={this.handleLeft}>
-          <i className="fa fa-chevron-left" />
+        <div className="arrow_container">
+          <div className="left_button" onClick={this.handleLeft}>
+            <i className="fa fa-chevron-left" />
+          </div>
+
+          <div className="right_button" onClick={this.handleRight}>
+            <i className="fa fa-chevron-right" />
+          </div>
         </div>
 
-        <div className="right_button" onClick={this.handleright}>
-          <i className="fa fa-chevron-right" />
-        </div>
-
-        <div className="main">Main</div>
-        <img
-          alt="mainPicture"
-          src={`images/man_${this.state.count}.png`}
-          height="600em"
-          width="1380px"
-        />
+        <div className="main">AUTUMN OUTER</div>
+        <Carousel images={IMAGE_DATA} />
       </div>
     );
   }

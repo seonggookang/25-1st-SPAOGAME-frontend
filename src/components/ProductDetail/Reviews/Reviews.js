@@ -13,8 +13,6 @@ class Reviews extends Component {
   };
 
   render() {
-    console.log(this.props.history);
-
     return (
       <div>
         <div class="review_submit_wrapper">
