@@ -10,38 +10,42 @@ class Signup extends React.Component {
       password: '',
       checkpassword: '',
       name: '',
-      email: '',
-      mobile_number: '',
       address1: '',
       address2: '',
-      birthday: '',
       gender: '',
     };
   }
 
   handleInput = e => {
     const { name, value } = e.target;
-    const {
-      year,
-      month,
-      day,
-      first_number,
-      second_number,
-      last_number,
-      email_id,
-      emailaddress,
-    } = this.state;
     this.setState({
       [name]: value,
-      birthday: year + '-' + month + '-' + day,
-      mobile_number: first_number + second_number + last_number,
-      email: email_id + '@' + emailaddress,
     });
+
+    this.setState({ birthday: value }, () => this.sumBirthDay());
+
+    this.setState({ mobile_number: value }, () => this.sumMoblieNumber());
+
+    this.setState({ email: value }, () => this.sumEmail());
   };
 
   sumBirthDay = () => {
     const { year, month, day } = this.state;
-    this.setState({ birthday: year + month + day });
+    this.setState({ birthday: year + '-' + month + '-' + day });
+  };
+
+  sumMoblieNumber = () => {
+    const { first_number, second_number, last_number } = this.state;
+    this.setState({
+      mobile_number: first_number + second_number + last_number,
+    });
+  };
+
+  sumEmail = () => {
+    const { email_id, emailaddress } = this.state;
+    this.setState({
+      email: email_id + '@' + emailaddress,
+    });
   };
 
   goToSignin = () => {
@@ -80,6 +84,7 @@ class Signup extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     const special = /[~!@#$%^&*()_+|<>?:{}]/;
     const {
       username,
@@ -98,10 +103,10 @@ class Signup extends React.Component {
       password.length >= 8 &&
       password === checkpassword &&
       name.length >= 2 &&
-      email.length > 0 &&
-      mobile_number.length > 11 &&
-      birthday.length >= 8 &&
-      gender.length > 0;
+      email &&
+      mobile_number.length >= 11 &&
+      birthday &&
+      gender;
 
     return (
       <main className="signup_wrapper">
@@ -220,7 +225,7 @@ class Signup extends React.Component {
                       <select
                         value={this.state.value}
                         className="signup_birth"
-                        name="year"
+                        name="birthday"
                         onChange={this.handleInput}
                       >
                         <option value>선택</option>
@@ -332,7 +337,7 @@ class Signup extends React.Component {
                       <label className="user_month">{/*month*/}</label>
                       <select
                         className="signup_birth"
-                        name="month"
+                        name="birthday"
                         value={this.state.value}
                         onChange={this.handleInput}
                       >
@@ -357,7 +362,7 @@ class Signup extends React.Component {
                       <select
                         value={this.state.value}
                         className="signup_birth"
-                        name="day"
+                        name="birthday"
                         onChange={this.handleInput}
                       >
                         <option value>선택</option>
