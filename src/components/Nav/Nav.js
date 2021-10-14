@@ -226,7 +226,7 @@ class Nav extends React.Component {
       isMouseTextOver: false,
       hoveredText: '',
       isSearch: false,
-      isContent: false,
+      scroll: false,
     };
   }
 
@@ -256,66 +256,57 @@ class Nav extends React.Component {
     }));
   };
 
+  isMouseTextOverDie = () => {
+    this.setState({
+      isMouseTextOver: false,
+    });
+  };
+
   goToMain = () => {
     window.location.href = 'http://localhost:3000/main';
   };
 
   goToMyProfile = () => {
-    window.location.href = 'http://localhost:3000/users/login';
+    window.location.href = 'http://localhost:3000/users/signin';
   };
 
-  // componentDidMount() {
-  //   fetch('https://jsonplaceholder.typicode.com/users', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => this.setState({ monsters: data }));
-  // }
+  goToWomenOuter = () => {
+    window.location.href = 'http://localhost:3000/productdetail';
+  };
 
-  //기용님 주소: 'http://10.58.2.199'
-  // body JSON.stringify 는 왜하는거지?
-
-  // componentDidMount() {
-  //   fetch('/data/goods.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data.goods[0]);
-  //       this.setState({
-  //         goods_detail: data.goods_detail,
-  //         // nav_map: data.good,
-  //         // console.log(data),
-  //       });
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   fetch('http://10.58.2.199:8000/women/outer?offset=0&limit=15', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data.goods[0]);
-  //       this.setState({
-  //         giyoung: data.goods_detail,
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    window.onscroll = () => {
+      if (window.scrollY !== 0) {
+        this.setState({
+          isMouseOver: true,
+        });
+      }
+    };
+  }
+  componentDidUpdate() {
+    window.onscroll = () => {
+      if (window.scrollY !== 0) {
+        this.setState({
+          isMouseOver: true,
+          scroll: true,
+        });
+      } else {
+        this.setState({
+          isMouseOver: false,
+          scroll: false,
+        });
+      }
+    };
+  }
 
   render() {
-    {
-      console.log(nav_map);
-      console.log(typeof nav_map);
-      console.log(nav_map['women']);
-      console.log(nav_map.women);
-    }
-
     return (
       <div>
-        {this.state.isMouseOver && <div className="background"></div>}
+        {this.state.isMouseOver && this.state.hoveredText !== '' && (
+          <div className="background"></div>
+        )}
         <div
-          className="Nav"
+          className={this.state.scroll === true ? 'Nav2' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
         >
@@ -326,7 +317,6 @@ class Nav extends React.Component {
                 isMouseOver={this.state.isMouseOver}
                 onClick={this.goToMain}
               />
-
               <div className="nav_menu">
                 <div className="nav_menu_Festival">FLECE FESTIVAL</div>
                 <div
@@ -400,7 +390,10 @@ class Nav extends React.Component {
             </div>
 
             <div className="profile">
-              <div onClick={this.goToMyProfile}>
+              <div
+                onClick={this.goToMyProfile}
+                onMouseEnter={this.isMouseTextOverDie}
+              >
                 <i className="fas fa-user" />
               </div>
               <div>
@@ -420,44 +413,42 @@ class Nav extends React.Component {
               <Searchbox />
             </div>
           )}
+          {/* 각 메뉴에 hover 됐을때 글자를 가져올수 있게. */}
           {this.state.hoveredText !== '' && this.state.isMouseTextOver && (
             <div className="Drop_down">
               <div className="Drop_down_left">
-                {nav_map
-                  .get(this.state.hoveredText)
-                  .first_menu.map((el, idx) => {
-                    return <div key={idx}>{el.title}</div>;
-                  })}
+                {nav_map[this.state.hoveredText].first_menu.map((el, idx) => {
+                  return <div key={idx}>{el.title}</div>;
+                })}
               </div>
 
               <div className="Drop_down_center">
                 <div>
-                  {nav_map
-                    .get(this.state.hoveredText)
-                    .second_menu.map((el, idx) => {
+                  {nav_map[this.state.hoveredText].second_menu.map(
+                    (el, idx) => {
                       return (
                         <div
                           className="red_text"
-                          key={idx} /* onClick={this.gotoSomethings} */
+                          key={idx}
+                          onClick={this.goToWomenOuter}
                         >
                           {el.title}
                         </div>
                       );
-                    })}
+                    }
+                  )}
                 </div>
               </div>
 
               <div className="Drop_down_right">
                 <div>
-                  {nav_map
-                    .get(this.state.hoveredText)
-                    .third_menu.map((el, idx) => {
-                      return (
-                        <div key={idx}>
-                          {<img alt="category_image" src={el.img_src} />}
-                        </div>
-                      );
-                    })}
+                  {nav_map[this.state.hoveredText].third_menu.map((el, idx) => {
+                    return (
+                      <div key={idx}>
+                        {<img alt="category_image" src={el.img_src} />}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

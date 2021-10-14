@@ -1,19 +1,19 @@
 .Searchbox {
   font-size: 20px;
-  height: 350px;
-  padding: 0 350px 50px 400px;
-  background-color: grey;
-  position: absolute;
+  height: 1100px;
+  z-index: 1112222;
+  padding: 30px 220px;
   top: 3.8em;
-  width: 1379px;
-  left: 0px;
-  transition: 1900ms;
+  transition: 500ms;
+  width: 100%;
 
-  // transform: translate(-50%, -50%);
   .greeting {
-    // border: 1px solid black;
     padding: 1em 1em 1em 0.5em;
     font-weight: bold;
+
+    .greeting_content {
+      padding-bottom: 23px;
+    }
   }
   .find {
     display: flex;
@@ -35,39 +35,33 @@
       cursor: pointer;
     }
   }
+
   .recommend {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     font-weight: bold;
     border-top: 1px solid grey;
 
     .popular {
-      padding: 10px;
-      width: 200px;
+      width: 230px;
       font-size: 15px;
       .word {
-        padding: 15px;
+        padding: 15px 0;
       }
 
       .ten_keywords span {
-        // display: block;
-        flex-direction: row;
-        flex-wrap: wrap;
         padding: 5px;
         width: 500px;
-        // padding: 10px;
-
-        flex-wrap: wrap;
       }
     }
 
     .images {
-      position: absolute;
-      right: 17em;
       padding: 10px;
 
       .recommend_pictures {
         display: flex;
+
         .recommend_each {
           padding: 10px;
         }
