@@ -9,7 +9,7 @@ import SubjectList from './components/SubjectList/SubjectList';
 import UpDownBtn from './components/Main/UpDownBtn';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Basket from './pages/basket/Basket';
+// import Basket from './pages/basket/Basket';
 
 class Routes extends React.Component {
   render() {
@@ -18,7 +18,7 @@ class Routes extends React.Component {
         <Nav />
         <UpDownBtn />
         <Router>
-          <div className="header_fixed">
+          <div className="header_fixed" style={{ marginTop: '75px' }}>
             <Switch>
               <Route path="/Main" component={Main} />
               <Route exact path="/products" component={SubjectList} />
@@ -26,7 +26,7 @@ class Routes extends React.Component {
               <Route exact path="/review" component={ReviewInput} />
               <Route exact path="/users/signin" component={Login} />
               <Route exact path="/users/signup" component={Signup} />
-              <Route exact path="/baskets" component={Basket} />
+              {/* <Route exact path="/baskets" component={Basket} /> */}
               <Route exact path="/productdetail" component={ProductDetail} />
               <Route exact path="/subjectlist" component={SubjectList} />
             </Switch>
