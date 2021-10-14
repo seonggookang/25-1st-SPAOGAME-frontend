@@ -1,11 +1,12 @@
 import React from 'react';
+import { BASE_URL } from '../config';
 import '../pages/Login.scss';
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      email: '',
       password: '',
     };
   }
@@ -16,19 +17,41 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    this.props.history.push('/users/Main');
-    fetch('http://127.0.0.1:8000/users/signin', {
+    this.props.history.push('/Main');
+    fetch(`${BASE_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
-        username: this.state.username,
-        passowrd: this.state.password,
+        email: this.state.email,
+        password: this.state.password,
       }),
     })
-      .then(response => response.json())
-      .then(result => console.log(''));
+      .then(res => res.json())
+      .then(res => {
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          alert('로그인 되었습니다.');
+          this.props.history.push('/Main');
+        } else {
+          alert('아이디와 비밀번호를 확인하세요');
+        }
+      });
+  };
+
+  goToSignup = () => {
+    this.props.history.push('/users/signup');
+  };
+
+  pressEnter = e => {
+    if (e.key === 'Enter') {
+      this.goToMain();
+    }
   };
 
   render() {
+    const { email, password } = this.state;
+    const special = /[~!@#$%^&*()_+|<>?:{}]/;
+    const isValidButton =
+      email.includes('@') && password.length >= 8 && special.test(password);
     return (
       <main className="login_pages">
         <section className="login_form">
@@ -44,7 +67,7 @@ class Login extends React.Component {
                     <input
                       className="user_id"
                       placeholder="아이디"
-                      name="username"
+                      name="email"
                       onChange={this.handleInput}
                     />
                     <input
@@ -53,11 +76,13 @@ class Login extends React.Component {
                       placeholder="비밀번호"
                       name="password"
                       onChange={this.handleInput}
+                      onKeyPress={this.pressEnter}
                     />
                   </div>
                   <button
-                    className="login_button"
+                    className={isValidButton ? 'activeButton' : 'disabled'}
                     type="button"
+                    disabled={!isValidButton}
                     onClick={this.goToMain}
                   >
                     로그인
@@ -81,7 +106,12 @@ class Login extends React.Component {
                 <div className="join_the_membership">
                   <li>
                     SPAO 멤버십 회원이 아니신가요?
-                    <button className="join_membership">회원가입</button>
+                    <button
+                      className="join_membership"
+                      onClick={this.goToSignup}
+                    >
+                      회원가입
+                    </button>
                   </li>
                 </div>
               </ul>

@@ -1,0 +1,65 @@
+.review_wrapper {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+
+  .review_left {
+    width: 650px;
+    margin: 10px;
+
+    .review_photo {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      margin-left: 5px;
+      margin-bottom: 10px;
+    }
+
+    .review_content {
+      max-height: 57px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      line-height: 19px;
+      word-wrap: break-word;
+      font-size: 12px;
+      font-family: '돋움', Helvetica, 'Apple SD Gothic Neo', Sans-serif;
+    }
+  }
+
+  .review_right {
+    width: 400px;
+
+    .posting_title {
+      color: #767676;
+      margin-bottom: 30px;
+      font-size: 12px;
+      font-family: '나눔고딕', 'NanumGothic', '맑은 고딕';
+      margin: 5px;
+      padding: 0px;
+    }
+    .posting_content {
+      color: #333333;
+      font-weight: bold;
+      font-family: '돋움', Helvetica, 'Apple SD Gothic Neo', Sans-serif;
+      font-size: 12px;
+      margin: 5px;
+      padding: 0px;
+    }
+  }
+  hr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid lightgray;
+  }
+}
+
+.insteadOfHr {
+  margin-left: 10px;
+  border: 0px;
+  width: 1280px;
+  height: 10px;
+  border-top: 1px solid lightgray;
+  padding: 0px;
+}

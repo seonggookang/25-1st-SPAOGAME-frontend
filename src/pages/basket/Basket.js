@@ -1,6 +1,7 @@
 import React from 'react';
-import Orderlists from './components/Orderlists';
-import Empty from './components/Empty';
+import Orderlists from '../../components/Orderbasket/Orderlists';
+import Empty from '../../components/Orderbasket/Empty';
+import { BASE_URL } from 'react';
 import '../basket/Basket.scss';
 
 class Basket extends React.Component {
@@ -11,13 +12,27 @@ class Basket extends React.Component {
     };
   }
 
-  componentDidMount(){
-    fetch(`${}`)
-  };
-  /*컴디마 페치(api) .then(제이슨) .then(인자 => 셋스테이트 (빈배열 : 벨류값(인자.백엔드객체이름)))*/
+  componentDidMount() {
+    fetch(`${BASE_URL}/orders/cart`, {
+      headers: { Authorization: localStorage.getItem('token') },
+    })
+      .then(res => res.json())
+      .then(result => {
+        this.setState({ isEmptyCart: result.res });
+      });
+  }
+
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/data/basket.json').then(res =>
+  //     res.json().then(data => {
+  //       this.setState({ isEmptyCart: data.basket });
+  //     })
+  //   );
+  // }
 
   render() {
-    /*구조분해할당* const{isEmptyCart} = this.state*/
+    console.log(this.state.isEmptyCart);
+    const { isEmptyCart } = this.state;
     return (
       <main className="basket_container">
         <section className="basket_contents">
@@ -26,7 +41,7 @@ class Basket extends React.Component {
               <li>
                 <button className="basket_home_button">Home</button>
               </li>
-              <li className="basket_location"> > 장바구니</li>
+              <li className="basket_location">장바구니</li>
             </ol>
           </div>
           <div className="basket_title">
@@ -38,8 +53,7 @@ class Basket extends React.Component {
                 장바구니에 담긴 상품은 30일동안 보관됩니다.
               </p>
             </div>
-            {/* {idEmptyCart.length > 0 ? <Orderlists /> : <Empty />}
-            빈것이 들어갈지 들어간놈이 들어갈지 정할게 들어간다 */}
+            {isEmptyCart.length > 0 ? <Orderlists /> : <Empty />}
             <div className="delivery_wrapper">
               <div className="delivery_title">배송방법</div>
               <div className="basket_delivery">

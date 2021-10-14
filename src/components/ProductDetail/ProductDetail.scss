@@ -1,0 +1,35 @@
+.ProductDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+
+  // .nav_position {
+  //   height: 80px;
+  // }
+  main {
+    width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .product_detail_left {
+      width: 850px;
+    }
+    .product_detail_right {
+      width: 350px;
+      margin: 20px;
+    }
+  }
+
+  .start_wrapper {
+    width: 600px;
+    hr {
+      height: 0;
+      border: 0;
+      border-top: 1px solid lightgray;
+      margin: 20px;
+    }
+  }
+}

@@ -1,8 +1,26 @@
 import React from 'react';
-import Orderproduct from '../pages/basket/Orderproduct';
+import Orderproduct from './Orderproduct';
+// import { BASE_URL } from 'react';
+import '../../components/Orderbasket/Orderlists.scss';
 
 class Orderlists extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      cartList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/basket.json').then(res =>
+      res.json().then(data => {
+        this.setState({ cartList: data.basket });
+      })
+    );
+  }
+
   render() {
+    const { cartList } = this.state;
     return (
       <section className="order_lists">
         <form className="order_title">
@@ -10,16 +28,6 @@ class Orderlists extends React.Component {
         </form>
         <table className="order_table">
           <caption>일반배송</caption>
-          <colgroup>
-            <col style={{ width: '80px' }}></col>
-            <col style={{ width: '100px' }}></col>
-            <col style={{ width: 'auto' }}></col>
-            <col style={{ width: '120px' }}></col>
-            <col style={{ width: '120px' }}></col>
-            <col style={{ width: '120px' }}></col>
-            <col style={{ width: '120px' }}></col>
-            <col style={{ width: '120px' }}></col>
-          </colgroup>
           <thead>
             <tr>
               <th scope="col">
@@ -34,26 +42,22 @@ class Orderlists extends React.Component {
               <th scope="col" className="th_quantity">
                 수량
               </th>
-              <th scope="col" className="th_shipping">
-                배송구분
-              </th>
-              <th scope="col" className="th_shipping_fee">
-                배송비
-              </th>
               <th scope="col" calssName="th_amount">
-                합계
+                가격
               </th>
               <th scope="col" className="th_select">
                 선택
               </th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <Orderproduct />
-            </tr>
-          </tbody>
         </table>
+        <tbody>
+          {cartList.map(item => (
+            <tr key={item.id}>
+              <Orderproduct cartItem={item} />
+            </tr>
+          ))}
+        </tbody>
       </section>
     );
   }

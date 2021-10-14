@@ -1,0 +1,60 @@
+.Filters {
+  .main_left {
+    margin-right: 10px;
+
+    .title {
+      width: 160px;
+      padding: 0;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      color: #1a1a1a;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  .revert_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .revert {
+    border: 0;
+    background-color: white;
+    color: #707070;
+    font-size: 10px;
+  }
+  .filter_title {
+    position: relative;
+    margin: 18px 0;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .material_title {
+    position: relative;
+    margin: 18px 0;
+    padding-top: 18px;
+    border-top: 1px solid lightgray;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .material {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 160px;
+  }
+
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 160px;
+  }
+}
