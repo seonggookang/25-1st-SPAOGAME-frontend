@@ -5,6 +5,7 @@ import './Goods.scss';
 class GoodList extends Component {
   render() {
     const { goods } = this.props;
+
     return (
       <>
         {goods.map(item => {

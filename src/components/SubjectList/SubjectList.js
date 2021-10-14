@@ -6,6 +6,8 @@ import CategoryFilter from './Filter/CategoryFilter';
 import PageBtn from '../PageBtn/PageBtn';
 import './SubjectList.scss';
 
+const LIMIT = 15;
+
 class SubjectList extends Component {
   constructor() {
     super();
@@ -15,25 +17,13 @@ class SubjectList extends Component {
       filterdFunction: [],
       nonfilterd: [],
       offset: 0,
-      limit: 15,
       standard: 0,
     };
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.205:8000/products/women/outer?offset=0&limit=15')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          goods: data.goods,
-          filterdFunction: data.goods,
-          nonfilterd: data.goods,
-        });
-      });
-  }
-  componentDidUpdate() {
     fetch(
-      `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${this.state.limit}`
+      `http://10.58.0.205:8000/products/women/outer?offset=0&limit=${LIMIT}`
     )
       .then(res => res.json())
       .then(data => {
@@ -43,6 +33,22 @@ class SubjectList extends Component {
           nonfilterd: data.goods,
         });
       });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.offset !== this.state.offset) {
+      fetch(
+        `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}`
+      )
+        .then(res => res.json())
+        .then(data => {
+          this.setState({
+            goods: data.goods,
+            filterdFunction: data.goods,
+            nonfilterd: data.goods,
+          });
+        });
+    }
   }
 
   sortByPrice = e => {
@@ -88,10 +94,6 @@ class SubjectList extends Component {
   colorRevert = e => {
     this.setState({ goods: this.state.nonfilterd });
   };
-
-
-  render() {
-    const { goods, filterdFunction } = this.state;
 
   pageBtn = e => {
     window.scrollTo(0, 0);
