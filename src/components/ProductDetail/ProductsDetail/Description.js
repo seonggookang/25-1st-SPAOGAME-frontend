@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import './Description.scss';
 class Description extends Component {
   render() {
-    const { colors } = this.props;
+    const { colors, size } = this.props;
 
     return (
       <div className="Description">
         <span className="description_title">색상: </span>
         {colors.map(color => (
-          <span className="description_content">{color} </span>
+          <span key={color} className="description_content">
+            {color}
+          </span>
         ))}
         <br />
         <span className="description_title">사이즈: </span>
-        {this.props.size.map(size => (
-          <span className="description_content">{size} </span>
+        {size.map(size => (
+          <span key={size} className="description_content">
+            {size}
+          </span>
         ))}
         <br />
         <span className="description_title">제조국: </span>
