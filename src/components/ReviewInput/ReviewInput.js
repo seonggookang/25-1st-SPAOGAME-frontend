@@ -18,6 +18,10 @@ class ReviewInput extends Component {
     });
   };
 
+  resetEx = e => {
+    e.target.placeholder = '';
+  };
+
   reviewInput = () => {
     fetch('http://10.58.0.205:8000/postings', {
       method: 'POST',
@@ -30,10 +34,9 @@ class ReviewInput extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message === 'INVALID_USER') {
-          alert('비밀번호가 올바르지 않습니다!');
+        if (result.message === 'USER_NOTEXIST') {
+          alert('리뷰가 정상적으로 등록되지 않았습니다.');
         } else {
-          alert('로그인 성공!');
           this.props.history.push(
             `/products/${this.props.location.state.product_id}`
           );
@@ -77,22 +80,22 @@ class ReviewInput extends Component {
               <span className="review_span">필수입력 항목 입니다.</span>
             </div>
             <input
-              name="review_content"
               className="review_content"
               placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다.
         (최소 10자 이상)"
               onChange={this.handleInput}
+              onClick={this.resetEx}
             ></input>
           </div>
           <div>
             <form type="submit">
-              <form
+              <button
                 type="submit"
                 className="submit_btn"
                 onClick={this.reviewInput}
               >
                 완료
-              </form>
+              </button>
             </form>
           </div>
         </div>

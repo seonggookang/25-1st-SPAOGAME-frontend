@@ -4,7 +4,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
-
   .review_left {
     width: 650px;
     margin: 10px;
@@ -19,11 +18,13 @@
 
     .review_content {
       max-height: 57px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 13px;
       overflow: hidden;
       line-height: 19px;
       word-wrap: break-word;
-      font-size: 12px;
+      padding-left: 6px;
+
       font-family: '돋움', Helvetica, 'Apple SD Gothic Neo', Sans-serif;
     }
   }
