@@ -47,28 +47,22 @@ class Basket extends React.Component {
                 <tbody className="basket_flex">
                   <tr>
                     <td className="total_fee">
-                      <div>총 상품금액</div>
-                      <div>
+                      <p>총 상품금액</p>
+                      <p>
                         <strong>0</strong>
-                      </div>
-                      <div>
-                        <strong>+</strong>
-                      </div>
+                      </p>
                     </td>
+                    <p>
+                      <strong>+</strong>
+                    </p>
                     <td className="shipping_fee">
-                      <div>총 배송비</div>
-                      <div>
-                        <strong>0</strong>
-                      </div>
-                      <div>
-                        <strong>=</strong>
-                      </div>
+                      <p>총 배송비</p>
+                      <p className="calculate_fees">0</p>
                     </td>
+                    <p className="calculate_fees">=</p>
                     <td className="reservation_fee">
-                      <div>결재예정금액</div>
-                      <div>
-                        <strong>0</strong>
-                      </div>
+                      <p>결재예정금액</p>
+                      <p className="calculate_fees">0</p>
                     </td>
                   </tr>
                 </tbody>
