@@ -3,6 +3,7 @@ import Product from './ProductsDetail/Product';
 import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
 import './ProductDetail.scss';
+import './Reviews/Review.scss';
 
 class ProductDetail extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/goodsDetail.json')
+    fetch(`http://10.58.0.205:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -23,10 +24,18 @@ class ProductDetail extends Component {
         });
       });
   }
+
+  handleDelete = reply => {
+    const replys = this.state.replys.filter(item => item.id !== reply.id);
+    this.setState({ replys });
+  };
+
   render() {
     const { goods_detail } = this.state;
+
     return (
       <div className="ProductDetail">
+        <div className="nav_position" />
         <main>
           <div className="product_detail_left">
             {this.state.goods_detail.map(item => (
@@ -43,7 +52,7 @@ class ProductDetail extends Component {
           <div className="product_detail_right">
             {this.state.goods_detail.map(item => (
               <Options
-                key={item.id}
+                key={item.product_id}
                 goods_detail={goods_detail}
                 price={item.price}
                 name={item.name}
@@ -53,14 +62,16 @@ class ProductDetail extends Component {
             ))}
           </div>
         </main>
+
         <div className="bottom_wrapper">
-          <div className="stars_wrapper">
-            <hr className="hr_bottom" />
-          </div>
           {this.state.goods_detail.map(item => (
-            <Reviews posting_info={item.posting_info} />
+            <Reviews
+              key={item.product_id}
+              posting_info={item.posting_info}
+              comment_info={item.comment_info}
+              product_id={item.product_id}
+            />
           ))}
-          <hr className="hr_bottom" />
         </div>
       </div>
     );

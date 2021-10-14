@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+
 import GoodsList from './Goods/GoodList';
 import Filters from './Filter/Filters';
 import CategoryFilter from './Filter/CategoryFilter';
+import PageBtn from '../PageBtn/PageBtn';
 import './SubjectList.scss';
+
+const LIMIT = 15;
 
 class SubjectList extends Component {
   constructor() {
@@ -12,11 +16,15 @@ class SubjectList extends Component {
       category: [],
       filterdFunction: [],
       nonfilterd: [],
+      offset: 0,
+      standard: 0,
     };
   }
 
   componentDidMount() {
-    fetch('/data/goods.json')
+    fetch(
+      `http://10.58.0.205:8000/products/women/outer?offset=0&limit=${LIMIT}`
+    )
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -25,6 +33,22 @@ class SubjectList extends Component {
           nonfilterd: data.goods,
         });
       });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.offset !== this.state.offset) {
+      fetch(
+        `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}`
+      )
+        .then(res => res.json())
+        .then(data => {
+          this.setState({
+            goods: data.goods,
+            filterdFunction: data.goods,
+            nonfilterd: data.goods,
+          });
+        });
+    }
   }
 
   sortByPrice = e => {
@@ -71,9 +95,17 @@ class SubjectList extends Component {
     this.setState({ goods: this.state.nonfilterd });
   };
 
+  pageBtn = e => {
+    window.scrollTo(0, 0);
+
+    this.setState({
+      limit: 15 * e.target.name,
+      offset: 15 * (e.target.name - 1),
+    });
+  };
+
   render() {
     const { goods, filterdFunction } = this.state;
-
     return (
       <div className="subject_list">
         <nav />
@@ -128,7 +160,9 @@ class SubjectList extends Component {
             <ul className="subjects">
               <GoodsList goods={goods} />
             </ul>
+            <PageBtn pageBtn={this.pageBtn} />
           </div>
+
           <div className="main_right"></div>
         </main>
         <footer />
