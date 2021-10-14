@@ -1,12 +1,12 @@
 import React from 'react';
-import '../Cart/Basket.scss';
+import '../basket/Basket.scss';
+import Orderlists from './Orderlists';
 
 class Basket extends React.Component {
   render() {
     return (
       <main className="basket_container">
         <section className="basket_contents">
-          <h1>네브바 올자리</h1>
           <div className="basket_header">
             <ol>
               <li>
@@ -20,22 +20,15 @@ class Basket extends React.Component {
           </div>
           <div className="product_basket">
             <div className="product_basket_title">
-              <ul className="product_menu">
-                <li className="selected">
-                  <a href=" ! ">국내배송상품 (0)</a>
-                </li>
-                <li className="selected">
-                  <a href=" ! ">해외배송상품 (0)</a>
-                </li>
-              </ul>
               <p className="right_setence">
                 장바구니에 담긴 상품은 30일동안 보관됩니다.
               </p>
             </div>
-            <div className="vacant_basket">
-              <p>장바구니가 비어있습니다.</p>
-              <ul></ul>
-            </div>
+            <table className="vacant_basket">
+              <thead>
+                <td>장바구니가 비어있습니다.</td>
+              </thead>
+            </table>
             <div className="delivery_wrapper">
               <div className="delivery_title">배송방법</div>
               <div className="basket_delivery">
@@ -49,6 +42,38 @@ class Basket extends React.Component {
                 </ul>
               </div>
             </div>
+            <section className="basket_amount">
+              <div className="total_amount">
+                <tbody className="basket_flex">
+                  <tr>
+                    <td className="total_fee">
+                      <div>총 상품금액</div>
+                      <div>
+                        <strong>0</strong>
+                      </div>
+                      <div>
+                        <strong>+</strong>
+                      </div>
+                    </td>
+                    <td className="shipping_fee">
+                      <div>총 배송비</div>
+                      <div>
+                        <strong>0</strong>
+                      </div>
+                      <div>
+                        <strong>=</strong>
+                      </div>
+                    </td>
+                    <td className="reservation_fee">
+                      <div>결재예정금액</div>
+                      <div>
+                        <strong>0</strong>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </div>
+            </section>
             <div className="basket_order_button">
               <button className="order_select_item">선택상품주문</button>
               <button className="continue_shopping">쇼핑계속하기</button>

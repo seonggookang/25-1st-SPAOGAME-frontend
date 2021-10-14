@@ -50,30 +50,12 @@
       .product_basket_title {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #ddd;
+        justify-content: flex-end;
+        border-bottom: 2px solid #1a1a1a;
 
-        .product_menu {
-          display: flex;
-
-          .selected {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid#ddd;
-            background-color: #fff;
-            width: 15em;
-            height: 4em;
-            cursor: pointer;
-
-            a {
-              color: #909090;
-              text-decoration: none;
-            }
-          }
-        }
         p {
           color: #909090;
+          margin-bottom: 1em;
         }
       }
 
@@ -162,6 +144,18 @@
           border: 1px solid #ddd;
           color: #ddd;
           cursor: pointer;
+        }
+      }
+
+      .basket_amount {
+        background-color: #909090;
+        margin-top: 3em;
+
+        .total_amount {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          gap: 5em;
         }
       }
     }

@@ -5,7 +5,9 @@ import Main from './components/Main/Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Basket from './pages/Basket';
+import Basket from './pages/basket/Basket';
+import Orderlists from './pages/basket/Orderlists';
+import Orderproduct from './pages/basket/Orderproduct';
 
 class Routes extends React.Component {
   render() {
@@ -18,6 +20,12 @@ class Routes extends React.Component {
             <Route exact path="/users/signin" component={Login} />
             <Route exact path="/users/signup" component={Signup} />
             <Route exact path="/baskets" component={Basket} />
+            <Route exact path="/baskets/orderlists" component={Orderlists} />
+            <Route
+              exact
+              path="/baskets/Orderproduct"
+              component={Orderproduct}
+            />
           </Switch>
         </Router>
         <Footer />
