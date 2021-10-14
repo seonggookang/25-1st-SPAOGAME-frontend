@@ -1,4 +1,5 @@
 import React from 'react';
+import { BASE_URL } from '../config';
 import '../pages/Login.scss';
 
 class Login extends React.Component {
@@ -17,7 +18,7 @@ class Login extends React.Component {
 
   goToMain = () => {
     this.props.history.push('/users/Main');
-    fetch('http://10.58.2.134:8000/users/signin', {
+    fetch(`${BASE_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
