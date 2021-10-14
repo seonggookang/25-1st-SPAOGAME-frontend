@@ -269,6 +269,37 @@ class Nav extends React.Component {
     window.location.href = 'http://localhost:3000/users/signin';
   };
 
+  componentDidMount() {
+    console.log(window.scrollY); // 0 맨처음 0이니까 0이 아니면 네브바 켜지게.
+    window.onscroll = () => {
+      if (window.scrollY !== 0) {
+        console.log(window.scrollY);
+        console.log('컴디마:스크롤감지!!!');
+        // this.state.hoveredText ='women',
+        this.setState({
+          // hoveredText: 'e',
+          isMouseOver: true,
+        });
+      }
+    };
+  }
+  componentDidUpdate() {
+    window.onscroll = () => {
+      if (window.scrollY !== 0) {
+        console.log('컴디업:스크롤감지!!');
+        console.log(this.state.hoveredText);
+        console.log(this.state.isMouseOver);
+        this.setState({
+          isMouseOver: true,
+        });
+      } else {
+        this.setState({
+          isMouseOver: false,
+        });
+      }
+    };
+  }
+
   // componentDidMount() {
   //   fetch('https://jsonplaceholder.typicode.com/users', {
   //     method: 'GET',
@@ -311,9 +342,12 @@ class Nav extends React.Component {
   render() {
     return (
       <div>
-        {this.state.isMouseOver && <div className="background"></div>}
+        {this.state.isMouseOver && this.state.hoveredText !== '' && (
+          <div className="background"></div>
+        )}
         <div
           className="Nav"
+          // className={this.state.isMouseOver === true ? 'hi' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
         >

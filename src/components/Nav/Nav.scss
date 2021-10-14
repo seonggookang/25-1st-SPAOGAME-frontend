@@ -16,7 +16,13 @@
   background-color: transparent;
   left: 0;
   z-index: 3;
+  // background-color: white;
+  color: white;
   //if(scroll이 맨위가 아니면){ 색변경 감행 }
+  // .hi {
+  //   background-color: white;
+  //   color: black;
+  // }
   &:hover {
     transition: background-color 0.5s;
     background-color: white;

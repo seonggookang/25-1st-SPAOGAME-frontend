@@ -10,10 +10,12 @@ class Carousel extends React.Component {
   }
 
   onChangeImage = index => {
-    if (this.props.images.length <= index) {
+    // if (this.props.images.length <= index) {
+    if (index === this.props.images.length - 2) {
       index = 0;
     } else if (index < 0) {
-      index = this.props.images.length - 1;
+      // index = this.props.images.length - 1;
+      index = this.props.images.length - 3;
     }
 
     this.setState({ currIndex: index });
@@ -43,7 +45,7 @@ class Carousel extends React.Component {
                   key={id}
                   style={{
                     width: '100%',
-                    padding: '50px',
+                    padding: '15px 25px',
                   }}
                 >
                   <div
@@ -52,16 +54,22 @@ class Carousel extends React.Component {
                       // width: '100em',
                       // height: '30em',
                       background: `url(${url}) no-repeat center`,
-                      backgroundSize: 'cover',
+                      backgroundSize: 'contain',
+                      // backgroundSize: '300px',
+                      // backgroundSize: 'cover',
+                      // backgroundSize: '350px 420px',
                     }}
                   />
                 </div>
               );
             })}
           </div>
+
           <ul className="dots">
             {images.map(({ id }) => {
-              // console.log(id);
+              console.log(id); // 012345 number
+              console.log({ id }); // object
+              // (id === 4 ? return : continue)
               return (
                 <li key={id}>
                   <button
@@ -74,8 +82,8 @@ class Carousel extends React.Component {
               );
             })}
           </ul>
+
           <div className="slideBtn">
-            {/* prevBtn */}
             <button
               className="prevBtn"
               onClick={() => {
@@ -86,7 +94,6 @@ class Carousel extends React.Component {
                 <i className="fas fa-chevron-left" />
               </span>
             </button>
-            {/* nextBtn */}
             <button
               className="nextBtn"
               onClick={() => {
