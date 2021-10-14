@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ReviewInput from './components/ReviewInput/ReviewInput';
 import SubjectList from './components/SubjectList/SubjectList';
-// import UpDownBtn from './components/Main/UpDownBtn';
+import UpDownBtn from './components/Main/UpDownBtn';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Basket from './pages/basket/Basket';
@@ -15,7 +15,7 @@ class Routes extends React.Component {
     return (
       <>
         <Nav />
-        {/* <UpDownBtn /> */}
+        <UpDownBtn />
         <Router>
           <div className="header_fixed">
             <Switch>
