@@ -56,15 +56,14 @@ class Options extends Component {
     this.props.history.push('/baskets');
   };
 
-  goToReviewInput = () => {
-    fetch('http://10.58.7.58:8000/users/review/', {
+  goToCart = () => {
+    fetch('http://10.58.7.58:8000/orders/cart/', {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.props.product_id,
-        colorname: this.state.cartcolor,
-        sizename: this.state.cartsize,
-        count: this.state.count,
-        price: this.state.countprice,
+        color_name: this.state.cartcolor,
+        size_name: this.state.cartsize,
+        quantity: this.state.count,
       }),
     })
       .then(response => response.json())
@@ -155,7 +154,9 @@ class Options extends Component {
           <form className="cart" onClick={this.goToBaskets}>
             <i className="fas fa-cart-plus"></i>
           </form>
-          <form className="buy">구매하기</form>
+          <form className="buy" onSubmit={this.goToCart}>
+            구매하기
+          </form>
         </div>
         <hr className="hrr" />
       </div>
