@@ -21,7 +21,7 @@ class Routes extends React.Component {
           <div className="header_fixed" style={{ marginTop: '75px' }}>
             <Nav isMain={false} />
             <Route exact path="/products" component={SubjectList} />
-            <Route exact path="/products/:id" component={ProductDetail} />
+            <Route exact path="/products/1" component={ProductDetail} />
             <Route exact path="/review" component={ReviewInput} />
             <Route exact path="/users/signin" component={Login} />
             <Route exact path="/users/signup" component={Signup} />
