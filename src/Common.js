@@ -713,11 +713,3 @@ const nav_map = {
 };
 
 export default nav_map;
-
-// {
-//   console.log(nav_map);
-//   console.log(nav_map.women);
-//   console.log(nav_map.women.first_menu);
-//   console.log(nav_map.women.first_menu[0]);
-// {console.log(this.state.hoveredText)}
-// }

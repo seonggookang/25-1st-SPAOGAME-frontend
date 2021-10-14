@@ -72,6 +72,7 @@
 
     .prevBtn {
       position: absolute;
+      text-align: left;
       width: 80px;
       height: 80px;
       left: 0;
@@ -79,7 +80,6 @@
       overflow: hidden;
       border: none;
       border-radius: 50%;
-      text-align: left;
 
       &:hover {
         width: 100px;

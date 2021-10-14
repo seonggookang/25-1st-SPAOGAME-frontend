@@ -10,11 +10,9 @@ class Carousel extends React.Component {
   }
 
   onChangeImage = index => {
-    // if (this.props.images.length <= index) {
     if (index === this.props.images.length - 2) {
       index = 0;
     } else if (index < 0) {
-      // index = this.props.images.length - 1;
       index = this.props.images.length - 3;
     }
 
@@ -54,9 +52,9 @@ class Carousel extends React.Component {
           {/*  왜 6개지 ??? */}
           <ul className="dots">
             {newArr.map(({ id }) => {
-              console.log(id); // 012345 number
-              console.log({ id }); // object
-              // (id === 4 ? return : continue)
+              console.log(id);
+              console.log({ id });
+
               return (
                 <li key={id}>
                   <button

@@ -1,23 +1,16 @@
 .Searchbox {
   font-size: 20px;
-  // height: 360px;
   height: 1100px;
   z-index: 1112222;
   padding: 30px 220px;
-  // margin: 0 auto;
-  // background-color: grey;
-  // position: absolute;
   top: 3.8em;
-  // width: 1379px;
-  // left: 0px;
   transition: 500ms;
   width: 100%;
 
-  // transform: translate(-50%, -50%);
   .greeting {
-    // border: 1px solid black;
     padding: 1em 1em 1em 0.5em;
     font-weight: bold;
+
     .greeting_content {
       padding-bottom: 23px;
     }
@@ -42,6 +35,7 @@
       cursor: pointer;
     }
   }
+
   .recommend {
     width: 100%;
     display: flex;
@@ -50,7 +44,6 @@
     border-top: 1px solid grey;
 
     .popular {
-      // padding: 10px;
       width: 230px;
       font-size: 15px;
       .word {
@@ -64,14 +57,11 @@
     }
 
     .images {
-      // width: 45%;
-      // position: absolute;
-      // right: 17em;
-      // transition: all 0.5s ease-in-out;
       padding: 10px;
 
       .recommend_pictures {
         display: flex;
+
         .recommend_each {
           padding: 10px;
         }

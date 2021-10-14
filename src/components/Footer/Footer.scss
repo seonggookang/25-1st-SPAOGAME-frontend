@@ -1,9 +1,7 @@
 .Footer {
-  // padding: 0px 10px;
-  height: 350px;
-  // height: 60%;
-  background-color: lightgrey;
   position: relative;
+  height: 350px;
+  background-color: lightgrey;
   z-index: -1;
 
   .about_company {
@@ -13,12 +11,12 @@
     position: relative;
 
     .footer_section01 {
-      font-size: 15px;
-      width: 50%;
-      // padding: 50px 0;
       position: absolute;
+      width: 50%;
       top: 10px;
       left: 30px;
+      font-size: 15px;
+
       .phone {
         padding: 10px 0px;
         font-weight: bold;
@@ -35,30 +33,33 @@
       .company_info {
         padding-top: 50px;
       }
+
       .sns {
         display: flex;
-        font-size: 30px;
         padding-top: 20px;
+        font-size: 30px;
+
         div {
           padding: 10px;
+
           &:hover {
-            cursor: pointer;
-            color: grey;
             transform: scale(1.2);
+            color: grey;
+            cursor: pointer;
           }
         }
       }
     }
 
     .footer_section02 {
+      position: absolute;
       display: flex;
       align-items: baseline;
       padding: 5px 10px;
       text-align: right;
-      font-size: 15px;
-      position: absolute;
       top: 10px;
       right: 30px;
+      font-size: 15px;
 
       .section02_01 {
         padding: 5px 10px;

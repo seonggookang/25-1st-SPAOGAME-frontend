@@ -299,45 +299,6 @@ class Nav extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('https://jsonplaceholder.typicode.com/users', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => this.setState({ monsters: data }));
-  // }
-
-  //기용님 주소: 'http://10.58.2.199'
-  // body JSON.stringify 는 왜하는거지?
-
-  // componentDidMount() {
-  //   fetch('/data/goods.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data.goods[0]);
-  //       this.setState({
-  //         goods_detail: data.goods_detail,
-  //         // nav_map: data.good,
-  //         // console.log(data),
-  //       });
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   fetch('http://10.58.2.199:8000/women/outer?offset=0&limit=15', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data.goods[0]);
-  //       this.setState({
-  //         giyoung: data.goods_detail,
-  //       });
-  //     });
-  // }
-
   render() {
     return (
       <div>
@@ -345,7 +306,6 @@ class Nav extends React.Component {
           <div className="background"></div>
         )}
         <div
-          // className="Nav" 됐다!!!!근데 전체를 감싸야 하는데..
           className={this.state.scroll === true ? 'Nav2' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
@@ -353,7 +313,6 @@ class Nav extends React.Component {
           <div className="nav_wrapper">
             <div className="nav_letters">
               <ImageToggle
-                //if(scroll이 맨위가 아니면){ 색변경 감행 }
                 className="logo"
                 isMouseOver={this.state.isMouseOver}
                 onClick={this.goToMain}
