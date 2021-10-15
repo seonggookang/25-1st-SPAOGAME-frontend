@@ -4,6 +4,7 @@ import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
 import './ProductDetail.scss';
 import './Reviews/Review.scss';
+// import { BASE_URL } from 'react';
 
 class ProductDetail extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.205:8000/products/${this.props.match.params.id}`)
+    fetch(`http://192.168.0.133:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({

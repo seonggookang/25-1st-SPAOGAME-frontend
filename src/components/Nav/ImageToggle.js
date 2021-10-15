@@ -6,7 +6,8 @@ export default class ImageToggle extends React.Component {
       <div>
         <img
           alt="spao logo"
-          src={this.props.isMouseOver ? '/images/red.png' : '/images/red.png'}
+          // src={this.props.isMouseOver ? '/images/red.png' : '/images/white.png'}
+          src={'/images/red.png'}
           onClick={this.props.onClick}
         />
       </div>
