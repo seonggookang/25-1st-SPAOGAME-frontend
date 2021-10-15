@@ -436,7 +436,7 @@ const nav_map = {
         route: 'www.naver.com',
       },
       {
-        img_src: '//images/woman_3.jpg',
+        img_src: '/images/woman_3.jpg',
         route: 'www.naver.com',
       },
     ],

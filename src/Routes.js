@@ -18,9 +18,9 @@ class Routes extends React.Component {
         <Nav />
         <UpDownBtn />
         <Router>
-          <div className="header_fixed" style={{ marginTop: '75px' }}>
-            <Switch>
-              <Route path="/Main" component={Main} />
+          <Switch>
+            <Route path="/Main" component={Main} />
+            <div className="header_fixed" style={{ marginTop: '75px' }}>
               <Route exact path="/products" component={SubjectList} />
               <Route exact path="/products/:id" component={ProductDetail} />
               <Route exact path="/review" component={ReviewInput} />
@@ -29,8 +29,8 @@ class Routes extends React.Component {
               {/* <Route exact path="/baskets" component={Basket} /> */}
               <Route exact path="/productdetail" component={ProductDetail} />
               <Route exact path="/subjectlist" component={SubjectList} />
-            </Switch>
-          </div>
+            </div>
+          </Switch>
           <Footer />
         </Router>
       </>
