@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './Options.scss';
 
@@ -55,6 +55,7 @@ class Options extends Component {
   goToCart = () => {
     fetch('http://10.58.3.134:8000/orders/cart', {
       method: 'POST',
+      headers: { Authorization: localStorage.getItem('token') },
       body: JSON.stringify({
         product_id: this.props.product_id,
         color_name: this.state.targetnamecolor,
@@ -64,7 +65,7 @@ class Options extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message === 'ALREADY_EXIST') {
+        if (result.MESSAGE === 'ALREADY_EXIST') {
           alert('이미 장바구니에 같은 상품이 존재합니다. ');
         } else {
           this.props.history.push('/baskets');

@@ -17,7 +17,7 @@ class Routes extends React.Component {
       <Router>
         <UpDownBtn />
         <Switch>
-          <Route path="/Main" component={Main} />
+          <Route path="/" component={Main} />
           <div className="header_fixed" style={{ marginTop: '75px' }}>
             <Nav isMain={false} />
             <Route exact path="/products" component={SubjectList} />

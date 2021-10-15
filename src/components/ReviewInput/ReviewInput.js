@@ -10,6 +10,9 @@ class ReviewInput extends Component {
       review_content: '',
     };
   }
+  componentDidMount() {
+    window.scrollTo({ top: 0 });
+  }
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -23,7 +26,12 @@ class ReviewInput extends Component {
   };
 
   reviewInput = () => {
+    this.props.history.push(
+      `/products/${this.props.location.state.product_id}`
+    );
     fetch('http://10.58.3.134:8000/postings', {
+      headers: { Authorization: localStorage.getItem('token') },
+
       method: 'POST',
       body: JSON.stringify({
         review_image: this.state.review_image,
@@ -36,16 +44,11 @@ class ReviewInput extends Component {
       .then(result => {
         if (result.message === 'USER_NOTEXIST') {
           alert('리뷰가 정상적으로 등록되지 않았습니다.');
-        } else {
-          this.props.history.push(
-            `/products/${this.props.location.state.product_id}`
-          );
         }
       });
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="ReviewInput">
         <div className="review_input_wrapper">
@@ -73,6 +76,7 @@ class ReviewInput extends Component {
             type="text"
             style={{ display: 'none' }}
             onChange={this.handleInput}
+            onClick={this.props.handleModal}
           />
           <div className="review_mid">
             <div>
@@ -80,6 +84,7 @@ class ReviewInput extends Component {
               <span className="review_span">필수입력 항목 입니다.</span>
             </div>
             <input
+              name="review_content"
               className="review_content"
               placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다.
         (최소 10자 이상)"

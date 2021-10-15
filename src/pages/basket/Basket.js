@@ -31,7 +31,6 @@ class Basket extends React.Component {
   // }
 
   render() {
-    console.log(this.state.isEmptyCart);
     const { isEmptyCart } = this.state;
     return (
       <main className="basket_container">

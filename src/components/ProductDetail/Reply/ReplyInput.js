@@ -14,6 +14,7 @@ class Reply extends PureComponent {
 
   reviewInput = () => {
     fetch('http://10.58.3.134:8000/postings/comments', {
+      headers: { Authorization: localStorage.getItem('token') },
       method: 'POST',
       body: JSON.stringify({
         comment_content: this.inputRef.current.value,
@@ -31,7 +32,6 @@ class Reply extends PureComponent {
   };
 
   render() {
-    console.log(this.props);
     return (
       <form className="reply_submit" onSubmit={this.onSubmit}>
         <span className="reply_wrapper">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Product from './ProductsDetail/Product';
 import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
+
 import './ProductDetail.scss';
 import './Reviews/Review.scss';
 // import { BASE_URL } from 'react';
@@ -13,6 +14,8 @@ class ProductDetail extends Component {
       goods_detail: [],
       category: [],
       filterdFunction: [],
+      isReviewInputPopup: false,
+      content_writer: '',
     };
   }
 
@@ -31,13 +34,18 @@ class ProductDetail extends Component {
     this.setState({ replys });
   };
 
+  handleModal = e => {
+    this.setState({
+      isReviewInputPopup: !this.state.isReviewInputPopup,
+    });
+  };
+
   render() {
     const { goods_detail } = this.state;
 
     return (
       <div className="ProductDetail">
-        <div className="nav_position" />
-        <main>
+        <main onClick={e => e.stopPropagation()}>
           <div className="product_detail_left">
             {this.state.goods_detail.map(item => (
               <Product
