@@ -287,7 +287,9 @@ class Nav extends React.Component {
       isMouseOver: true,
     });
   };
-
+  goToBasket = () => {
+    window.location.href = 'http://localhost:3000/basket';
+  };
   componentDidMount() {
     window.onscroll = () => {
       if (window.scrollY !== 0) {
@@ -418,7 +420,8 @@ class Nav extends React.Component {
               <div onClick={this.searchButton}>
                 <i className="fas fa-search" />
               </div>
-              <div>
+
+              <div onClick={this.goToBasket}>
                 <i className="fas fa-shopping-basket" />
               </div>
             </div>

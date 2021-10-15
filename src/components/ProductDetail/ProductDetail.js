@@ -4,6 +4,7 @@ import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
 import './ProductDetail.scss';
 import './Reviews/Review.scss';
+// import { BASE_URL } from 'react';
 
 class ProductDetail extends Component {
   constructor() {

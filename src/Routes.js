@@ -9,7 +9,7 @@ import SubjectList from './components/SubjectList/SubjectList';
 import UpDownBtn from './components/Main/UpDownBtn';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-// import Basket from './pages/Basket';
+import Basket from './pages/basket/Basket';
 
 class Routes extends React.Component {
   render() {
@@ -25,6 +25,7 @@ class Routes extends React.Component {
             <Route exact path="/review" component={ReviewInput} />
             <Route exact path="/users/signin" component={Login} />
             <Route exact path="/users/signup" component={Signup} />
+            <Route exact path="/basket" component={Basket} />
           </div>
         </Switch>
         <Footer />
