@@ -17,7 +17,7 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    this.props.history.push('/users/main');
+    this.props.history.push('/Main');
     fetch(`${BASE_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({

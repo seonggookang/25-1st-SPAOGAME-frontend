@@ -15,15 +15,17 @@ class Carousel extends React.Component {
     } else if (index < 0) {
       index = this.props.images.length - 3;
     }
-
     this.setState({ currIndex: index });
+
+    if (index === 4) {
+      this.setState({});
+    }
   };
 
   render() {
     const { currIndex } = this.state;
     const { images } = this.props;
     let newArr = images.slice(0, images.length - 2);
-    console.log(newArr);
     return (
       <>
         <div className="MainCarouselWapper">
@@ -49,12 +51,8 @@ class Carousel extends React.Component {
             })}
           </div>
 
-          {/*  왜 6개지 ??? */}
           <ul className="dots">
             {newArr.map(({ id }) => {
-              console.log(id);
-              console.log({ id });
-
               return (
                 <li key={id}>
                   <button

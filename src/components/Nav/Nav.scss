@@ -1,12 +1,12 @@
 .background {
-  background-color: black;
-  opacity: 0.4;
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0.4;
   height: 100%;
   width: 100%;
   z-index: 1;
+  background-color: black;
 }
 
 .Nav {
@@ -114,9 +114,7 @@
         &:hover {
           color: red;
           font-weight: bold;
-
           font-size: 0.65em;
-          // transition: transform 0.3s;
           cursor: pointer;
         }
       }
@@ -139,11 +137,9 @@
         }
       }
     }
-    // &:hover {
-    //   transition: display 0.3s;
-    // }
   }
 }
+
 .Nav2 {
   position: fixed;
   width: 100%;
@@ -153,6 +149,7 @@
   background-color: white;
   color: black;
   transition: background-color 0.4s;
+  border-bottom: 1px solid lightgrey;
 
   .nav_wrapper {
     display: flex;

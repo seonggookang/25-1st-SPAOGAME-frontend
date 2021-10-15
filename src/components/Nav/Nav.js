@@ -230,6 +230,16 @@ class Nav extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch('http://10.58.3.134:8000/products/1'),
+  //     {
+  //       method: 'POST',
+  //       body: JSON.stringify({}),
+  //     }
+  //       .then(res => response.json())
+  //       .then(res => {});
+  // }
+
   toggleMouseOver = () => {
     this.setState({ isMouseOver: true });
   };
@@ -268,12 +278,18 @@ class Nav extends React.Component {
 
   goToMyProfile = () => {
     window.location.href = 'http://localhost:3000/users/signin';
+    // window.location.href = 'http://10.58.3.134:8000/users/signin';
   };
 
   goToWomenOuter = () => {
     window.location.href = 'http://localhost:3000/products';
+    this.setState({
+      isMouseOver: true,
+    });
   };
-
+  goToBasket = () => {
+    window.location.href = 'http://localhost:3000/basket';
+  };
   componentDidMount() {
     window.onscroll = () => {
       if (window.scrollY !== 0) {
@@ -300,13 +316,15 @@ class Nav extends React.Component {
   }
 
   render() {
+    const { scroll } = this.state;
+    const { isMain } = this.props;
     return (
-      <div>
+      <>
         {this.state.isMouseOver && this.state.hoveredText !== '' && (
           <div className="background"></div>
         )}
         <div
-          className={this.state.scroll === true ? 'Nav2' : 'Nav'}
+          className={scroll ? 'Nav2' : 'Nav'}
           onMouseEnter={this.toggleMouseOver}
           onMouseLeave={this.toggleMouseLeave}
         >
@@ -402,7 +420,8 @@ class Nav extends React.Component {
               <div onClick={this.searchButton}>
                 <i className="fas fa-search" />
               </div>
-              <div>
+
+              <div onClick={this.goToBasket}>
                 <i className="fas fa-shopping-basket" />
               </div>
             </div>
@@ -454,7 +473,7 @@ class Nav extends React.Component {
             </div>
           )}
         </div>
-      </div>
+      </>
     );
   }
 }
