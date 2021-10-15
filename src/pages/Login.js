@@ -17,7 +17,7 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    this.props.history.push('/Main');
+    this.props.history.push('/');
     fetch(`${BASE_URL}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
@@ -30,7 +30,7 @@ class Login extends React.Component {
         if (res.token) {
           localStorage.setItem('token', res.token);
           alert('로그인 되었습니다.');
-          this.props.history.push('/Main');
+          this.props.history.push('/');
         } else {
           alert('아이디와 비밀번호를 확인하세요');
         }

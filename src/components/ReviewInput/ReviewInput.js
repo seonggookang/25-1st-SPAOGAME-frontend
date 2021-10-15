@@ -49,7 +49,6 @@ class ReviewInput extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="ReviewInput">
         <div className="review_input_wrapper">

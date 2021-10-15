@@ -1,222 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import ImageToggle from './ImageToggle';
 import Searchbox from './Searchbox';
 import './Nav.scss';
 import nav_map from '../../../src/Common';
-
-// class Nav extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       isMouseOver: false,
-//       isMouseTextOver: false,
-//       hoveredText: 'women',
-//       isSearch: false,
-//       isContent: false,
-//     };
-//   }
-
-//   toggleMouseOver = () => {
-//     this.setState(prev => ({ isMouseOver: true }));
-//   };
-
-//   toggleMouseLeave = () => {
-//     this.setState(prev => ({
-//       isMouseOver: false,
-//       isMouseTextOver: false,
-//     }));
-//   };
-
-//   toggleTextMouseOver = () => {
-//     this.setState(prev => ({
-//       isMouseTextOver: !prev.isMouseTextOver,
-//       isSearch: false,
-//     }));
-//   };
-
-//   searchButton = () => {
-//     this.setState(prev => ({
-//       isSearch: !prev.isSearch,
-//     }));
-//   };
-
-//   render() {
-//     return (
-//       <div
-//         className="Nav"
-//         onMouseEnter={this.toggleMouseOver}
-//         onMouseLeave={this.toggleMouseLeave}
-//       >
-//         <div className="nav_wrapper">
-//           <div className="nav_letters">
-//             <ImageToggle
-//               className="logo"
-//               isMouseOver={this.state.isMouseOver}
-//             />
-//             <div className="nav_menu">
-//               <div className="nav_menu_Festival">FLECE FESTIVAL</div>
-//               <div className="nav_menu_Outer">OUTER</div>
-//               <div
-//                 className="nav_menu_white"
-//                 onMouseLeave={() => {
-//                   // this.toggleTextMouseOver();
-//                   this.setState({
-//                     // hoveredText: '',
-//                   });
-//                 }}
-//               >
-//                 <div
-//                   onMouseEnter={() => {
-//                     this.setState({
-//                       hoveredText: 'women',
-//                       isMouseTextOver: true,
-//                       isSearch: false,
-//                     });
-//                   }}
-//                   // onMouseLeave={() => {
-//                   //   this.toggleTextMouseOver();
-//                   //   this.setState({
-//                   //     isMouseOver: false,
-//                   //   });
-//                   // }}
-//                 >
-//                   WOMEN
-//                 </div>
-//                 <div
-//                   onMouseEnter={() => {
-//                     this.setState({
-//                       hoveredText: 'men',
-//                       isMouseTextOver: true,
-//                       isSearch: false,
-//                     });
-//                   }}
-//                   // onMouseLeave={() => {
-//                   //   this.toggleTextMouseOver();
-//                   //   this.setState({
-//                   //     isMouseOver: false,
-//                   //   });
-//                   // }}
-//                 >
-//                   MEN
-//                 </div>
-//                 <div
-//                   onMouseEnter={() => {
-//                     this.setState({
-//                       hoveredText: 'kids',
-//                       isMouseTextOver: true,
-//                       isSearch: false,
-//                     });
-//                   }}
-//                   // onMouseLeave={() => {
-//                   //   this.toggleTextMouseOver();
-//                   //   this.setState({
-//                   //     isMouseOver: false,
-//                   //   });
-//                   // }}
-//                 >
-//                   KIDS
-//                 </div>
-//                 <div
-//                   onMouseEnter={() => {
-//                     this.setState({
-//                       hoveredText: 'collaboration',
-//                       isMouseTextOver: true,
-//                       isSearch: false,
-//                     });
-//                   }}
-//                   // onMouseLeave={() => {
-//                   //   this.toggleTextMouseOver();
-//                   //   this.setState({
-//                   //     isMouseOver: false,
-//                   //   });
-//                   // }}
-//                 >
-//                   COLLABORATION
-//                 </div>
-//                 <div
-//                   onMouseEnter={() => {
-//                     this.setState({
-//                       hoveredText: 'community',
-//                       isMouseTextOver: true,
-//                       isSearch: false,
-//                     });
-//                   }}
-//                   // onMouseLeave={() => {
-//                   //   this.toggleTextMouseOver();
-//                   //   this.setState({
-//                   //     isMouseOver: false,
-//                   //   });
-//                   // }}
-//                 >
-//                   COMMUNITY
-//                 </div>
-
-//                 {true && (
-//                   <div className="Drop_down">
-//                     <div className="Drop_down_left">
-//                       {nav_map
-//                         .get(this.state.hoveredText)
-//                         .first_menu.map((el, idx) => {
-//                           return <div key={idx}>{el.title}</div>;
-//                         })}
-//                     </div>
-
-//                     <div className="Drop_down_center">
-//                       <div>
-//                         {nav_map
-//                           .get(this.state.hoveredText)
-//                           .second_menu.map((el, idx) => {
-//                             return <div key={idx}>{el.title}</div>;
-//                           })}
-//                       </div>
-//                     </div>
-
-//                     <div className="Drop_down_right">
-//                       <div>
-//                         {nav_map
-//                           .get(this.state.hoveredText)
-//                           .third_menu.map((el, idx) => {
-//                             return (
-//                               <div key={idx}>
-//                                 {<img alt="category_image" src={el.img_src} />}
-//                               </div>
-//                             );
-//                           })}
-//                       </div>
-//                     </div>
-//                   </div>
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="profile">
-//             <div>
-//               <i class="fas fa-user" />
-//             </div>
-//             <div>
-//               <i class="far fa-heart" />
-//             </div>
-//             <div onClick={this.searchButton}>
-//               <i class="fas fa-search" />
-//             </div>
-//             <div>
-//               <i class="fas fa-shopping-basket" />
-//             </div>
-//           </div>
-//         </div>
-
-//         {this.state.isSearch && (
-//           <div className="searchbox">
-//             <Searchbox />
-//           </div>
-//         )}
-//       </div>
-//     );
-//   }
-// }
-
-// export default Nav;
 
 class Nav extends React.Component {
   constructor() {
@@ -230,15 +17,14 @@ class Nav extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('http://10.58.3.134:8000/products/1'),
-  //     {
-  //       method: 'POST',
-  //       body: JSON.stringify({}),
-  //     }
-  //       .then(res => response.json())
-  //       .then(res => {});
-  // }
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      this.setState({
+        isMouseOver: !!window.scrollY,
+        scroll: !!window.scrollY,
+      });
+    });
+  }
 
   toggleMouseOver = () => {
     this.setState({ isMouseOver: true });
@@ -273,51 +59,27 @@ class Nav extends React.Component {
   };
 
   goToMain = () => {
-    window.location.href = 'http://localhost:3000/main';
+    this.props.history.push('/');
   };
 
   goToMyProfile = () => {
-    window.location.href = 'http://localhost:3000/users/signin';
-    // window.location.href = 'http://10.58.3.134:8000/users/signin';
+    this.props.history.push('/users/signin');
   };
 
   goToWomenOuter = () => {
-    window.location.href = 'http://localhost:3000/products';
+    this.props.history.push('/products');
     this.setState({
       isMouseOver: true,
     });
   };
+
   goToBasket = () => {
-    window.location.href = 'http://localhost:3000/basket';
+    this.props.history.push('/basket');
   };
-  componentDidMount() {
-    window.onscroll = () => {
-      if (window.scrollY !== 0) {
-        this.setState({
-          isMouseOver: true,
-        });
-      }
-    };
-  }
-  componentDidUpdate() {
-    window.onscroll = () => {
-      if (window.scrollY !== 0) {
-        this.setState({
-          isMouseOver: true,
-          scroll: true,
-        });
-      } else {
-        this.setState({
-          isMouseOver: false,
-          scroll: false,
-        });
-      }
-    };
-  }
 
   render() {
     const { scroll } = this.state;
-    const { isMain } = this.props;
+
     return (
       <>
         {this.state.isMouseOver && this.state.hoveredText !== '' && (
@@ -478,4 +240,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

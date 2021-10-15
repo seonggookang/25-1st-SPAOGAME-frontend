@@ -89,7 +89,6 @@ class SubjectList extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { goods, filterdFunction } = this.state;
     return (
       <div className="subject_list">

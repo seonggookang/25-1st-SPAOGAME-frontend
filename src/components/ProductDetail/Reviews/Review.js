@@ -50,7 +50,6 @@ class Review extends Component {
   };
 
   render() {
-    console.log(this.props);
     const {
       posting_image,
       posting_content,
