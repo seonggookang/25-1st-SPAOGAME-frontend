@@ -16,16 +16,16 @@ class Routes extends React.Component {
     return (
       <Router>
         <UpDownBtn />
+        <Nav isMain={false} />
         <Switch>
-          <Route path="/" component={Main} />
+          <Route exact path="/" component={Main} />
           <div className="header_fixed" style={{ marginTop: '75px' }}>
-            <Nav isMain={false} />
             <Route exact path="/products" component={SubjectList} />
             <Route exact path="/products/:id" component={ProductDetail} />
             <Route exact path="/review" component={ReviewInput} />
             <Route exact path="/users/signin" component={Login} />
             <Route exact path="/users/signup" component={Signup} />
-            <Route exact path="/basket" component={Basket} />
+            <Route exact path="/baskets" component={Basket} />
           </div>
         </Switch>
         <Footer />

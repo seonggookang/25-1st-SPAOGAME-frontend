@@ -67,6 +67,10 @@ class SubjectList extends Component {
     this.setState({ order_id: 3 });
   };
 
+  sortByNew = () => {
+    this.setState({ order_id: 0 });
+  };
+
   colorSort = e => {
     const targetColor = e.target.getAttribute('name');
     const sortByColor = [...this.state.filterdFunction].filter(item =>
@@ -115,7 +119,9 @@ class SubjectList extends Component {
               <button className="sort">
                 상품정렬 &nbsp;<i className="fas fa-chevron-down"></i>
                 <ul className="dropbox">
-                  <li className="dropbox_item">신상품</li>
+                  <li className="dropbox_item" onClick={this.sortByNew}>
+                    신상품
+                  </li>
                   <li
                     className="dropbox_item"
                     name="name"
@@ -128,14 +134,14 @@ class SubjectList extends Component {
                     name="price"
                     onClick={this.sortByPrice}
                   >
-                    낮은가격순
+                    높은가격순
                   </li>
                   <li
                     className="dropbox_item"
                     name="price"
                     onClick={this.sortByPriceDesc}
                   >
-                    높은가격순
+                    낮은가격순
                   </li>
                 </ul>
               </button>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Orderlists from '../../components/Orderbasket/Orderlists';
 import Empty from '../../components/Orderbasket/Empty';
-import { BASE_URL } from 'react';
 import '../basket/Basket.scss';
 
 class Basket extends React.Component {
@@ -13,7 +12,7 @@ class Basket extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${BASE_URL}/orders/cart`, {
+    fetch('http://10.58.3.134:8000/orders/cart', {
       headers: { Authorization: localStorage.getItem('token') },
     })
       .then(res => res.json())
@@ -21,14 +20,6 @@ class Basket extends React.Component {
         this.setState({ isEmptyCart: result.res });
       });
   }
-
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/data/basket.json').then(res =>
-  //     res.json().then(data => {
-  //       this.setState({ isEmptyCart: data.basket });
-  //     })
-  //   );
-  // }
 
   render() {
     const { isEmptyCart } = this.state;
@@ -73,7 +64,10 @@ class Basket extends React.Component {
                     <td className="total_fee">
                       <p>총 상품금액</p>
                       <p>
-                        <strong>0</strong>
+                        <strong>
+                          {isEmptyCart[0] &&
+                            isEmptyCart[0].price.toLocaleString('ko-KR')}
+                        </strong>
                       </p>
                     </td>
                     <p>
@@ -86,7 +80,10 @@ class Basket extends React.Component {
                     <p className="calculate_fees">=</p>
                     <td className="reservation_fee">
                       <p>결재예정금액</p>
-                      <p className="calculate_fees">0</p>
+                      <p className="calculate_fees">
+                        {isEmptyCart[0] &&
+                          isEmptyCart[0].price.toLocaleString('ko-KR')}
+                      </p>
                     </td>
                   </tr>
                 </tbody>

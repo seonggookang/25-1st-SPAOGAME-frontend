@@ -74,7 +74,7 @@ class Nav extends React.Component {
   };
 
   goToBasket = () => {
-    this.props.history.push('/basket');
+    this.props.history.push('/baskets');
   };
 
   render() {
