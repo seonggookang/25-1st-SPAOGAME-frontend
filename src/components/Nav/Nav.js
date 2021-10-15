@@ -230,6 +230,16 @@ class Nav extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch('http://10.58.3.134:8000/products/1'),
+  //     {
+  //       method: 'POST',
+  //       body: JSON.stringify({}),
+  //     }
+  //       .then(res => response.json())
+  //       .then(res => {});
+  // }
+
   toggleMouseOver = () => {
     this.setState({ isMouseOver: true });
   };
@@ -268,10 +278,11 @@ class Nav extends React.Component {
 
   goToMyProfile = () => {
     window.location.href = 'http://localhost:3000/users/signin';
+    // window.location.href = 'http://10.58.3.134:8000/users/signin';
   };
 
   goToWomenOuter = () => {
-    window.location.href = 'http://localhost:3000/products';
+    window.location.href = 'http://localhost:3000/products/1';
     this.setState({
       isMouseOver: true,
     });
