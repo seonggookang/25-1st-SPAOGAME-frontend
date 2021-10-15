@@ -24,7 +24,7 @@ class SubjectList extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.0.205:8000/products/women/outer?offset=0&limit=${LIMIT}`
+      `http://10.58.3.134:8000/products/women/outer?offset=0&limit=${LIMIT}`
     )
       .then(res => res.json())
       .then(data => {
@@ -42,7 +42,7 @@ class SubjectList extends Component {
       prevState.order_id !== this.state.order_id
     ) {
       fetch(
-        `http://10.58.0.205:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}&order_id=${this.state.order_id}`
+        `http://10.58.3.134:8000/products/women/outer?offset=${this.state.offset}&limit=${LIMIT}&order_id=${this.state.order_id}`
       )
         .then(res => res.json())
         .then(data => {

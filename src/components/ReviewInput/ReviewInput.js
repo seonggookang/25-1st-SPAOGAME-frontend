@@ -23,7 +23,7 @@ class ReviewInput extends Component {
   };
 
   reviewInput = () => {
-    fetch('http://10.58.0.205:8000/postings', {
+    fetch('http://10.58.3.134:8000/postings', {
       method: 'POST',
       body: JSON.stringify({
         review_image: this.state.review_image,

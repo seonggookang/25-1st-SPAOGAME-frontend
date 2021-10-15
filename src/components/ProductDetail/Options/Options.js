@@ -53,7 +53,7 @@ class Options extends Component {
   };
 
   goToCart = () => {
-    fetch('http://10.58.0.205:8000/orders/cart', {
+    fetch('http://10.58.3.134:8000/orders/cart', {
       method: 'POST',
       body: JSON.stringify({
         product_id: this.props.product_id,
