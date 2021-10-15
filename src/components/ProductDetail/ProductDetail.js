@@ -15,15 +15,15 @@ class ProductDetail extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch(`http://10.58.0.205:8000/products/${this.props.match.params.id}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         goods_detail: data.goods_detail,
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    fetch(`http://10.58.3.134:8000/products/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          goods_detail: data.goods_detail,
+        });
+      });
+  }
 
   handleDelete = reply => {
     const replys = this.state.replys.filter(item => item.id !== reply.id);

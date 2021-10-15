@@ -282,7 +282,7 @@ class Nav extends React.Component {
   };
 
   goToWomenOuter = () => {
-    window.location.href = 'http://localhost:3000/products/1';
+    window.location.href = 'http://localhost:3000/products';
     this.setState({
       isMouseOver: true,
     });
