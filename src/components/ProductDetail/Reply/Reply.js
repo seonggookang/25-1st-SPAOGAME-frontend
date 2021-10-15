@@ -20,7 +20,7 @@ class Reply extends Component {
     this.props.onDelete(this.props.reply);
 
     fetch(
-      `http://192.168.0.133:8000/postings/comments/${this.state.comment_id}`,
+      `http://110.58.3.134:8000/postings/comments/${this.state.comment_id}`,
 
       {
         headers: { Authorization: localStorage.getItem('token') },

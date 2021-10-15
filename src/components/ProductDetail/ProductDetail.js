@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Product from './ProductsDetail/Product';
 import Options from './Options/Options';
 import Reviews from './Reviews/Reviews';
-import ReviewInput from '../ReviewInput/ReviewInput';
 
 import './ProductDetail.scss';
 import './Reviews/Review.scss';
@@ -20,7 +19,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://192.168.0.133:8000/products/${this.props.match.params.id}`)
+    fetch(`http://10.58.3.134:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -46,7 +45,6 @@ class ProductDetail extends Component {
 
     return (
       <div className="ProductDetail">
-        <div className="nav_position" />
         <main onClick={e => e.stopPropagation()}>
           <div className="product_detail_left">
             {this.state.goods_detail.map(item => (
@@ -84,11 +82,6 @@ class ProductDetail extends Component {
               product_id={item.product_id}
             />
           ))}
-        </div>
-        <div>
-          {this.state.isReviewInputPopup && (
-            <ReviewInput handleModal={this.handleModal} />
-          )}
         </div>
       </div>
     );

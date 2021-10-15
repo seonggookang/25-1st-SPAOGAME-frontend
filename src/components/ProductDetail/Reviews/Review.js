@@ -37,7 +37,7 @@ class Review extends Component {
       {
         comment_id: Date.now(),
         comment_content: replyInput,
-        comment_writer: '',
+        comment_writer: '김현진',
       },
     ];
     this.setState({ replys });

@@ -11,11 +11,7 @@ class Replys extends Component {
   render() {
     return (
       <>
-        <div
-          className="replys_wrapper"
-          ref={this.messagesEndRef}
-          onChange={this.scrollBottom}
-        >
+        <div className="replys_wrapper" ref={this.messagesEndRef}>
           {this.props.replys.map(reply => (
             <Reply
               key={reply.comment_id}

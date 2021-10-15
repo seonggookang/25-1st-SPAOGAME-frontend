@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './ReviewInput.scss';
 
@@ -9,6 +9,9 @@ class ReviewInput extends Component {
     this.state = {
       review_content: '',
     };
+  }
+  componentDidMount() {
+    window.scrollTo({ top: 0 });
   }
 
   handleInput = e => {
@@ -23,7 +26,10 @@ class ReviewInput extends Component {
   };
 
   reviewInput = () => {
-    fetch('http://192.168.0.133:8000/postings', {
+    this.props.history.push(
+      `/products/${this.props.location.state.product_id}`
+    );
+    fetch('http://10.58.3.134:8000/postings', {
       headers: { Authorization: localStorage.getItem('token') },
 
       method: 'POST',
@@ -38,10 +44,6 @@ class ReviewInput extends Component {
       .then(result => {
         if (result.message === 'USER_NOTEXIST') {
           alert('리뷰가 정상적으로 등록되지 않았습니다.');
-        } else {
-          this.props.history.push(
-            `/products/${this.props.location.state.product_id}`
-          );
         }
       });
   };

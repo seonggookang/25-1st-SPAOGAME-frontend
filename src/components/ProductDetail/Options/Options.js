@@ -53,7 +53,7 @@ class Options extends Component {
   };
 
   goToCart = () => {
-    fetch('http://192.168.0.133:8000/orders/cart', {
+    fetch('http://10.58.3.134:8000/orders/cart', {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('token') },
       body: JSON.stringify({
