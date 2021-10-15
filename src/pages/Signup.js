@@ -71,11 +71,18 @@ class Signup extends React.Component {
       }),
     })
       .then(response => response.json())
-      .then(result => console.log(''));
+      .then(result => {
+        if (result) {
+          alert('회원가입을 축하드립니다.');
+          this.props.history.push('/users/signin');
+        } else {
+          alert('정보를 확인해주세요');
+        }
+      });
   };
 
   goToMain = () => {
-    this.props.history.push('/components/Main/Main.js');
+    this.props.history.push('/Main');
   };
 
   render() {
@@ -122,8 +129,6 @@ class Signup extends React.Component {
 
     const userday = Array.from({ length: 31 }).map((el, idx) => idx + 1);
     userday.unshift('선택');
-
-    console.log(this.state);
 
     return (
       <main className="signup_wrapper">
