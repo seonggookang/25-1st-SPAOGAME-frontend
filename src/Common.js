@@ -436,7 +436,7 @@ const nav_map = {
         route: 'www.naver.com',
       },
       {
-        img_src: '//images/woman_3.jpg',
+        img_src: '/images/woman_3.jpg',
         route: 'www.naver.com',
       },
     ],
@@ -702,13 +702,13 @@ const nav_map = {
         route: 'www.naver.com',
       },
       {
-        img_src: 'images/com_3.jpg',
+        img_src: '/images/com_3.jpg',
         route: 'www.naver.com',
       },
     ],
   },
   recommend: {
-    picture: ['images/com_1.jpg', 'images/com_2.jpg', 'images/com_3.jpg'],
+    picture: ['/images/com_1.jpg', '/images/com_2.jpg', '/images/com_3.jpg'],
   },
 };
 
