@@ -1,6 +1,5 @@
 import React from 'react';
 import Orderproduct from './Orderproduct';
-// import { BASE_URL } from 'react';
 import '../../components/Orderbasket/Orderlists.scss';
 
 class Orderlists extends React.Component {
@@ -12,14 +11,17 @@ class Orderlists extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/basket.json').then(res =>
-      res.json().then(data => {
-        this.setState({ cartList: data.basket });
-      })
-    );
+    fetch('http://10.58.3.134:8000/orders/cart', {
+      headers: { Authorization: localStorage.getItem('token') },
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ cartList: data.res });
+      });
   }
 
   render() {
+    console.log(this.cartList);
     const { cartList } = this.state;
     return (
       <section className="order_lists">
@@ -33,9 +35,7 @@ class Orderlists extends React.Component {
               <th scope="col">
                 <input className="th_checkbox" type="checkbox" />
               </th>
-              <th scope="col" className="th_img">
-                이미지자리
-              </th>
+              <th scope="col" className="th_img"></th>
               <th scope="col" className="th_details">
                 상품정보
               </th>
@@ -51,13 +51,11 @@ class Orderlists extends React.Component {
             </tr>
           </thead>
         </table>
-        <tbody>
-          {cartList.map(item => (
-            <tr key={item.id}>
-              <Orderproduct cartItem={item} />
-            </tr>
-          ))}
-        </tbody>
+        {cartList.map(item => (
+          <tr key={item.id}>
+            <Orderproduct cartItem={item} />
+          </tr>
+        ))}
       </section>
     );
   }

@@ -30,6 +30,75 @@
     }
   }
 
+  .order_wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #1a1a1a;
+    padding: 2em 0;
+    margin-bottom: 1em;
+
+    .wrapper {
+      display: flex;
+    }
+
+    tr {
+      display: flex;
+      align-items: center;
+
+      .wrapper_checkbox {
+        margin-left: 11em;
+      }
+
+      .image_information {
+        margin-left: 10em;
+
+        .product_img {
+          width: 13em;
+        }
+      }
+
+      .wrapper_product_details {
+        margin-left: 5em;
+        font-size: 25px;
+      }
+
+      .quantity_button {
+        display: flex;
+        align-items: center;
+        margin-left: 26em;
+
+        button {
+          width: 2em;
+          height: 2em;
+        }
+
+        input {
+          width: 5em;
+          height: 2em;
+          text-align: center;
+        }
+      }
+
+      .wrapper_cart_price {
+        margin-left: 12em;
+        font-size: 25px;
+      }
+
+      .wrapper_delete_button {
+        margin-left: 20em;
+
+        button {
+          width: 6em;
+          height: 3em;
+          background-color: white;
+          border: 1px solid #ddd;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
   input[type='checkbox'] {
     width: 1.5em;
     height: 1.5em;
