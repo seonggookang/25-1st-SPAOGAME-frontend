@@ -1,4 +1,4 @@
-**# SPAO Clone Project
+** SPAO Clone Project
 
 - Trends meet Basic Be Transic! - 스파오(SPAO) 사이트 클론.
 
