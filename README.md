@@ -1,4 +1,3 @@
-**SPAOGAME-front 팀원: 강성구 김현진 정경훈
 **# SPAO Clone Project
 
 - Trends meet Basic Be Transic! - 스파오(SPAO) 사이트 클론.
