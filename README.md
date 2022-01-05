@@ -21,7 +21,7 @@
 - 🔗 [영상 링크]
 
 ## ⚙ 적용 기술
-- **Front-End** : HTML5, CSS3, React, SASS, JSX
+- **Front-End** : HTML5, CSS3, React, SASS
 - **Back-End** : Python, Django, MySQL, jwt, bcypt, AWS RDS, AWS EC2
 - **Common** : Git, Github, Slack, Trello, Postman or Insomnia
 
