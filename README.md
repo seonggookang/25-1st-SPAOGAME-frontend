@@ -19,7 +19,7 @@
 ## 🎬 프로젝트 구현 영상
 
 - 🔗 [영상 링크]
-
+https://www.youtube.com/watch?v=6ystu4fspfI&list=PLZTmS1zO_K1Zj4ZRa-eu3Ugt-DfGC7eXC&index=2
 ## ⚙ 적용 기술
 - **Front-End** : HTML5, CSS3, React, SASS
 - **Back-End** : Python, Django, MySQL, jwt, bcypt, AWS RDS, AWS EC2
