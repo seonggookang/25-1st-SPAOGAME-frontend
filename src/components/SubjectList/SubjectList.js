@@ -117,7 +117,12 @@ class SubjectList extends Component {
 
               <button className="item_count"> 8 items</button>
               <button className="sort">
-                상품정렬 &nbsp;<i className="fas fa-chevron-down"></i>
+                <div className="down_arrow">
+                  <div>상품정렬</div>
+                  <div>
+                    <i className="fas fa-chevron-down" />
+                  </div>
+                </div>
                 <ul className="dropbox">
                   <li className="dropbox_item" onClick={this.sortByNew}>
                     신상품
