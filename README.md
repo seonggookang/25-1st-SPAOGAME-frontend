@@ -40,4 +40,3 @@ https://www.youtube.com/watch?v=6ystu4fspfI&list=PLZTmS1zO_K1Zj4ZRa-eu3Ugt-DfGC7
 - **Carousel방식으로 버튼 클릭시 이미지 너비 규격만큼 이동(마지막 사진에서는 첫번째 사진으로 이동)**
 - **radio 형식으로 사진 이동기능 추가**
 - **페이지업,페이지 다운 컴포넌트 화면 우측하단 고정**
-- 
