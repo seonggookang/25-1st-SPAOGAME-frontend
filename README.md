@@ -34,6 +34,7 @@ https://www.youtube.com/watch?v=6ystu4fspfI&list=PLZTmS1zO_K1Zj4ZRa-eu3Ugt-DfGC7
 ### 강성구
 
 - **메인페이지 레이아웃 구현**
+- 메인페이지의 사진 방향키 클릭시 사진 
 - **네브바 각 메뉴별 호버 시, 메뉴에 맞는 내용들 드롭다운(Two Depth)**
 - **스크롤 감지시 네브바 색 변경**
 - **Carousel방식으로 버튼 클릭시 이미지 너비 규격만큼 이동(마지막 사진에서는 첫번째 사진으로 이동)**
